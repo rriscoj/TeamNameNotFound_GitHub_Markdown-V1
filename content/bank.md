@@ -1,4 +1,4 @@
-## 6. Answers and Explanations
+## Answers and Explanations ( Module 1 )
 
 * **Question 1: B — CPU**
 The CPU executes general program instructions and coordinates operations.
