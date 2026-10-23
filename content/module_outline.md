@@ -1,6 +1,3 @@
-Here is the complete, single text file that combines **Part B (Module Structure)** and **Part C (Substantive Content)** together. You can copy this whole block directly into your file (such as `content/topic_1.md` or `content/module1_hardware_and_ai.md`):
-
-```markdown
 # Foundations of Computer Science & AI
 ## Module 1: Understanding Computer Hardware and Its Role in Artificial Intelligence
 
