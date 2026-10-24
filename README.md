@@ -1,17 +1,17 @@
 # TeamNameNotFound — Foundations of CS & AI: Stage 1
 
 ## Team Information & Members
-* **Team Name:** TeamNameNotFound[cite: 6]
+* **Team Name:** TeamNameNotFound
 * **Selected Module:** Module 1: Understanding Computer Hardware and Its Role in Artificial Intelligence
 
 | Member Name | Student ID | GitHub Username | Role |
 | :--- | :--- | :--- | :--- |
 | Matthew Owen Winarto | 18020262080 | `matthewtechb` | CEO / Project Coordinator[cite: 7] |
-| Risco Jara Ricardo Mauricio | 1820262138 | `rriscoj` | CIO / Media & Visuals[cite: 7] |
+| Risco Jara Ricardo Mauricio | 1820262138 | `rriscoj` | CTO / Media & Visuals[cite: 7] |
 | Harby | 1820262129 | `harbyyy9` | Lead Writer[cite: 7] |
 | Aki | [Insert ID] | `[Insert Username]` | Media Producer[cite: 7] |
-| Naththarampotha Nemindhara Thisun Dinayuru (黎明) | 1820262133 | `nemin404` | Lead Designer[cite: 7] |
-| Falent Ananta Christanto | 1820262294 | `anantafalent_hash` | Academic Director[cite: 7] |
+| Naththarampotha Nemindhara Thisun Dinayuru (黎明) | 1820262133 | `nemin404` | CIO[cite: 7] |
+| Falent Ananta Christanto | 1820262294 | `anantafalent_hash` | Tester[cite: 7] |
 
 ---
 
