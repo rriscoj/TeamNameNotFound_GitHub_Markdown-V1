@@ -181,6 +181,6 @@ By the end of the materials, a beginner should be able to:
 ---
 
 ### Team Review Before Submission
-* **All members have reviewed the plan and task list:** `[Yes / Not yet]`
-* **Date of review:** `[YYYY-MM-DD]`
-* **Decisions or changes made:** `[Brief notes]`
+* **All members have reviewed the plan and task list:** `[Yes]`
+* **Date of review:** `[11:00p.m. of 2026-10-24]`
+* **Decisions or changes made:** `[Correction and update of information]`
