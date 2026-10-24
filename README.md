@@ -1,5 +1,5 @@
 # TeamNameNotFound — Foundations of CS & AI: Stage 1
-
+#
 ## Team Information & Members
 * **Team Name:** TeamNameNotFound
 * **Selected Module:** Module 1: Understanding Computer Hardware and Its Role in Artificial Intelligence
