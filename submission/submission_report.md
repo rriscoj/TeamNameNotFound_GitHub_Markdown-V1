@@ -5,7 +5,7 @@
 * **Module:** Hardware, Networks & Behaviorist AI
 * **Repository URL:** https://github.com/rriscoj/TeamNameNotFound_GitHub_Markdown-V1
 * **Snapshot Date:** October 24, 2026
-* **Latest Commit Identifier (SHA):** [Insert Commit Hash here before submitting]
+* **Latest Commit Identifier (SHA):** 61abab3b01c322d8ba79f8ce6874524882f441e6
 
 ## Content Status Summary
 Our team has outlined the full 6-section module on Hardware and Behavioral AI. We have fully drafted and checked the substantive Markdown content (V1.0) for Section 2, detailing core hardware components (CPU, GPU, RAM, Storage) and their roles in AI. We have also drafted the answer key for the school security camera activity in `bank.md`. The remaining sections (Worked Example, Application, Practice) are currently planned/outlined and will be developed for Stage 2.
@@ -13,23 +13,26 @@ Our team has outlined the full 6-section module on Hardware and Behavioral AI. W
 ## Repository Evidence
 ### 1. Repository Overview
 **Evidence E1: Repository Homepage**
-*(Insert a readable screenshot showing the repository name, README, and main files/folders)*
+<img width="1916" height="866" alt="image" src="https://github.com/user-attachments/assets/66007838-44d7-44e6-87f8-244e4202dccd" />
 *Caption: Overview of the TeamNameNotFound repository structure.*
 
 ### 2. Development History
 **Evidence E2: Commit History**
-*(Insert a readable screenshot of the commit history showing authors, dates, and meaningful descriptions)*
+<img width="1887" height="827" alt="image" src="https://github.com/user-attachments/assets/cf7ae817-ce2a-4b82-82bd-cd086d6586a6" />
+
 *Caption: Commit history demonstrating ongoing development and team collaboration.*
 
 ### 3. Examples of Actual Changes
 **Evidence E3: Markdown Content Addition**
-*(Insert a selected change view/screenshot showing what was added, corrected, or improved—not just a list of commit messages)*
-*Caption: Example showing Harby's addition of core hardware explanations and comparison tables in module1_hardware_and_ai.md.*
+<img width="1881" height="831" alt="image" src="https://github.com/user-attachments/assets/b6dc5fbb-bc30-4f7d-af8e-9305d87b046f" />
+
+*Caption: Example showing Harby's addition of the modules of our topic in module_outline.md.*
 
 ### 4. Review and Coordination
-**Evidence E4: Task Coordination / Content Review**
-*(Insert a screenshot of content review, task coordination, or resolving a problem from GitHub or documented team discussions)*
-*Caption: Team discussion reviewing peer feedback and applying revisions to the Markdown files on October 22.*
+**Evidence E4: Task Coordination**
+<img width="1532" height="792" alt="image" src="https://github.com/user-attachments/assets/8b88c48d-40d4-47aa-abf4-08bec7adff1f" />
+
+*Caption: Team discussion in Chat.*
 
 ## Member Contributions
 * **Matthew (CEO):** Organized the master task list, created the initial project plan, coordinated the team meetings (Oct 19), managed deadlines, and compiled the final Stage 1 submission files.
