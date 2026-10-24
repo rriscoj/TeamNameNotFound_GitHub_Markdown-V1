@@ -9,7 +9,7 @@
 | Matthew Owen Winarto | 18020262080 | `matthewtechb` | CEO / Project Coordinator[cite: 7] |
 | Risco Jara Ricardo Mauricio | 1820262138 | `rriscoj` | CTO / Media & Visuals[cite: 7] |
 | Harby | 1820262129 | `harbyyy9` | Lead Writer[cite: 7] |
-| Aki | [1820262035] | `[akerkefn]` | Lead Designer[cite: 7] |
+| Akerke | [1820262035] | `[akerkefn]` | Lead Designer[cite: 7] |
 | Naththarampotha Nemindhara Thisun Dinayuru (黎明) | 1820262133 | `nemin404` | CIO[cite: 7] |
 | Falent Ananta Christanto | 1820262294 | `anantafalent_hash` | Tester[cite: 7] |
 
