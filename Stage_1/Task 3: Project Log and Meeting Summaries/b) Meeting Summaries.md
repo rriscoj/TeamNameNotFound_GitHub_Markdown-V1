@@ -27,16 +27,20 @@
 
 - **Date, time, and location or platform:** 23 Oct 2026, from 9:00pm to 11:59pm, at LX’s Dormitory Basement.
 - **Attendees:** Matthew, Ricardo, Falent, Harby, Nemindhara, Aki
-- **Purpose or agenda:** Review all the documents, collect feedback, and finalize
-- **Key discussion points:** Aligning with the guidelines, Positional Changes
-- **Decisions and outcomes:** CIO position changed, finalizing the documents after collecting feedback and submission of the documents
-- **Follow-up actions:** Final review and proof reading done by the tester & final submission
+- **Purpose or agenda:** Review all the documents, collect feedback, and check the learning content.
+- **Key discussion points:** Aligned with the guidelines, made positional changes, and reviewed the content material.
+- **Decisions and outcomes:** CIO position changed; finalize the documents after collecting feedback and submitting them.
+- **Follow-up actions:** The tester will do a final review and proofreading, then submit.
 
 ## Meeting 3
 
-- **Date, time, and location or platform:** Oct. 26, 2026, from 9:00pm to 10:00pm, at the BIT's East Canteen.
+- **Date, time, and location or platform:** Oct. 26, 2026, from 9:00pm to 11:00pm, at the BIT's East Canteen and later at LX’s Dormitory Basement.
 - **Attendees:** 
-- **Purpose or agenda:** Review Stage 1 grading feedback, plan resubmission strategy to improve our score, and verhaul the GitHub repository.
+- **Purpose or agenda:**
+    - Review Stage 1 grading feedback.
+    - Plan a resubmission strategy to improve our score.
+    - Overhaul the GitHub repository.
+    - Delegate tasks.
 - **Key discussion points:** 
 - **Decisions and outcomes:** 
 - **Follow-up actions:**
