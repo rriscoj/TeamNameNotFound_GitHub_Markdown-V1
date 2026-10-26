@@ -35,7 +35,7 @@ Before submitting, each student should check that:
 Before submitting, the team should also check that:
 
 - [x] Every member’s Stage 1 personal log is included in one Word or PDF document.
-  - **Comment: Every team member’s Stage 1 personal log is included in one document** 
+  - **Comment: every team member’s Stage 1 personal log is included in one document** 
 
 - [x] A contents list identifies all members, and each person's log starts on a new page with their name, student ID, team, and reporting period.
   - **Comment: the contents list includes everyone, and each log starts on a new page with the required details** 
