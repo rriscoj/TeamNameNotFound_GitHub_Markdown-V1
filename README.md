@@ -1,36 +1,50 @@
-# TeamNameNotFound — Foundations of CS & AI: Stage 1
-#
-## Team Information & Members
-* **Team Name:** TeamNameNotFound
-* **Selected Module:** Module 1: Understanding Computer Hardware and Its Role in Artificial Intelligence
+# TeamNameNotFound | Foundations of CS & AI
 
-| Member Name | Student ID | GitHub Username | Role |
-| :--- | :--- | :--- | :--- |
-| Matthew Owen Winarto | 18020262080 | `matthewtechb` | CEO / Project Coordinator[cite: 7] |
-| Risco Jara Ricardo Mauricio | 1820262138 | `rriscoj` | CTO / Media & Visuals[cite: 7] |
-| Harby | 1820262129 | `harbyyy9` | Lead Writer[cite: 7] |
-| Akerke | [1820262035] | `[akerkefn]` | Lead Designer[cite: 7] |
-| Naththarampotha Nemindhara Thisun Dinayuru (黎明) | 1820262133 | `nemin404` | CIO[cite: 7] |
-| Falent Ananta Christanto | 1820262294 | `anantafalent_hash` | Tester[cite: 7] |
+## Team Information
 
----
+| Member Name | Role | GitHub Username |
+| :--- | :--- | :--- |
+| Matthew Owen Winarto | CEO / Submission Lead | [@matthewtechb](https://github.com/matthewtechb) |
+| Risco Jara Ricardo Mauricio | CTO | [@rriscoj](https://github.com/rriscoj) |
+| Harby | Content Lead | [@harbyyy5](https://github.com/harbyyy5) |
+| Aki | Lead Designer | [@akerkefn](https://github.com/akerkefn) |
+| Nemindhara Naththarampotha (黎明) | CIO | [@nemin404](https://github.com/nemin404) |
+| Falent Ananta Christanto | Quality Lead | [@anantafalent_hash](https://github.com/anantafalent_hash) |
 
-## Project Purpose & Intended Learners
-* **Purpose:** To investigate the subject, organize the learning sequence, and develop accurate explanations, examples, and activities in Markdown as the shared content foundation for our Study Guide, PPT Slides, and Video Tutorials[cite: 2, 8, 9].
-* **Intended Learners:** Beginners taking Foundations of CS & AI who have little or no prior experience with hardware and behavioral AI[cite: 7]. The material defines module-specific terminology before using it to ensure accessibility[cite: 7].
+## 📚 Selected Module & Project Purpose
+**Module:** Hardware, Networks & Behaviorist AI
 
----
+**Purpose and Intended Learners:** 
+This project is designed to teach beginners taking *Foundations of CS & AI* who have little to no prior experience with hardware and behavioral AI. Our goal is to build a comprehensive shared Markdown content base, which will subsequently be adapted into a Study Guide, PPT Slides, and Video Tutorials. By the end of our materials, learners will be able to define key terms, understand core hardware components (CPUs, GPUs, memory), map out data processing workflows, and identify real-world applications and limitations of AI behavior.
 
-## Repository Folder Structure
-Our repository is organized as follows[cite: 10]:
-```text
-/TeamNameNotFound_GitHub_Markdown_V1
-│
-├── README.md               # Overview of the project, team, and repository structure
-├── /content                # Shared Markdown content files (e.g., module1_hardware_and_ai.md)[cite: 3, 10]
-├── /assets                 # Images, diagrams, and visual resources[cite: 3, 10]
-├── /examples               # Example files and code snippets[cite: 3, 10]
-├── /study-guide            # Study Guide and test bank materials[cite: 8, 10]
-├── /slides                 # Presentation slide outlines and assets[cite: 9, 10]
-├── /videos                 # Video tutorial scripts and plans[cite: 9, 10]
-└── /project-plan           # Team project plan, master task list, and schedule[cite: 6, 10]
+## 📂 Folder Structure Overview
+Here is where you can find our content and project files:
+
+*   📁 **`Stage_1/`** — Contains all formatted deliverable files and folders for our Stage 1 submission.
+    *   📁 **`Assets/`** — Stores media, icons, and `Images/` used across our markdown files.
+    *   📁 **`Task 1: Team Project Plan and Task List/`** — Contains our primary planning documents.
+    *   📁 **`Task 2: GitHub Repo and MD Content V1.0/`** — Houses our module structure, first developed topic, content checks, and contribution evidence.
+    *   📁 **`Task 3: Project Log and Meeting Summaries/`** — Contains team-level logs and meeting records.
+    *   📁 **`Task 4: Personal Learning and Work Logs/`** — Contains individual member learning and work logs.
+    *   📁 **`Task 5: Live Status Report/`** — Contains our report for the live presentation.
+*   📁 **`content/`** — The shared working directory for drafting our core educational materials.
+*   📁 **`project plan/`** — Working folder for early planning documents and drafts.
+
+## 📋 Project Plan and Task List Location
+Our current project plan and the master task list have been split into dedicated files for readability. You can find them here:
+👉 **`Stage_1/Task 1: Team Project Plan and Task List/`**
+*   [`a) Project Plan.md`](./Stage_1/Task%201:%20Team%20Project%20Plan%20and%20Task%20List/a\)%20Project%20Plan.md)
+*   [`b) Task List.md`](./Stage_1/Task%201:%20Team%20Project%20Plan%20and%20Task%20List/b\)%20Task%20List.md)
+
+## 📈 Current Progress and Remaining Work
+
+**Current Progress:**
+We are wrapping up Stage 1. The team has successfully established the project scope, set up this GitHub repository with a clean directory structure, drafted the initial V1.0 Markdown educational content (Core Concepts & Orientation), and completed internal peer reviews. We have also finalized our Stage 1 project logs, personal logs, and meeting summaries.
+
+**Core Remaining Work:**
+- Refine and finalize learning outcomes based on teacher feedback.
+- Expand the Markdown content to cover the remaining module sections (Worked examples, Applications/Limitations).
+- Produce the beginner-friendly Study Guide and Test Bank (Stage 2).
+- Design and create presentation PPT Slides (Stage 2).
+- Write scripts, narrate, and edit the Video Tutorials (Stage 2).
+- Prepare the live mini-lecture demonstration (Stage 3).
