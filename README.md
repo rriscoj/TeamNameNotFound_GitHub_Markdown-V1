@@ -27,8 +27,6 @@ Here is where you can find our content and project files:
     *   📁 **`Task 3: Project Log and Meeting Summaries/`** — Contains team-level logs and meeting records.
     *   📁 **`Task 4: Personal Learning and Work Logs/`** — Contains individual member learning and work logs.
     *   📁 **`Task 5: Live Status Report/`** — Contains our report for the live presentation.
-*   📁 **`content/`** — The shared working directory for drafting our core educational materials.
-*   📁 **`project plan/`** — Working folder for early planning documents and drafts.
 
 ## 📋 Project Plan and Task List Location
 Our current project plan and the master task list have been split into dedicated files for readability. You can find them here:
