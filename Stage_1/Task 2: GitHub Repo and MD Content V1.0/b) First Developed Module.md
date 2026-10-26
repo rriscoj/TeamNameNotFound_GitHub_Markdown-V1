@@ -36,3 +36,26 @@ When scaling this up to train an AI agent across millions of parameters or state
 
 [ Traditional CPU ] ──(Sequential Fetch/Store)──► [ Single Bus Bottleneck ] ──► [ Slow Data Transfer ]
 [ AI Accelerator  ] ──(Parallel Matrix Pipelines)─► [ High-Bandwidth Fabric ] ──► [ High-Speed AI Training ]
+
+---
+
+#### 4) Learner Activity & Application Question
+
+**Scenario:** 
+You are designing a hardware deployment strategy for an autonomous delivery robot running a real-time behavioral reinforcement learning agent. The robot must process sensor inputs and choose an action every 10 milliseconds. 
+
+**Question:** 
+Why would deploying this agent on a standard quad-core CPU result in decision-making lag (latency violations), and what physical hardware property of modern accelerators helps resolve this issue?
+
+---
+
+#### 5) Expected Outcome / Answer Key
+
+* **Explanation of Lag:** A standard quad-core CPU processes tasks sequentially or across very few threads. Because reinforcement learning requires evaluating dense matrix multiplications (state-action value tables or neural network weights) at high frequencies, the CPU continually hits the *Von Neumann bottleneck*, spending more time waiting for memory data transfers than performing calculations.
+* **Accelerator Solution:** Modern accelerators (like GPUs or edge TPUs) use massively parallel processing arrays and high-bandwidth memory (HBM) architectures. This allows thousands of calculations to occur simultaneously, bypassing sequential memory stalls and ensuring the agent can respond within the required 10-millisecond window.
+
+---
+
+#### 6) References
+* Hennessy, J. L., & Patterson, D. A. (2017). *Computer Architecture: A Quantitative Approach* (6th ed.). Morgan Kaufmann.
+* Sutton, R. S., & Barto, A. G. (2018). *Reinforcement Learning: An Introduction* (2nd ed.). MIT Press. (Referenced for computational requirements of state-action loops).
