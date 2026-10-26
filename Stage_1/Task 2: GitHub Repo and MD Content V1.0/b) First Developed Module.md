@@ -8,18 +8,17 @@ Before exploring how modern artificial intelligence and reinforcement learning a
 2. **Memory (RAM):** A temporary workspace that holds both active program instructions and the data being processed.
 3. **Input/Output (I/O) Devices:** Interfaces (like keyboards, screens, or network cards) that let the computer interact with the external world.
 
-* **Terminology:** 
-  * **Instruction Cycle:** The fundamental four-step process a CPU follows: *Fetch* an instruction from memory, *Decode* what the instruction means, *Execute* the operation, and *Store* the result back.
-  * **The Von Neumann Bottleneck:** A performance limitation caused by the speed mismatch between the CPU (which processes data extremely fast) and memory storage (which transfers data at a slower rate). Because the CPU cannot process data faster than it can fetch it from memory, the processor often sits idle waiting for data.
+##### Terminology:
+* **Instruction Cycle:** The fundamental four-step process a CPU follows: *Fetch* an instruction from memory, *Decode* what the instruction means, *Execute* the operation, and *Store* the result back.
+* **The Von Neumann Bottleneck:** A performance limitation caused by the speed mismatch between the CPU (which processes data extremely fast) and memory storage (which transfers data at a slower rate). Because the CPU cannot process data faster than it can fetch it from memory, the processor often sits idle waiting for data.
 
 ---
 
 #### 2) Worked Example: Step-by-Step Instruction Cycle and Memory Stall
 To see how hardware constraints impact software performance, let’s trace how a CPU executes a simple array addition operation (e.g., adding a reward value of `+1` to a state matrix in memory):
-
-* **Step 1 (Fetch):** The Control Unit requests the instruction located at memory address `0x1004`. 
+* **Step 1 (Fetch):** The Control Unit requests the instruction located at memory address `0x1004`.
 * **Step 2 (Decode):** The CPU decodes the instruction: *"Load the value at memory address `0x5000` into Register A."*
-* **Step 3 (Execute):** The CPU issues a read request to RAM. *Notice the delay:* RAM takes several clock cycles to retrieve the data because of physical bus limitations (the Von Neumann bottleneck). The CPU sits in a waiting state ("stall").
+* **Step 3 (Execute):** The CPU issues a read request to RAM. Notice the delay: RAM takes several clock cycles to retrieve the data because of physical bus limitations (the Von Neumann bottleneck). The CPU sits in a waiting state ("stall").
 * **Step 4 (Store):** Once the data arrives, the addition is performed, and the updated reward value is written back to memory.
 
 When scaling this up to train an AI agent across millions of parameters or states (such as in Reinforcement Learning), this sequential fetch-decode-execute cycle creates massive latency bottlenecks on standard CPUs, driving the need for parallel hardware accelerators like GPUs and TPUs.
@@ -34,28 +33,6 @@ When scaling this up to train an AI agent across millions of parameters or state
 | **Handling the Bottleneck** | Relies heavily on large, fast cache hierarchies to predict and pre-fetch data. | Overlaps memory latency with massive parallel computation pipelines. |
 | **Primary Workload** | Operating systems, application logic, sequential decision-making. | Deep learning training, matrix transformations, policy/value estimations. |
 
+```text
 [ Traditional CPU ] ──(Sequential Fetch/Store)──► [ Single Bus Bottleneck ] ──► [ Slow Data Transfer ]
 [ AI Accelerator  ] ──(Parallel Matrix Pipelines)─► [ High-Bandwidth Fabric ] ──► [ High-Speed AI Training ]
-
----
-
-#### 4) Learner Activity & Application Question
-
-**Scenario:** 
-You are designing a hardware deployment strategy for an autonomous delivery robot running a real-time behavioral reinforcement learning agent. The robot must process sensor inputs and choose an action every 10 milliseconds. 
-
-**Question:** 
-Why would deploying this agent on a standard quad-core CPU result in decision-making lag (latency violations), and what physical hardware property of modern accelerators helps resolve this issue?
-
----
-
-#### 5) Expected Outcome / Answer Key
-
-* **Explanation of Lag:** A standard quad-core CPU processes tasks sequentially or across very few threads. Because reinforcement learning requires evaluating dense matrix multiplications (state-action value tables or neural network weights) at high frequencies, the CPU continually hits the *Von Neumann bottleneck*, spending more time waiting for memory data transfers than performing calculations.
-* **Accelerator Solution:** Modern accelerators (like GPUs or edge TPUs) use massively parallel processing arrays and high-bandwidth memory (HBM) architectures. This allows thousands of calculations to occur simultaneously, bypassing sequential memory stalls and ensuring the agent can respond within the required 10-millisecond window.
-
----
-
-#### 6) References
-* Hennessy, J. L., & Patterson, D. A. (2017). *Computer Architecture: A Quantitative Approach* (6th ed.). Morgan Kaufmann.
-* Sutton, R. S., & Barto, A. G. (2018). *Reinforcement Learning: An Introduction* (2nd ed.). MIT Press. (Referenced for computational requirements of state-action loops).
