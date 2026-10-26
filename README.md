@@ -1,4 +1,4 @@
-# TeamNameNotFound | Foundations of CS & AI
+# ⋆. 𐙚 ˚TeamNameNotFound | Foundations of CS & AI  ۶ৎ ݁˖ . ݁
 
 ## 👥 Team Information
 
@@ -14,7 +14,7 @@
 ## 📚 Selected Module & Project Purpose
 **Module:** Hardware, Networks & Behaviorist AI
 
-**Purpose and Intended Learners:** 
+**˗ˏˋPurpose and Intended Learners ˎˊ˗:** 
 This project is designed to teach beginners taking *Foundations of CS & AI* who have little to no prior experience with hardware and behavioral AI. Our goal is to build a comprehensive shared Markdown content base, which will subsequently be adapted into a Study Guide, PPT Slides, and Video Tutorials. By the end of our materials, learners will be able to define key terms, understand core hardware components, map out data processing workflows, and identify real-world AI applications and limitations.
 
 ## 📂 Folder Structure & Navigation
