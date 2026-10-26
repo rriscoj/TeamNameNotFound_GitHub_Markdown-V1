@@ -33,3 +33,6 @@ When scaling this up to train an AI agent across millions of parameters or state
 | **Core Design** | Few cores (e.g., 4 to 16) optimized for sequential, complex logic tasks. | Thousands of smaller cores optimized for parallel matrix multiplication. |
 | **Handling the Bottleneck** | Relies heavily on large, fast cache hierarchies to predict and pre-fetch data. | Overlaps memory latency with massive parallel computation pipelines. |
 | **Primary Workload** | Operating systems, application logic, sequential decision-making. | Deep learning training, matrix transformations, policy/value estimations. |
+
+[ Traditional CPU ] ──(Sequential Fetch/Store)──► [ Single Bus Bottleneck ] ──► [ Slow Data Transfer ]
+[ AI Accelerator  ] ──(Parallel Matrix Pipelines)─► [ High-Bandwidth Fabric ] ──► [ High-Speed AI Training ]
