@@ -5,10 +5,10 @@
 | Member Name | Role | GitHub Username |
 | :--- | :--- | :--- |
 | Matthew Owen Winarto | CEO / Submission Lead | [@matthewtechb](https://github.com/matthewtechb) |
-| Risco Jara Ricardo Mauricio | CTO | [@rriscoj](https://github.com/rriscoj) |
+| Risco Jara Ricardo Mauricio | CIO | [@rriscoj](https://github.com/rriscoj) |
 | Harby | Content Lead | [@harbyyy5](https://github.com/harbyyy5) |
-| Aki | Lead Designer | [@akerkefn](https://github.com/akerkefn) |
-| Nemindhara Naththarampotha (黎明) | CIO | [@nemin404](https://github.com/nemin404) |
+| Akerke | Lead Designer | [@akerkefn](https://github.com/akerkefn) |
+| Nemindhara Naththarampotha (黎明) | Video lead | [@nemin404](https://github.com/nemin404) |
 | Falent Ananta Christanto | Quality Lead | [@anantafalent_hash](https://github.com/anantafalent_hash) |
 
 ## 📚 Selected Module & Project Purpose
