@@ -131,9 +131,3 @@ The roles below follow the current planning draft. Because the Project Plan and 
 5. Push only the team-approved source; then record the actual latest commit SHA.
 6. Capture current screenshots of the repository, meaningful changes and each member’s contributions.
 7. Update the resubmission report and AI-use records, regenerate the PDF and test the final ZIP.
-
-## 12. Plan review
-
-- **Reviewing team members:** To be filled after the actual review.
-- **Review date:** To be filled after the actual review.
-- **Decisions / corrections:** Record only decisions made by the team.
