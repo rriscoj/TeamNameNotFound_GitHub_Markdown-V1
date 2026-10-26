@@ -1,4 +1,4 @@
-# Team Project Plan
+# ⋆｡‧˚ʚ𓊆Team Project Plan 𓊇ɞ˚‧｡⋆
 
 **Course:** Foundations of Computer Science & AI  
 **Team:** TeamNameNotFound  
