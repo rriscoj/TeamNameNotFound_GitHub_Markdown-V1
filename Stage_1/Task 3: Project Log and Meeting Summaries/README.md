@@ -17,7 +17,7 @@ The compiled document is organized into the following key sections:
 2. **Chronological Project Log**: A master tracking table detailing all major tasks, responsible members, expected vs. actual results, key learnings, and next steps for the entire team.
 3. **Meeting Summaries**: Detailed minutes from our team meetings (e.g., at BIT's Library and Linwen College), including attendees, key discussion points, decisions made, and follow-up action items.
 4. **AI-Use Records and Supporting Evidence**: A centralized log documenting how the team used AI tools (like Gemini) for overarching project tasks, such as formatting GitHub Markdown and processing raw logs.
-5. **Stage 1 Contribution Evaluation**: A detailed breakdown of the main contributions, supporting evidence, and final contribution scores for every team member (CEO, CTO, CIO, Lead Writer, Lead Designer, Tester).
+5. **Stage 1 Contribution Evaluation**: A detailed breakdown of the main contributions, supporting evidence, and final contribution scores for every team member (CEO, CIO, Content Lead, Lead Designer, Video Lead, Quality Lead).
 
 ## Status
 
