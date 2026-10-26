@@ -36,3 +36,29 @@ When scaling this up to train an AI agent across millions of parameters or state
 ```text
 [ Traditional CPU ] ──(Sequential Fetch/Store)──► [ Single Bus Bottleneck ] ──► [ Slow Data Transfer ]
 [ AI Accelerator  ] ──(Parallel Matrix Pipelines)─► [ High-Bandwidth Fabric ] ──► [ High-Speed AI Training ]
+---
+```
+#### 4) Learner Activity & Application Question
+
+**Scenario:**
+You are deploying a real-time behavioral reinforcement learning agent onto an autonomous delivery robot. The robot's decision loop must process multi-sensor inputs, evaluate a state-action Q-table, and dispatch motor commands every **10 milliseconds**.
+
+**Question:**
+1. Why would deploying this agent on a standard quad-core CPU likely lead to latency violations (taking longer than 10ms per decision step)?
+2. What specific physical architecture feature of specialized AI accelerators overcomes this limitation?
+
+---
+
+#### 5) Expected Outcome / Answer Key
+
+* **1. Reason for CPU Latency Violations:**
+  A standard quad-core CPU processes task instructions sequentially or across very few parallel threads. Because evaluating reinforcement learning models requires calculating large matrix transformations (state-action value tables or neural network weights) at high frequencies, the CPU continually hits the **Von Neumann Bottleneck**. The processor spends the majority of its clock cycles idling in **memory stall** states waiting for data to transfer over the system bus, causing total decision time to exceed the 10ms window.
+* **2. Accelerator Solution:**
+  Specialized AI accelerators (such as GPUs or edge TPUs) utilize thousands of specialized arithmetic cores working in parallel alongside **High-Bandwidth Memory (HBM)** interfaces. This allows thousands of vector and matrix operations to execute concurrently, hiding memory access delays and ensuring decision loops execute well within the 10ms real-time limit.
+
+---
+
+#### 6) References & Learning Sources
+1. Hennessy, J. L., & Patterson, D. A. (2017). *Computer Architecture: A Quantitative Approach* (6th ed.). Morgan Kaufmann. [Elsevier Companion Site](https://shop.elsevier.com/books/book-companion/9780128119051)
+2. Sutton, R. S., & Barto, A. G. (2018). *Reinforcement Learning: An Introduction* (2nd ed.). MIT Press. [Free Online HTML Draft](http://incompleteideas.net/book/the-book-2nd.html)
+3. Von Neumann, J. (1945). *First Draft of a Report on the EDVAC*. Moore School of Electrical Engineering, University of Pennsylvania.
