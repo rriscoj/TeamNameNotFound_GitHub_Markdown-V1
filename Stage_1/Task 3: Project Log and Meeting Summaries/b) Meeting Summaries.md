@@ -1,4 +1,4 @@
-# 3. Meeting Summaries
+# Meeting Summaries
 
 ## Meeting 1
 
