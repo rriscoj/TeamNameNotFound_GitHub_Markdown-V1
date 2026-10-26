@@ -1,4 +1,4 @@
-### 3. Quality Checklist
+### Quality Checklist
 
 Before submitting, each student should check that:
 
