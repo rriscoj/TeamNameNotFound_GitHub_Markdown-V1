@@ -1,4 +1,4 @@
-### 3. Quality Checklist
+### Quality Checklist
 
 Before submitting, check that:
 
