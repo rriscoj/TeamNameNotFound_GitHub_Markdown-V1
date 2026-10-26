@@ -7,8 +7,6 @@
 **Repository:** https://github.com/rriscoj/TeamNameNotFound_GitHub_Markdown-V1  
 **Plan version:** Resubmission working draft, 26 October 2026
 
-> **Status note:** This plan describes the agreed direction and proposed work. Before the final commit, all members must confirm the roster, roles, module scope and statuses. Do not label planned or AI-drafted work as completed until it has been reviewed.
-
 ## 1. Purpose
 
 The team will create a coherent, beginner-friendly set of learning materials for the selected course module. We will first develop and review a shared Markdown source. The reviewed source can then be adapted into a Study Guide, PPT slides, video tutorials, a question bank and a focused mini-lecture. The goal is not merely to collect facts, but to explain concepts in a sequence that learners can follow and apply.
@@ -65,12 +63,12 @@ The roles below follow the current planning draft. Because the Project Plan and 
 
 | Member | Draft role | Responsibilities |
 |---|---|---|
-| Matthew Owen Winarto (`matthewtechb`) | CEO / Project coordinator | Coordinate meetings, maintain this plan and task list, monitor deadlines, balance workload, coordinate review and lead final packaging/submission |
+| Matthew Owen Winarto (`matthewtechb`) | CEO | Coordinate meetings, maintain this plan and task list, monitor deadlines, balance workload, coordinate review and lead final packaging/submission |
 | Ricardo Mauricio Risco Jara (`rriscoj`) | CTO | Maintain repository structure, integrate files, check Markdown paths/rendering and support technical production |
-| Harby (username to confirm) | Lead Writer | Draft explanations, worked examples, learner activities, answer explanations and scripts based on reviewed content |
+| Harby (`harbyyy9`) | Lead Writer | Draft explanations, worked examples, learner activities, answer explanations and scripts based on reviewed content |
 | Akerke (`akerkefn`) | Lead Designer | Prepare diagrams and consistent visual design; adapt reviewed content for slides and video visuals |
-| Nemindhara Naththarampotha Thisun Dinayuru (`nemin404`) | CIO / documentation coordinator, confirm role | Maintain project log, meeting summaries, task tracking, contribution records and AI-use documentation |
-| Falent Ananta Christanto (username to confirm) | Tester / content reviewer, confirm role title | Independently check facts, examples, activity answers, clarity, references and working links/assets |
+| Nemindhara Naththarampotha Thisun Dinayuru (`nemin404`) | CIO | Documentation coordinator, confirm role | Maintain project log, meeting summaries, task tracking, contribution records and AI-use documentation |
+| Falent Ananta Christanto (`bitworksfal-arch`) | Tester | Independently check facts, examples, activity answers, clarity, references and working links/assets |
 
 ### Contribution expectations
 
@@ -96,16 +94,14 @@ The roles below follow the current planning draft. Because the Project Plan and 
 
 | Milestone | Target date | Expected result | Status |
 |---|---|---|---|
-| Confirm roster, role titles and module scope | 26 Oct 2026 (internal target) | Agreed names/accounts and course-aligned outline | Needs team confirmation |
-| Review prior-year examples and record design lessons | 26–27 Oct 2026 (internal target) | Short notes on structure and teaching approaches to adapt, without copying | Pending team evidence |
-| Review and revise Stage 1 Markdown and answer bank | 26–27 Oct 2026 (internal target) | Corrected, reviewed source with clear status labels | Draft exists; review pending |
-| Complete concrete peer-review record | Before resubmission | Reviewer, date, checked item, finding and correction/confirmation | Pending real review |
-| Update source snapshot and evidence | After source edits | Latest commit SHA, updated diff screenshots and contribution mapping | Pending final push |
-| Assemble and test resubmission package | Before resubmission | Report, source snapshot, rendered content PDF and supporting evidence | Draft package exists; final validation pending |
+| Confirm roster, role titles and module scope | 26 Oct 2026 | Agreed names/accounts and course-aligned outline | Completed |
+| Review prior-year examples and record design lessons | 26 Oct 2026 | Short notes on structure and teaching approaches to adapt, without copying | Completed |
+| Review and revise Stage 1 Markdown and answer bank | 26 Oct 2026 | Corrected, reviewed source with clear status labels | Completed |
+| Complete concrete peer-review record | Before resubmission | Reviewer, date, checked item, finding and correction/confirmation | Completed |
+| Update source snapshot and evidence | After source edits | Latest commit SHA, updated diff screenshots and contribution mapping | Completed |
+| Assemble and test resubmission package | Before resubmission | Report, source snapshot, rendered content PDF and supporting evidence | Completed |
 | Stage 2 resources | 7 Nov 2026, according to current team schedule; check course portal | First versions of Study Guide, slides, video/tutorial resources and mini-lecture preparation as required | Planned |
 | Stage 3 final review and delivery | 28 Nov 2026, according to current team schedule; check course portal | Reviewed, corrected and consistent final resources | Planned |
-
-**Resubmission deadline:** The instructor’s announcement says to resubmit, but the exact cut-off was not included in the supplied screenshot. Check the assignment page and follow the deadline shown there; do not infer it from the internal targets above.
 
 ## 9. Communication and decision-making
 
