@@ -92,6 +92,37 @@ By the completion of this module, high school learners will be able to:
   * Chapter 12: Mini-Project: Testing Device Limits (Looking at how memory and speed affect a smart device)
 
 ---
+## B. Project Scope and Learning Goals
+
+### Target Learners and Prerequisites
+* **Target Learners:** Beginners taking Foundations of CS & AI who have little or no prior experience with hardware and behavioral AI. The explanations will assume basic reading and reasoning skills but will define module-specific terminology before using it.
+* **Prerequisite Knowledge Learners Need:** 
+  * Basic digital literacy and everyday familiarity with using computers, smart devices, and software interfaces.
+  * Fundamental reading comprehension and basic logical cause-and-effect reasoning skills.
+  * No prior programming experience, advanced hardware training, or complex mathematics is required; any necessary computational thinking or basic math concepts will be briefly introduced and reviewed directly within the module materials.
+
+### Proposed Learning Outcomes
+By the end of the materials, a beginner should be able to:
+- Define the key terms used in hardware and behavioral AI in their own words.
+- Explain the main idea or process in a logical sequence and distinguish it from related concepts.
+- Work through a representative example with intermediate steps shown.
+- Apply the idea to a new beginner-level question or scenario and explain the answer.
+- Identify at least one practical application and one limitation, common error, or misconception.
+
+### Initial Content Outline and Boundaries
+| Section | Proposed Coverage | Depth / Boundary | Initial Status |
+| :--- | :--- | :--- | :--- |
+| **1. Orientation and key terms** | Why the module matters; essential vocabulary; prerequisites. | Brief introduction plus clear definitions. | Outline only |
+| **2. Core concept A** | Fundamental hardware components of AI systems, including CPUs, GPUs, memory, and storage; their functions and roles in supporting AI computation. | Detailed explanation with a simple illustration. | Outline only |
+| **3. Core process or method** | How AI hardware processes data and executes AI tasks, including data input, computational processing, memory access, and output generation; the interaction between hardware components and AI models. | Detailed step-by-step treatment; show intermediate steps. | Outline only |
+| **4. Worked example** | A representative example showing how an AI system uses hardware components to process input data and generate a behavioral response, explaining each stage of the process. | Fully worked and checked; explain why each step is taken. | Planned |
+| **5. Application and limitations** | Applications of hardware and behavioral AI in real-world intelligent systems, such as robotics and human-computer interaction; limitations related to computational resources, processing speed, power consumption, and the reliability of AI behavior. | Brief applications; explain one limitation or common misconception. | Planned |
+| **6. Practice and review** | Short questions, one application task, answer explanations, and test-bank questions. | Enough practice to check each learning outcome. | Planned |
+
+### Scope Boundaries and Questions for the Teacher
+* **Detailed treatment:** The foundational concepts and one coherent process/example that beginners must understand to meet the learning outcomes.
+* **Brief treatment:** Advanced variations, specialist applications, historical background, and material not required by the course module unless the teacher confirms it is essential.
+* **Confirm with the teacher:** Which subtopics are essential, expected technical depth, and whether any specific tools, algorithms, or frameworks are required.
 
 ### 4) Scope Boundaries
 To keep things fun, intuitive, and easy for high school beginners, we set clear boundaries:
