@@ -28,10 +28,10 @@ Use each member’s actual GitHub account when assigning or reviewing work. The 
 |---|---|---|
 | Matthew Owen Winarto | `matthewtechb` | Project coordination, deadlines, final package and submission |
 | Ricardo Mauricio Risco Jara | `rriscoj` | Repository structure, technical workflow and file integration |
-| Harby | **Confirm: `harbyyy5` or `harbyyy9`** | Main lesson writing, examples and learner questions |
+| Harby | `harbyyy9` | Main lesson writing, examples and learner questions |
 | Akerke | `akerkefn` | Visual design and presentation assets |
 | Nemindhara Naththarampotha Thisun Dinayuru | `nemin404` | Project records, meeting summaries, task tracking and AI-use records |
-| Falent Ananta Christanto | **Confirm: `bitworksfal-arch` or `anantafalent_hash`** | Independent content review, question checking and clarity testing |
+| Falent Ananta Christanto | `bitworksfal-arch` | Independent content review, question checking and clarity testing |
 
 **Before merging this README:** confirm the two usernames marked above and confirm the agreed role titles for all members. Other team documents have shown inconsistent accounts or role changes. Do not publish student IDs or personal logs in this public repository.
 
