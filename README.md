@@ -7,7 +7,7 @@
 | Matthew Owen Winarto | CEO / Submission Lead | [@matthewtechb](https://github.com/matthewtechb) |
 | Risco Jara Ricardo Mauricio | CIO | [@rriscoj](https://github.com/rriscoj) |
 | Harby | Content Lead | [@harbyyy5](https://github.com/harbyyy5) |
-| Akerke | Lead Designer | [@akerkefn](https://github.com/akerkefn) |
+| Akerke Sarsenbay | Lead Designer | [@akerkefn](https://github.com/akerkefn) |
 | Nemindhara Naththarampotha (黎明) | Video lead | [@nemin404](https://github.com/nemin404) |
 | Falent Ananta Christanto | Quality Lead | [@anantafalent_hash](https://github.com/anantafalent_hash) |
 
