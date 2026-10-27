@@ -89,6 +89,14 @@
 * **Decisions and outcomes:** Officially scrapped the old GitHub setup in favor of the clean repository rebuilt by the CIO. Successfully finalized the module structure/outline (Topic list).
 * **Follow-up actions:** Content Lead and Video Lead to take the finalized outline and heavily focus on writing the first module's content (explanations, diagrams, examples) on Oct 27. Quality Lead will review it immediately after. CEO will manage final packaging once content is pushed.
 
+### Meeting 4
+* **Date, time, and location:** Oct 27, 2026, 4:00 PM - 6:00 PM | LX's dormitory basement
+* **Attendees:** Matthew, Ricardo, Falent, Harby, Nemindhara, Akerke
+* **Purpose or agenda:** Finalize the first developed topic and coordinate the recording of the live status report.
+* **Key discussion points:** Reviewed the completed sections of the first module to ensure they met quality standards. Discussed the logistics and technical setup required for the status report presentation.
+* **Decisions and outcomes:** The team decided the live status report will be a pre-recorded video to avoid technical issues. It will be recorded from one person's computer using OBS, sharing the screen while placing the camera feed in the corner.
+* **Follow-up actions:** Set up OBS on the recording computer and finalize speaking parts to record the status report before the final submission deadline.
+
 ---
 
 ## 4. AI-Use Records and Supporting Evidence
