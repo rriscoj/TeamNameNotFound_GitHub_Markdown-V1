@@ -72,6 +72,7 @@
 * **Key discussion points:** Stage 1 requirements and rubric expectations, assignment of team roles.
 * **Decisions and outcomes:** Reviewed and agreed upon the Stage 1 scope. Defined team organizational roles. Created standard document templates.
 * **Follow-up actions:** Matthew to finalize project plan scaffold. 
+<img width="1706" height="1280" alt="04645fbcf4e807abf0d67550c114ffc8" src="https://github.com/user-attachments/assets/b83ab775-5511-4b39-88e3-32c5041eac59" />
 
 ### Meeting 2
 * **Date, time, and location:** Oct 23, 2026, 9:00 PM - 11:59 PM | LX's dormitory basement
@@ -80,6 +81,7 @@
 * **Key discussion points:** Discussed aligning research with the guidelines and re-evaluating member roles to better fit the workload.
 * **Decisions and outcomes:** Official role transitions (e.g., CIO, Video Lead) agreed upon to ensure a fair distribution of tasks.
 * **Follow-up actions:** Lead Designer to start on visual branding; CIO to prepare for GitHub restructuring.
+<img width="1703" height="1280" alt="20371ed1ea6e2b32ee984b672838e57c" src="https://github.com/user-attachments/assets/ea2845a3-491e-4c90-8279-a48e32ebe1d8" />
 
 ### Meeting 3
 * **Date, time, and location:** Oct 26, 2026, 9:00 PM - 11:00 PM | BIT's East Canteen, then LX's dormitory basement
@@ -88,6 +90,7 @@
 * **Key discussion points:** The initial GitHub execution was highly disorganized. Reviewed the new repository base that the CIO started building from "zero" on Oct 25. Shifted focus entirely to getting the MD V1.0 module structure finalized during the meeting, acknowledging that the actual content writing was delayed.
 * **Decisions and outcomes:** Officially scrapped the old GitHub setup in favor of the clean repository rebuilt by the CIO. Successfully finalized the module structure/outline (Topic list).
 * **Follow-up actions:** Content Lead and Video Lead to take the finalized outline and heavily focus on writing the first module's content (explanations, diagrams, examples) on Oct 27. Quality Lead will review it immediately after. CEO will manage final packaging once content is pushed.
+<img width="1706" height="1279" alt="ef151d2cba2a9dc26ca18c712dcfe1cc" src="https://github.com/user-attachments/assets/1fa9c59e-52eb-4372-98c3-c5f019e809cd" />
 
 ### Meeting 4
 * **Date, time, and location:** Oct 27, 2026, 4:00 PM - 6:00 PM | LX's dormitory basement
@@ -96,6 +99,7 @@
 * **Key discussion points:** Reviewed the completed sections of the first module to ensure they met quality standards. Discussed the logistics and technical setup required for the status report presentation.
 * **Decisions and outcomes:** The team decided the live status report will be a pre-recorded video to avoid technical issues. It will be recorded from one person's computer using OBS, sharing the screen while placing the camera feed in the corner.
 * **Follow-up actions:** Set up OBS on the recording computer and finalize speaking parts to record the status report before the final submission deadline.
+<img width="1703" height="1280" alt="1cb5a98704d82296bbd3afb9635d8352" src="https://github.com/user-attachments/assets/daadfcdf-879f-4a88-a241-76f5cc508daa" />
 
 ---
 
