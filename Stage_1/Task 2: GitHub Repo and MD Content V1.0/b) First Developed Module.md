@@ -1,5 +1,4 @@
 
-```markdown
 # CHAPTER 1 — What is a Computer? Hardware Basics, Processors, Memory, the Instruction Loop, and Why Devices Slow Down
 
 ## 1) What is a Computer?
