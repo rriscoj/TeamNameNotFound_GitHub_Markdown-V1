@@ -9,7 +9,7 @@
 | Harby (ID: 1820262129) / `harbyyy9` | Content Lead | [@harbyyy5](https://github.com/harbyyy5) |
 | Akerke Sarsenbay (ID: 1820262305) / `akerkefn` | Lead Designer | [@akerkefn](https://github.com/akerkefn) |
 | Nemindhara Naththarampotha Thisun Dinayuru (ID: 1820262133) / `nemin404` | Video lead | [@nemin404](https://github.com/nemin404) |
-| Falent Ananta Christanto (ID: 1820262294) / `bitworksfal-arch` | Quality Lead | [@anantafalent_hash](https://github.com/anantafalent_hash) |
+| Falent Ananta Christanto (ID: 1820262294) / `bitworksfal-arch` | Quality Lead | [@bitworksfal-arch](https://github.com/anantafalent_hash) |
 
 ## 📚 Selected Module & Project Purpose
 **Module:** Hardware, Networks & Behaviorist AI
