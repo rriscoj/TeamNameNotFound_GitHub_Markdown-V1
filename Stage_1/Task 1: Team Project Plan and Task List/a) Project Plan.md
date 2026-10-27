@@ -105,7 +105,7 @@ The roles below follow the current planning draft. Because the Project Plan and 
 
 ## 9. Communication and decision-making
 
-- Use the team’s agreed communication channel for quick coordination and record significant decisions in meeting summaries.
+- Use the team’s wechat group for quick coordination and record significant decisions in meeting summaries.
 - Every task update should identify the owner, current status, next action and evidence.
 - Raise blocked tasks early and redistribute work by team agreement.
 - Keep personal logs and private information out of the public repository.
