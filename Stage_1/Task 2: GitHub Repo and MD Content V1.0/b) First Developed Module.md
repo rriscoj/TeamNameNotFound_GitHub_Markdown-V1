@@ -59,9 +59,7 @@ Suppose a program is meant to add two numbers and print the result. In a simplif
 Fetch Instruction -> Decode Instruction -> Execute Operation -> (Repeat)
 ```
 
-How to read this diagram: follow the arrows. The processor fetches, decodes, executes, and then loops back to fetch the next instruction.
-
-3) Memory and Why Devices Slow Down When Overwhelmed with Data
+## 3) Memory and Why Devices Slow Down When Overwhelmed with Data
 
 If the processor is so fast, why does it ever slow down? Because fast memory is small and expensive; large memory is slower and cheaper.
 
@@ -100,27 +98,31 @@ A useful diagnostic question is: “Where is the data coming from right now?”
 
 When a device slows down, the processor is often not “thinking slowly.” It is waiting for data to arrive.
 
-Bottleneck reference table
+### Bottleneck reference table
 
-Situation Where the processor gets data Likely result
-Small calculation on values already loaded Registers Fast; processor is the limit
-Repeated loop over a small array that fits in cache Cache Fast; cache hit rate is high
-Large dataset that does not fit in cache Main memory (RAM) Slower; memory bandwidth and bus become the limit
-Opening a large file that is not in RAM Storage (SSD or disk) Much slower; storage I/O is the bottleneck
-Many programs competing for memory and bus RAM and bus shared across tasks Variable slowdown; bottleneck shifts between memory and bus
+| Situation | Where the processor gets data | Likely result |
+| :--- | :--- | :--- |
+| Small calculation on values already loaded | Registers | Fast; processor is the limit |
+| Repeated loop over a small array that fits in cache | Cache | Fast; cache hit rate is high |
+| Large dataset that does not fit in cache | Main memory (RAM) | Slower; memory bandwidth and bus become the limit |
+| Opening a large file that is not in RAM | Storage (SSD or disk) | Much slower; storage I/O is the bottleneck |
+| Many programs competing for memory and bus | RAM and bus shared across tasks | Variable slowdown; bottleneck shifts between memory and bus |
 
-4) Soooo, why does this matter?
+## 4) Soooo, why does this matter?
 
 Computer hardware is not just an abstract topic — it explains everyday behaviour you have probably noticed:
 
 · Why does a phone slow down when you open too many apps? The working data no longer fits comfortably in RAM, so the system swaps data to storage, and the processor waits.
+
 · Why does a laptop fan spin up during heavy tasks? The processor is working hard, generating heat, and the system must cool it down to keep it running safely.
+
 · Why a smart device with a tiny battery cannot run a huge AI model. Low-power microchips have limited memory and processing capacity; the bottleneck shows up as battery drain and slow responses.
+
 · Why AI training needs specialised hardware (GPUs, TPUs). Standard processors spend too much time waiting for data; AI chips are designed to move and process many data items in parallel.
 
 Understanding the instruction loop and the bottleneck gives you the foundation to understand why real-world smart devices behave the way they do — and why hardware choice matters for AI applications.
 
-5) QnA
+## 5) QnA
 
 1. What are the four main hardware components of a computer?
 A. Processor, memory, network, and storage.
@@ -156,7 +158,7 @@ D. The monitor resolution is too low.
 
 7. A user complains that their laptop is running very slowly while trying to open a massive video file, but their processor is barely working (low CPU usage). Based on the concept of the memory hierarchy and the "von Neumann bottleneck," what is the most likely cause of the slowdown?
 
-6) Answer Key
+## 6) Answer Key
 
 1. A
 2. B
@@ -166,7 +168,7 @@ D. The monitor resolution is too low.
 6. The processor takes the value that was previously saved in the memory location called NUM and adds it to the value currently sitting in the working register (the accumulator). The result then replaces the old value in the accumulator.
 7. The laptop is most likely experiencing a storage bottleneck. Because the file is massive and not currently in RAM, the processor has to wait for the slow storage drive (HDD or SSD) to fetch the data and send it across the bus. The processor isn't "thinking slowly"—it is just idling and waiting for the data to arrive.
 
-7) References
+## 7) References
 
 1. Princeton University, “Inside the CPU” (COS 109) — fetch–decode–execute cycle and toy computer instruction set.
 2. MIT Computer Science, “The von Neumann Model” — memory holds both data and instructions; CPU fetches, interprets, and executes.
@@ -177,7 +179,7 @@ D. The monitor resolution is too low.
 7. Computer Hope — computer definition: https://www.computerhope.com/jargon/c/computer.htm
 8. OpenStax — Introduction to Computer Science: https://openstax.org/books/introduction-computer-science/pages/1-introduction
 
-8) Image References
+## 8) Image References
 
 · Figure 1.1 Computer: https://sl.bing.net/cJloFEdO9T2
 · Figure 1.2 Abacus: https://sl.bing.net/j5DaIqjyikK
@@ -185,16 +187,16 @@ D. The monitor resolution is too low.
 · Figure 1.4 Ada Lovelace: https://sl.bing.net/dhoYGZV8tuS
 · Figure 1.5 ENIAC: https://openstax.org/apps/image-cdn/v1/f=webp/apps/archive/20260604.144757/resources/26786a448eea38805e96b447da176c3d70ac15c3
 
-Notes
+## Notes
 
-· Algorithm — a sequence of instructions that enables computing. An input can be processed step by step to create an output.
-· Transistor — a semiconductor device used to amplify or switch electrical signals and power.
-· Integrated Circuit (IC) — also called a chip; an electronic circuit formed by electronic components such as transistors, resistors, and capacitors, and their interconnections.
-· Microprocessor — an integrated circuit that contains all the functions of a central processing unit (CPU) of a computer.
-· Instruction — a single basic operation that the processor can carry out, such as “add,” “load from memory,” “store to memory,” or “compare.”
-· Program counter — a special storage location inside the processor that holds the memory address of the next instruction to be fetched.
-· Register — a very small, very fast storage location inside the processor, used to hold the values the processor is working on right now.
-· Cache — a smaller, faster storage area that holds a copy of data from a larger, slower memory. A cache hit means the data was found in cache; a cache miss means the processor must wait for it to be fetched from a slower level.
-· von Neumann bottleneck — the performance limit that arises because, in a stored-program computer, instructions and data share a pathway between memory and the processor, and memory cannot supply them as fast as the processor can consume them.
+- **Algorithm** — A sequence of instructions that enables computing. An input can be processed step by step to create an output.
+- **Transistor** — A semiconductor device used to amplify or switch electrical signals and power.
+- **Integrated Circuit (IC)** — Also called a chip; an electronic circuit formed by electronic components such as transistors, resistors, and capacitors, and their interconnections.
+- **Microprocessor** — An integrated circuit that contains all the functions of a central processing unit (CPU) of a computer.
+- **Instruction** — A single basic operation that the processor can carry out, such as “add,” “load from memory,” “store to memory,” or “compare.”
+- **Program counter** — A special storage location inside the processor that holds the memory address of the next instruction to be fetched.
+- **Register** — A very small, very fast storage location inside the processor, used to hold the values the processor is working on right now.
+- **Cache** — A smaller, faster storage area that holds a copy of data from a larger, slower memory. A *cache hit* means the data was found in cache; a *cache miss* means the processor must wait for it to be fetched from a slower level.
+- **von Neumann bottleneck** — The performance limit that arises because, in a stored-program computer, instructions and data share a pathway between memory and the processor, and memory cannot supply them as fast as the processor can consume them.
 
 ```
