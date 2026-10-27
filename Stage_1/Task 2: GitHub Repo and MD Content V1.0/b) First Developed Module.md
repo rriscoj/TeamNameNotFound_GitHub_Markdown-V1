@@ -187,11 +187,16 @@ D. The monitor resolution is too low.
 
 ## 8) Image References
 
-· Figure 1.1 Computer: https://sl.bing.net/cJloFEdO9T2
-· Figure 1.2 Abacus: https://sl.bing.net/j5DaIqjyikK
-· Figure 1.3 Charles Babbage: https://sl.bing.net/giQcgyDAqMm
-· Figure 1.4 Ada Lovelace: https://sl.bing.net/dhoYGZV8tuS
-· Figure 1.5 ENIAC: https://openstax.org/apps/image-cdn/v1/f=webp/apps/archive/20260604.144757/resources/26786a448eea38805e96b447da176c3d70ac15c3
+1. Fig1.1 Computer processor https://digibuggy.com/blog-details/top-5-processors-for-gaming-pcs-in-2025
+2. Fig1.2 Computer RAM https://www.itpro.com/hardware/31661/what-is-ram
+3. Fig1.3 Network https://www.networkworld.com/article/972429/are-ai-powered-networks-already-outperforming-sd-wan.html 
+4. Fig1.4 Storage https://www.computerscience.gcse.guru/theory/storage-devices 
+5. Fig1.5 GPU https://www.hellotech.com/blog/whats-a-gpu-what-gpu-do-you-have?srsltid=AYCX9vJHt4TEhAjow4onmCUGeg5rhaSDsPj-xPk8VU_TJlH8Cjfz0cMj
+6. Fig3.1 how computer works http://www.carnegiecyberacademy.com/facultyPages/computer/computers.html
+7. Fig3.2 RAM https://hken.rs-online.com/web/p/ram/1805838?srsltid=AYCX9vI3lfmc_dW-BIrBb8DnyyUSquDcPHlagbzuCvlWutayJhcMFiMk 
+8. Fig3.3 SSD https://shop.pegasus.hk/products/225443/Kingston-NV3-1TB-PCIe-40-NVMe-M2-2230-SSD---5%E5%B9%B4%E4%BF%9D%E9%A4%8A?srsltid=AYCX9vItx2t3UwFB4Vx2FJc1f9DYcH7397Scq9jADx5d2XOoVcahRvJS 
+9. Fig4.1 The bottleneck idea https://medium.com/@hemant.panda9/from-bottlenecks-to-flow-a-practical-guide-to-the-theory-of-constraints-041c19995e1d 
+
 
 ## Notes
 
