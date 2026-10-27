@@ -21,15 +21,15 @@ Besides hardware, there is something called software. Software consists of progr
 
 | Period | Development | Why it matters |
 | :--- | :--- | :--- |
-| Early tools | Abacus <img width="100" height="100" alt="image" src="https://github.com/user-attachments/assets/8ad9e2f3-6cef-4b37-99d9-34edbf495813" />
+| Early tools | Abacus <div align="center"><img width="100" height="100" alt="image" src="https://github.com/user-attachments/assets/8ad9e2f3-6cef-4b37-99d9-34edbf495813" />
  | A mechanical aid for arithmetic — computation is older than electronic computers. |
-| 19th century | Charles Babbage, “father of computing,” designed the Analytical Engine <img width="139.3" height="160.0" alt="image" src="https://github.com/user-attachments/assets/a4586afb-df2b-4db3-813a-47cf296aa1b3" />
+| 19th century | Charles Babbage, “father of computing,” designed the Analytical Engine <div align="center"><img width="139.3" height="160.0" alt="image" src="https://github.com/user-attachments/assets/a4586afb-df2b-4db3-813a-47cf296aa1b3" />
  | A mechanical computing machine that introduced important ideas related to programmable computers. |
-| 19th century | Ada Lovelace <img width="100" height="100" alt="image" src="https://github.com/user-attachments/assets/0614fb39-5aa0-4092-999c-6aa04840e690" />
+| 19th century | Ada Lovelace <div align="center"><img width="100" height="100" alt="image" src="https://github.com/user-attachments/assets/0614fb39-5aa0-4092-999c-6aa04840e690" />
  | Recognised that “a machine could perform a sequence of operations”; she created an algorithm to compute the Bernoulli numbers — an early algorithm principle. |
-| 20th century | ENIAC — Electronic Numerical Integrator and Computer <img width="160.0" height="125.6" alt="image" src="https://github.com/user-attachments/assets/908b02d4-b395-4448-95b8-68b3ac6244df" />
+| 20th century | ENIAC — Electronic Numerical Integrator and Computer <div align="center"><img width="160.0" height="125.6" alt="image" src="https://github.com/user-attachments/assets/908b02d4-b395-4448-95b8-68b3ac6244df" />
  | One of the earliest electronic digital computers; originally used for the US Army. It used thousands of vacuum tubes and required a large room. |
-| Later 20th century | Transistors, integrated circuits, and microprocessors <img width="100" height="100" alt="image" src="https://github.com/user-attachments/assets/04aa6879-9b07-4802-80bf-390973c52e29" />
+| Later 20th century | Transistors, integrated circuits, and microprocessors <div align="center"><img width="100" height="100" alt="image" src="https://github.com/user-attachments/assets/04aa6879-9b07-4802-80bf-390973c52e29" />
  | Made computers smaller, faster, and more effective. Computer development increased significantly. |
 
 ## 2) How Does a Computer Actually Work? The Instruction Loop
