@@ -59,16 +59,16 @@ The team’s selected module is recorded as **“Hardware, Networks & Behavioris
 
 ## 6. Team roles and responsibilities
 
-The roles below follow the current planning draft. Because the Project Plan and Personal Logs show some role changes, each member must confirm their current role and username before finalizing this table. Role assignment divides coordination work; every member remains responsible for understanding the module.
+The roles below follow the current planning draft. Because the Project Plan and Personal Logs show some role changes, each member must confirm their current role and username before finalizing this table. By mapping our specific individual strengths to designated roles, we ensure a fair distribution of the workload while allowing each member to focus on areas where they can contribute the highest quality of work and support one another in areas needing development. Every member remains responsible for understanding the module.
 
-| Member | Draft role | Responsibilities |
-|---|---|---|
-| Matthew Owen Winarto (`matthewtechb`) | CEO | Coordinate meetings, maintain this plan and task list, monitor deadlines, balance workload, coordinate review and lead final packaging/submission |
-| Ricardo Mauricio Risco Jara (`rriscoj`) | CTO | Maintain repository structure, integrate files, check Markdown paths/rendering and support technical production |
-| Harby (`harbyyy9`) | Lead Writer | Draft explanations, worked examples, learner activities, answer explanations and scripts based on reviewed content |
-| Akerke (`akerkefn`) | Lead Designer | Prepare diagrams and consistent visual design; adapt reviewed content for slides and video visuals |
-| Nemindhara Naththarampotha Thisun Dinayuru (`nemin404`) | CIO | Documentation coordinator, confirm role | Maintain project log, meeting summaries, task tracking, contribution records and AI-use documentation |
-| Falent Ananta Christanto (`bitworksfal-arch`) | Tester | Independently check facts, examples, activity answers, clarity, references and working links/assets |
+| Member / Student ID | Role | Relevant strengths & experience | Skills to develop | Responsibilities |
+|---|---|---|---|---|
+| Matthew Owen Winarto (ID: [18020262080]) / `matthewtechb` | CEO | [e.g., Team coordination, project management] | [e.g., Markdown, GitHub collaboration] | Coordinate meetings, maintain this plan and task list, monitor deadlines, balance workload, coordinate review and lead final packaging/submission |
+| Ricardo Mauricio Risco Jara (ID: [1820262138]) / `rriscoj` | CIO | [e.g., Document organization, logic planning] | [e.g., GitHub management, AI prompting] | Maintain project log, meeting summaries, task tracking, contribution records, and AI-use documentation |
+| Harby (ID: [1820262129]) / `harbyyy9` | Content Lead | [e.g., Coding, technical writing] | [e.g., Video narration, test design] | Draft core explanations, worked examples, learner activities, answer explanations, and video scripts based on reviewed content |
+| Akerke (ID: [1820262305]) / `akerkefn` | Lead Designer | [e.g., Creativity, visual communication] | [e.g., Layout consistency, PPT formatting] | Prepare diagrams, establish team design language, and adapt reviewed content for slides and video visuals |
+| Nemindhara Naththarampotha Thisun Dinayuru (ID: [1820262133]) / `nemin404` | Video Lead | [e.g., Optimization, strategic planning] | [e.g., Technical writing, video editing] | Lead video tutorial production, record/edit videos, synchronize narration with visuals, and support technical production |
+| Falent Ananta Christanto (ID: [1820262294]) / `bitworksfal-arch` | Quality Lead | [e.g., Attention to detail, critical thinking] | [e.g., Testing design, code review] | Independently check facts, test examples, verify activity answers, evaluate clarity, and check references/links |
 
 ### Contribution expectations
 
