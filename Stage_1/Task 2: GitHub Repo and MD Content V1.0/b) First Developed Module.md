@@ -63,16 +63,17 @@ Fetch Instruction -> Decode Instruction -> Execute Operation -> (Repeat)
 
 If the processor is so fast, why does it ever slow down? Because fast memory is small and expensive; large memory is slower and cheaper.
 
-The memory hierarchy
+### The memory hierarchy
 
-Level Typical role Speed (relative) Size (order of magnitude) Persistence
-Registers Values the processor is using right now Fastest Tens of locations Lost on power-off
-L1 cache Recently used instructions and data Very fast Tens of kilobytes Lost on power-off
-L2 / L3 cache Larger staging areas for main memory Fast Megabytes Lost on power-off
-Main memory (RAM) Program and data currently in use Moderate Gigabytes Lost on power-off
-Storage (SSD / disk) Programs and files not currently needed Slow Hundreds of gigabytes to terabytes Kept when power is off
+| Level | Typical role | Speed (relative) | Size (order of magnitude) | Persistence |
+| :--- | :--- | :--- | :--- | :--- |
+| **Registers** | Values the processor is using right now | Fastest | Tens of locations | Lost on power-off |
+| **L1 cache** | Recently used instructions and data | Very fast | Tens of kilobytes | Lost on power-off |
+| **L2 / L3 cache** | Larger staging areas for main memory | Fast | Megabytes | Lost on power-off |
+| **Main memory (RAM)** | Program and data currently in use | Moderate | Gigabytes | Lost on power-off |
+| **Storage (SSD / disk)** | Programs and files not currently needed | Slow | Hundreds of gigabytes to terabytes | Kept when power is off |
 
-The bottleneck idea
+### The bottleneck idea
 
 A bottleneck is the part of a system that limits overall performance. Even if one part is extremely fast, the whole system cannot go faster than its slowest necessary step.
 
@@ -80,7 +81,7 @@ In a stored-program computer, the processor and main memory share a communicatio
 
 This specific limitation is widely called the von Neumann bottleneck: the lag that occurs because data moves between memory and the processor more slowly than the processor can compute.
 
-What “overwhelmed with data” actually looks like
+### What “overwhelmed with data” actually looks like
 
 When a device is “overwhelmed,” it is usually not because the processor has suddenly become slow. It is because one or more of these has happened:
 
@@ -102,11 +103,11 @@ When a device slows down, the processor is often not “thinking slowly.” It i
 
 | Situation | Where the processor gets data | Likely result |
 | :--- | :--- | :--- |
-| Small calculation on values already loaded | Registers | Fast; processor is the limit |
-| Repeated loop over a small array that fits in cache | Cache | Fast; cache hit rate is high |
-| Large dataset that does not fit in cache | Main memory (RAM) | Slower; memory bandwidth and bus become the limit |
-| Opening a large file that is not in RAM | Storage (SSD or disk) | Much slower; storage I/O is the bottleneck |
-| Many programs competing for memory and bus | RAM and bus shared across tasks | Variable slowdown; bottleneck shifts between memory and bus |
+| Small calculation on values already loaded | Registers | Fast: processor is the limit |
+| Repeated loop over a small array that fits in cache | Cache | Fast: cache hit rate is high |
+| Large dataset that does not fit in cache | Main memory (RAM) | Slower: memory bandwidth and bus become the limit |
+| Opening a large file that is not in RAM | Storage (SSD or disk) | Much slower: storage I/O is the bottleneck |
+| Many programs competing for memory and bus | RAM and bus shared across tasks | Variable slowdown: bottleneck shifts between memory and bus |
 
 ## 4) Soooo, why does this matter?
 
@@ -118,7 +119,7 @@ Computer hardware is not just an abstract topic — it explains everyday behavio
 
 · Why a smart device with a tiny battery cannot run a huge AI model. Low-power microchips have limited memory and processing capacity; the bottleneck shows up as battery drain and slow responses.
 
-· Why AI training needs specialised hardware (GPUs, TPUs). Standard processors spend too much time waiting for data; AI chips are designed to move and process many data items in parallel.
+· Why AI training needs specialized hardware (GPUs, TPU). Standard processors spend too much time waiting for data: AI chips are designed to move and process many data items in parallel.
 
 Understanding the instruction loop and the bottleneck gives you the foundation to understand why real-world smart devices behave the way they do — and why hardware choice matters for AI applications.
 
