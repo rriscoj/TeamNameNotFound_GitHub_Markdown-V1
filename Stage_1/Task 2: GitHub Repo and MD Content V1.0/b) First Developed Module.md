@@ -9,11 +9,11 @@ A computer is a programmable device that stores, retrieves, and processes data. 
 
 | Component | Simple description | Everyday analogy |
 | :--- | :--- | :--- |
-| **Processor** | The computer’s brain processes input data with algorithms to create output. | A worker following a recipe step by step |
-| **Memory** | Addresses information in a computer and stores it in consistent locations. | A desk holding the materials you are using right now |
-| **Network** | The connection between several technological devices that can share information. | Roads and delivery routes between buildings |
-| **Storage** | The hardware that permanently stores a computer’s data. | A filing cabinet or pantry |
-| **GPU** | A specialized chip intended to perform thousands of calculations at the same time. | 1,000 average students doing calculations at the same time |
+| **Processor** <img width="100" height="100" alt="image" src="https://github.com/user-attachments/assets/a0b01e03-6d90-4b87-8d64-16296d437a14" /> | The computer’s brain processes input data with algorithms to create output. | A worker following a recipe step by step |
+| **Memory** <img width="100" height="100" alt="image" src="https://github.com/user-attachments/assets/e7b89460-48af-4294-a5ab-8770655549e5" /> | Addresses information in a computer and stores it in consistent locations. | A desk holding the materials you are using right now |
+| **Network** <img width="100" height="100" alt="image" src="https://github.com/user-attachments/assets/a758664f-5302-4fba-a866-2b74a9d22386" /> | The connection between several technological devices that can share information. | Roads and delivery routes between buildings |
+| **Storage**  <img width="100" height="100" alt="image" src="https://github.com/user-attachments/assets/a248a044-c2a2-4a8e-887f-ff0329a14186" /> | The hardware that permanently stores a computer’s data. | A filing cabinet or pantry |
+| **GPU** <img width="100" height="100" alt="image" align="left" src="https://github.com/user-attachments/assets/a2b24edc-e232-4311-b5d2-bda41574dcff" /> | A specialized chip intended to perform thousands of calculations at the same time. | 1,000 average students doing calculations at the same time |
 
 Besides hardware, there is something called software. Software consists of programs and instructions written in a programming language (such as Python, C, C++, Java) to process data and produce results.
 
@@ -58,6 +58,8 @@ Suppose a program is meant to add two numbers and print the result. In a simplif
 ```text
 Fetch Instruction -> Decode Instruction -> Execute Operation -> (Repeat)
 ```
+<img width="518" height="386" alt="image" src="https://github.com/user-attachments/assets/d7ac03c9-bf41-4676-a465-c50fba8efe58" />
+
 
 ## 3) Memory and Why Devices Slow Down When Overwhelmed with Data
 
@@ -70,8 +72,8 @@ If the processor is so fast, why does it ever slow down? Because fast memory is 
 | **Registers** | Values the processor is using right now | Fastest | Tens of locations | Lost on power-off |
 | **L1 cache** | Recently used instructions and data | Very fast | Tens of kilobytes | Lost on power-off |
 | **L2 / L3 cache** | Larger staging areas for main memory | Fast | Megabytes | Lost on power-off |
-| **Main memory (RAM)** | Program and data currently in use | Moderate | Gigabytes | Lost on power-off |
-| **Storage (SSD / disk)** | Programs and files not currently needed | Slow | Hundreds of gigabytes to terabytes | Kept when power is off |
+| **Main memory (RAM)**<img width="100" height="100" alt="image" src="https://github.com/user-attachments/assets/fd7565c7-667f-4c67-9c32-c147b6330cd6" /> | Program and data currently in use | Moderate | Gigabytes | Lost on power-off |
+| **Storage (SSD / disk)** <img width="100" height="100" alt="image" src="https://github.com/user-attachments/assets/29c8ac19-b6d0-4f0f-920a-c386b8ae7d57" /> | Programs and files not currently needed | Slow | Hundreds of gigabytes to terabytes | Kept when power is off |
 
 ### The bottleneck idea
 
@@ -108,6 +110,9 @@ When a device slows down, the processor is often not “thinking slowly.” It i
 | Large dataset that does not fit in cache | Main memory (RAM) | Slower: memory bandwidth and bus become the limit |
 | Opening a large file that is not in RAM | Storage (SSD or disk) | Much slower: storage I/O is the bottleneck |
 | Many programs competing for memory and bus | RAM and bus shared across tasks | Variable slowdown: bottleneck shifts between memory and bus |
+
+<img width="1400" height="764" alt="image" src="https://github.com/user-attachments/assets/524d5d0c-3c0e-4dd7-ad04-5c7174715a81" />
+
 
 ## 4) Soooo, why does this matter?
 
