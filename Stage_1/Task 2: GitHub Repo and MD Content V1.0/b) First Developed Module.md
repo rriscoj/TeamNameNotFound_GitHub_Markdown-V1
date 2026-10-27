@@ -215,4 +215,3 @@ D. The monitor resolution is too low.
 - **Cache** — A smaller, faster storage area that holds a copy of data from a larger, slower memory. A *cache hit* means the data was found in cache; a *cache miss* means the processor must wait for it to be fetched from a slower level.
 - **von Neumann bottleneck** — The performance limit that arises because, in a stored-program computer, instructions and data share a pathway between memory and the processor, and memory cannot supply them as fast as the processor can consume them.
 
-```
