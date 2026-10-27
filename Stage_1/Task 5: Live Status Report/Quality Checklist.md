@@ -2,20 +2,20 @@
 
 Before submitting and presenting, check that:
 
-- [x] The report makes our project direction and current progress clear.
-  - **Comment: team's project goals and current progress are clear** 
+- [ ] The report makes our project direction and current progress clear.
+  - **Comment:** 
 
-- [x] We distinguish completed work from ongoing work and future plans.
-  - **Comment: the report is divided to completed tasks, ongoing work, and future plan** 
+- [ ] We distinguish completed work from ongoing work and future plans.
+  - **Comment:** 
 
-- [x] We show readable evidence of our GitHub and Markdown development.
-  - **Comment: the team's github work and markwdown are easy to understand** 
+- [ ] We show readable evidence of our GitHub and Markdown development.
+  - **Comment:** 
 
-- [x] A concrete example demonstrates our understanding and teaching approach.
-  - **Comment: the report includes a simple example that shows the team's understanding and teaching approach** 
+- [ ] A concrete example demonstrates our understanding and teaching approach.
+  - **Comment:** 
 
-- [x] We explain an important problem and realistic next steps.
-  - **Comment: the report explains the important problem and gives future task** 
+- [ ] We explain an important problem and realistic next steps.
+  - **Comment:** 
 
 - [ ] We **cut to the chase**, **show rather than tell**, and **save the best for last**.
   - **Comment:** 
