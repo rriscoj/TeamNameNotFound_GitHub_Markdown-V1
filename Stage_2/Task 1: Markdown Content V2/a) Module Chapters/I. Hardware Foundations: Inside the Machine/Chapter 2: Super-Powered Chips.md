@@ -21,7 +21,6 @@ Here is how a CPU compares to a GPU:
 | **Everyday Analogy** | **1 Master Chef:** Can cook a 5-star meal, but only one plate at a time. | **1,000 Line Cooks:** Can't cook a 5-star meal alone, but can flip 10,000 burgers in an hour. |
 | **Best for** | Running a web browser, typing a document. | Training AI, rendering 3D graphics. |
 
-> **Terminology — Parallel Processing:** The ability of a computer to perform many calculations at the exact same time, rather than one after another.
 
 ## 3) What is a TPU? (Tensor Processing Unit)
 
@@ -29,8 +28,9 @@ If GPUs are so great, why do we need TPUs? A **TPU** is an even more specialized
 
 AI uses a specific type of math called Tensor math. TPUs strip away all the extra parts of a chip (like graphics rendering) and focus 100% of their power on doing Tensor math at lightning speed.
 
-> **Terminology — Tensor:** In computing, a tensor is just a concept of a multi-dimensional grid of numbers (like a giant spreadsheet of data). AI models use tensors to process images, text, and sound.
-> **Terminology — TPU (Tensor Processing Unit):** A specialized chip designed specifically to accelerate machine learning and AI workloads.
+**- Tensor:** In computing, a tensor is just a concept of a multi-dimensional grid of numbers (like a giant spreadsheet of data). AI models use tensors to process images, text, and sound.
+
+**- TPU (Tensor Processing Unit):** A specialized chip designed specifically to accelerate machine learning and AI workloads.
 
 ## 4) Worked Example: How AI Processes an Image
 
