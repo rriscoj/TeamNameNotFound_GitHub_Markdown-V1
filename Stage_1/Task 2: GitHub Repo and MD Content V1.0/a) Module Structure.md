@@ -9,25 +9,25 @@ The outcomes aim to develop both foundational knowledge and practical problem-so
 
 ## 2) Detailed Content Outline + Development Status
 
-### Inside the Machine (Hardware Foundations)
+### Section I: Inside the Machine (Hardware Foundations)
 - **[CHECKED] Chapter 1** → What is a Computer? Hardware basics, processors, memory, the instruction loop, and why devices slow down when overwhelmed with data.
 - **[OUTLINE ONLY] Chapter 2** → Super-Powered Chips: Why modern AI needs special graphics chips (GPUs) and processing units (TPUs) to handle many tasks at once.
 - **[OUTLINE ONLY] Chapter 3** → Smart & Efficient Tech: How small, low-power microchips run smart devices, phones, and wearables without running out of battery.
 - **[OUTLINE ONLY] Chapter 4** → Sensors and Perception: How computers gather real-world data (cameras, LiDAR, sonar, and temperature sensors) for AI processing.
 
-### How Devices Talk (Network Infrastructure)
+### Section II: How Devices Talk (Network Infrastructure)
 - **[OUTLINE ONLY] Chapter 5** → The Highway of Data: How Wi-Fi, internet cables, and high-speed network connections move information between smart devices and servers.
 - **[OUTLINE ONLY] Chapter 6** → Working Together: How large cloud servers share big tasks and data across distances to train smart AI systems.
 - **[OUTLINE ONLY] Chapter 7** → Keeping Traffic Flowing: Understanding lag (latency), internet speed (bandwidth), and how networks prevent data traffic jams.
 - **[OUTLINE ONLY] Chapter 8** → Edge vs. Cloud AI: Deciding whether to process data directly on the device or send it across the internet to the cloud.
 
-### How AI Learns (Behaviourist AI and Trial-and-Error)
+### Section III: How AI Learns (Behaviourist AI and Trial-and-Error)
 - **[OUTLINE ONLY] Chapter 9** → The Roots of Smart Behavior: Learning from history: how animal training (treats and penalties) and simple feedback loops inspired computer scientists.
 - **[OUTLINE ONLY] Chapter 10** → Rules of the Game: States, actions, and rewards: the fundamental building blocks of how an AI makes decisions.
 - **[OUTLINE ONLY] Chapter 11** → Learning by Doing: Exploring new choices vs. sticking to what already works, and how AI improves through trial and error over time.
 - **[OUTLINE ONLY] Chapter 12** → Multi-Agent Systems: How multiple AI agents communicate, cooperate, or compete in shared environments.
 
-### Putting It Together (Co-Design and Simple Projects)
+### Section IV: Putting It Together (Co-Design and Simple Projects)
 - **[OUTLINE ONLY] Chapter 13** → AI in the Real World: How hardware limits, heat, and network delays affect real-life robots and smart devices.
 - **[OUTLINE ONLY] Chapter 14** → Safety, Ethics, and Control: Ensuring AI behavior remains safe, predictable, and fair under unexpected hardware or network failures.
 - **[OUTLINE ONLY] Chapter 15** → Mini-Project: Building a Simple Decision Game: Exploring how an AI learns to find its way through a maze or simple grid game using rewards.
