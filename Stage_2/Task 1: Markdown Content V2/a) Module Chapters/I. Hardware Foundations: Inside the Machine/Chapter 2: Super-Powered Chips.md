@@ -32,7 +32,8 @@ AI uses a specific type of math called Tensor math. TPUs strip away all the extr
 
 **- TPU (Tensor Processing Unit):** A specialized chip designed specifically to accelerate machine learning and AI workloads.
 
-## 4) Worked Example: How AI Processes an Image
+## 4) Worked Example: 
+### How AI Processes an Image
 
 How does an AI actually use a GPU to "see" a picture? Suppose an AI needs to process a 100x100 pixel image to find a cat. That is **10,000 pixels**. If each pixel is a math problem, the AI has to solve 10,000 math problems to process the image.
 
@@ -84,6 +85,10 @@ A student says: "I upgraded my computer's CPU from 4 cores to 8 cores so it will
 2. Google Cloud, "What is a TPU?" — Definition of Tensor Processing Units and their use in machine learning.
 3. IBM Research, "CPU vs. GPU" — Comparisons between sequential and parallel processing architectures.
 4. TechTarget, "Tensor" — Definition of tensors in computing and machine learning.
+
+## 8) Image References
+1.
+2.
 
 ## Notes
 - **CPU (Central Processing Unit)** — The primary processor of a computer, designed to handle a wide variety of general-purpose, sequential tasks.
