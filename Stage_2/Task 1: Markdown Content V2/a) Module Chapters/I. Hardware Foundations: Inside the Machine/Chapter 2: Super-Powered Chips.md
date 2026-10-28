@@ -1,6 +1,6 @@
 # CHAPTER 2 — Super-Powered Chips: Why Modern AI Needs GPUs and TPUs
 
-## 1) The CPU's Limit (Connecting to Chapter 1)
+## 1) The CPU's Limit 
 
 In Chapter 1, we learned that the **CPU (Central Processing Unit)** is like a very fast worker following a recipe step by step. It uses the fetch–decode–execute cycle to handle instructions one at a time. It is excellent at complex tasks, like running your operating system or calculating a spreadsheet.
 
