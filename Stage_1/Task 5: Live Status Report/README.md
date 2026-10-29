@@ -13,7 +13,7 @@ You can view our presentation slides online here:
 
 ## Status
 
-**In progress — deadline: October 30, 2026.**
+**In progress — presentation date: October 30, 2026.**
 
 The report and its supporting evidence will be added and updated as the team continues working.
 
