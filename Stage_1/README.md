@@ -23,8 +23,7 @@ Houses our core educational material draft (Version 1.0) and development evidenc
 
 ### [Task 3: Project Log and Meeting Summaries](./Task%203:%20Project%20Log%20and%20Meeting%20Summaries)
 Contains our team-level tracking and coordination records.
-*   **`a) Project Log.md`**: High-level tracking of project milestones and AI-use documentation.
-*   **`b) Meeting Summaries.md`**: Records of our team meetings, attendees, key decisions, and follow-up tasks.
+*   **`a) Project Log and Meeting Summaries.md`**: High-level tracking of project milestones and summaries of our meetings.
 
 ### [Task 4: Personal Learning and Work Logs](./Task%204:%20Personal%20Learning%20and%20Work%20Logs)
 Contains the individual chronological logs for every team member. 
