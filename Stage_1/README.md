@@ -26,11 +26,11 @@ Contains our team-level tracking and coordination records.
 *   **`a) Project Log and Meeting Summaries.md`**: High-level tracking of project milestones and summaries of our meetings.
 
 ### [Task 4: Personal Learning and Work Logs](./Task%204:%20Personal%20Learning%20and%20Work%20Logs)
-Contains the individual chronological logs for every team member. 
-*   Details specific tasks completed, personal reflections, course learning, and exact AI-tool interactions for each team member. 
+Contains the Google Docs website link to the individual chronological logs for every team member. 
+*   This task details specific tasks completed, personal reflections, course learning, and exact AI-tool interactions for each team member. 
 
 ### [Task 5: Live Status Report](./Task%205:%20Live%20Status%20Report)
-Contains the preparation materials and script/report for our Stage 1 live presentation.
+Contains the website link for our preparation materials for our Stage 1 live presentation.
 
 ### [Assets](./Assets)
 A centralized folder for all supporting files, including custom `Images/`, diagrams, and branding (like our team logo) used across the Stage 1 Markdown documents.
