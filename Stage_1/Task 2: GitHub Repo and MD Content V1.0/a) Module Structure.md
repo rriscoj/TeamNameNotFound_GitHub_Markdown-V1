@@ -12,7 +12,7 @@ The outcomes aim to develop both foundational knowledge and practical problem-so
 ### Section I: Inside the Machine (Hardware Foundations)
 - **[CHECKED] Chapter 1** → What is a Computer? Hardware basics, processors, memory, the instruction loop, and why devices slow down when overwhelmed with data.
 - **[DRAFTED] Chapter 2** → Super-Powered Chips: Why modern AI needs special graphics chips (GPUs) and processing units (TPUs) to handle many tasks at once.
-- **[OUTLINE ONLY] Chapter 3** → Smart & Efficient Tech: How small, low-power microchips run smart devices, phones, and wearables without running out of battery.
+- **[DRAFTED] Chapter 3** → Smart & Efficient Tech: How small, low-power microchips run smart devices, phones, and wearables without running out of battery.
 - **[OUTLINE ONLY] Chapter 4** → Sensors and Perception: How computers gather real-world data (cameras, LiDAR, sonar, and temperature sensors) for AI processing.
 
 ### Section II: How Devices Talk (Network Infrastructure)
