@@ -1,6 +1,6 @@
 # CHAPTER 3 — Smart & Efficient Tech: How Small, Low-Power Microchips Run Wearables
 
-## 1) The Power Problem (Connecting to Chapters 1 & 2)
+## 1) The Power Problem 
 
 In Chapter 1, we learned about the **CPU** (the brain) and how it processes data. In Chapter 2, we learned that AI requires massive parallel processing, which is why we use **GPUs and TPUs**.
 
