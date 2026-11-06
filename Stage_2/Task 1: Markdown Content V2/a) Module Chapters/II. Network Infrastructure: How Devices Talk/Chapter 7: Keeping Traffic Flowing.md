@@ -6,11 +6,15 @@ Previously, we learned that data is chopped up into packets and sent across netw
 
 But here is the problem: **You are not the only one using the internet.**
 
+<img width="860" height="286" alt="image" src="https://github.com/user-attachments/assets/8238509a-4e6e-44f1-872c-ac54cf7a14ee" />
+
 When millions of people are streaming movies, playing games, and talking to AI at the exact same time, the internet's highways get crowded. Just like cars on a physical highway during rush hour, data packets get stuck in traffic.
 
 When a network is overwhelmed, the AI slows down, video calls freeze, and self-driving cars might react a second too late. Engineers have built clever systems to prevent this, but first, we need to understand the two types of "speed."
 
 ## 2) Latency vs. Bandwidth
+
+<img width="1500" height="837" alt="image" src="https://github.com/user-attachments/assets/8be9b9e0-7165-49c2-9fc9-cc1342094083" />
 
 People often confuse these two terms, but they measure completely different things.
 
@@ -27,6 +31,9 @@ People often confuse these two terms, but they measure completely different thin
 > **Terminology — Latency:** The time delay it takes for data to travel across a network from the sender to the receiver.
 
 ### How do we measure Bandwidth?
+
+<img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/3e611c20-5e43-47dd-96dd-8db9f7846c81" />
+
 Engineers measure bandwidth in **Mbps** (Megabits per second) or **Gbps** (Gigabits per second). The higher the number, the more data can flow.
 
 Here is a general guide for today's smart devices:
@@ -39,9 +46,12 @@ Here is a general guide for today's smart devices:
 
 ## 3) How Networks Prevent Traffic Jams
 
+<img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/26654350-bd6f-43ab-9040-6ee891e7fb2a" />
+
 If a network is overwhelmed (Network Congestion), it can crash. To keep traffic flowing, engineers use three main techniques:
 
 ### 1. Quality of Service (QoS) - The VIP Lane
+
 Not all data is equally important. If you are downloading a large video game, you can wait a few extra milliseconds. But if you are in a self-driving car, a few milliseconds of lag could cause a crash.
 **QoS** allows routers to prioritize certain types of data. The router puts self-driving car data or video call data into the "VIP fast lane" and puts file downloads into the "slow lane."
 
@@ -74,8 +84,16 @@ Imagine a house with one Wi-Fi router. Four things are happening at once. Let's 
 Understanding latency and bandwidth management is crucial because it explains the limits of what AI can do over the internet.
 
 *   **Why self-driving cars need 5G:** 5G doesn't just have high bandwidth; it has incredibly **low latency** (around 1 millisecond). A 4G network might have 50ms of latency, which is too slow to stop a car at 100 km/h.
+
+<img width="860" height="484" alt="image" src="https://github.com/user-attachments/assets/0ad97fb3-942a-4841-a77c-7cce129717b5" />
+
 *   **Why you can stream 4K movies:** Video streaming services use high **bandwidth** but can tolerate a few seconds of **latency** at the start. They buffer (load) a few seconds of video in advance so you don't notice any network jams.
+
+<img width="860" height="573" alt="image" src="https://github.com/user-attachments/assets/62344eb8-b66c-42d2-a96f-44d5fc8fc344" />
+
 *   **Why Cloud Gaming works:** Services like Xbox Cloud Gaming require both high bandwidth (for the video) and extremely low latency (so your button presses feel instant).
+
+<img width="612" height="408" alt="image" src="https://github.com/user-attachments/assets/0f8baff0-bb36-4446-bbc1-9c9ad3c45866" />
 
 ## 6) QnA
 
@@ -134,10 +152,13 @@ Based on what you know about Latency and Bandwidth, why is this statement incorr
 
 ## 9) Image References
 
-*(Add images here of a highway traffic jam, a QoS priority diagram, and a water pipe analogy)*
-1. 
-2. 
-3. 
+1. Fig. 1.1: Traffic Jam https://www.vecteezy.com/free-vector/traffic-jam 
+2. Fig. 2.1: Bandwidth vs Latency https://broadbandnow.com/guides/bandwidth-vs-latency
+3. Fig. 2.2: Bandwidth Measuring (Made by Gemini)
+4. Fig. 3.1: Quality of Service, Load Balancing & TCP Congestion Control Illustrations (Made by Gemini)
+5. Fig. 5.1: Smart Car connected to 5G https://dgtlinfra.com/autonomous-vehicles-5g-and-digital-infrastructure/
+6. Fig. 5.2: Netflix Streaming https://www.enclaveaudio.com/blogs/news/best-4k-movies
+7. Fig. 5.3: Teeanger playing Online Videogame https://www.gettyimages.com/photos/playing-video-games
 
 ## Notes
 
