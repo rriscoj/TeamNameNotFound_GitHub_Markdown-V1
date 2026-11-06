@@ -23,6 +23,7 @@ People often confuse these two terms, but they measure completely different thin
 | **Latency** | The time delay it takes for data to arrive. | The **length** of the pipe. A longer pipe takes longer for the water to reach the end. |
 
 > **Terminology — Bandwidth:** The maximum amount of data that can be transferred over a network in a given amount of time.
+>
 > **Terminology — Latency:** The time delay it takes for data to travel across a network from the sender to the receiver.
 
 ### How do we measure Bandwidth?
@@ -52,6 +53,7 @@ Imagine a Data Center with 1,000 servers. If all 1,000 users send their requests
 Previously, we learned that **TCP** resends lost packets. But TCP is smart—if it notices that packets are getting lost, it assumes the network is congested. It will automatically slow down the sender (like easing off the gas pedal) until the traffic clears up, then speed up again.
 
 > **Terminology — Quality of Service (QoS):** A network feature that allows certain types of data (like video calls or emergency AI) to be prioritized over other types of data.
+> 
 > **Terminology — Load Balancing:** Distributing incoming network traffic across multiple servers to ensure no single server is overwhelmed.
 
 ## 4) Worked Example: The Smart Home Traffic Jam
