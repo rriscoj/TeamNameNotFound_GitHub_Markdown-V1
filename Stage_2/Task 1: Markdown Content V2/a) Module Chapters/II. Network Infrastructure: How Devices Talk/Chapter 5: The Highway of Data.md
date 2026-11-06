@@ -55,7 +55,7 @@ Because the internet is a physical network of wires and radio waves, things can 
 | **2. Latency (Lag)** <img width="200" height="150" alt="image" src="https://github.com/user-attachments/assets/a4d9c8af-1328-4e11-8b69-e1a5184d010d" /> | The time it takes for the packet to arrive is too long. | **Edge Computing** (processing data closer to the user) and faster **5G** networks. |
 | **3. Jitter** <img width="200" height="150" alt="image" src="https://github.com/user-attachments/assets/8fc8a87d-02c5-4f53-b585-ec8060594918" /> | The delay keeps changing (packets arrive unevenly). | The receiving device uses a **Buffer** (a tiny waiting room) to hold packets and play them smoothly. |
 | **4. Corruption** <img width="200" height="150" alt="image" src="https://github.com/user-attachments/assets/2b0a2d7a-ec71-4196-b9bb-27590f0355fd" /> | The packet arrives, but the data inside is scrambled (0s turn into 1s). | The network uses **Checksums** (math stamps). If the math is wrong, it throws the packet away and asks for a new one. |
-| **5. Out-of-Order** | Packets arrive in the wrong sequence (Page 5 arrives before Page 4). | **TCP** uses sequence numbers to reorder the packets before giving them to the AI. |
+| **5. Out-of-Order** <img width="200" height="150" alt="image" src="https://github.com/user-attachments/assets/da1ce8a2-1c46-4def-a1d4-58fbbf49bb4f" /> | Packets arrive in the wrong sequence (Page 5 arrives before Page 4). | **TCP** uses sequence numbers to reorder the packets before giving them to the AI. |
 
 How does the network actually apply these fixes? It uses special rules called **Protocols**.
 
@@ -184,7 +184,7 @@ Based on what you know about TCP and UDP, why is this a terrible idea?
 7. Fig. 3.2: Lattency (Lag) https://phoenixnap.com/blog/network-latency
 8. Fig. 3.3: Jitter (made by ChatGPT)
 9. Fig. 3.4: Corruption https://dreamstime.com/photos-images/corrupted-data.html
-10. Fig. 3.5: Out-of-order 
+10. Fig. 3.5: Out-of-order (made by Gemini)
 11. Fig. 3.6: Transmission Control Protocol (TCP) https://www.cloudns.net/blog/tcp-transmission-control-protocol-what-is-it-and-how-does-it-work/
 12. Fig. 3.7: User Datagram Protocol (UDP) https://cheapsslsecurity.com/blog/what-is-the-udp-protocol-a-user-datagram-protocol-definition/
 13. Fig. 4.1: Low vs High Bandwidth https://broadbandnow.com/guides/bandwidth-vs-latency
