@@ -6,19 +6,28 @@ In Chapter 1, we learned about the **CPU** (the brain) and how it processes data
 
 But GPUs and TPUs have a massive problem: **They use a ton of electricity and generate a lot of heat.** If you put a powerful GPU inside a smartwatch or smart glasses, the battery would die in 10 minutes, and the device would burn your skin. 
 
+<img width="848" height="437" alt="image" src="https://github.com/user-attachments/assets/654b4043-5ff6-4e5d-b246-b94eef1e05e8" />
+
 This is the **Battery Bottleneck**. How can a tiny smartwatch track your heart rate all day, run AI to detect if you fell down, and still last for a week on a single charge? 
 
 The answer is **low-power microchips**.
 
 ## 2) What is a Low-Power Microchip? (MCU & SoC)
 
+<img width="770" height="513" alt="image" src="https://github.com/user-attachments/assets/97580de1-145e-43b5-a9ab-c5eee61bfe82" />
+
 Instead of one massive, power-hungry chip, smart devices use highly efficient chips designed for specific jobs. There are two main types:
 
 ### The Microcontroller (MCU)
 An **MCU** is a tiny, simple computer on a single chip. It doesn't have an operating system like Windows or Android. It runs one specific program (like "read the temperature sensor and turn on the fan"). Because it is so simple, it uses almost zero power.
 
+<img width="300" height="239" alt="image" src="https://github.com/user-attachments/assets/21203f24-b99a-4944-aa59-4113623c7857" />
+
 ### The System on a Chip (SoC)
 An **SoC** is what powers your smartphone. Instead of having a separate CPU, GPU, RAM, and Wi-Fi chip spread out across a large motherboard, an SoC packs **all** of them onto one tiny piece of silicon. Because they are so close together, the data doesn't have to travel far, which saves a massive amount of battery.
+
+<img width="300" height="238" alt="image" src="https://github.com/user-attachments/assets/9fa3000e-5ee1-4f33-9be4-c140cd6b7631" />
+
 
 Here is how a smart device compares to a PC:
 
@@ -45,6 +54,9 @@ Even though a low-power chip uses very little energy, keeping it fully awake sti
 This is how wearables survive: **They sleep as much as possible.**
 
 ### Example: How a Smart Speaker Listens All Day
+
+<img width="650" height="400" alt="image" src="https://github.com/user-attachments/assets/d945bb93-530f-4093-a159-314d844bfa49" />
+
 Think about a smart speaker (like Alexa). It listens for your voice 24 hours a day. If it used the main CPU to listen, it would overheat. Instead:
 *   **Sleeping:** The main CPU is completely asleep, and the electricity to it is cut off.
 *   **The Tiny Guard:** A tiny, low-power MCU (connected to the microphone) is the only thing awake. It uses microscopic amounts of power just listening for the "Wake Word."
@@ -53,6 +65,9 @@ Think about a smart speaker (like Alexa). It listens for your voice 24 hours a d
 ## 4) Worked Examples: Inside Smart Devices
 
 ### Example 1: Looking at the Smartwatch Time
+
+<img width="860" height="573" alt="image" src="https://github.com/user-attachments/assets/4ec5ab47-49f5-4586-b516-675f40a96226" />
+
 Let's trace what happens when you flick your wrist to check the time.
 
 | Step | What is happening | Which Chip is working? | Power usage |
@@ -65,6 +80,9 @@ Let's trace what happens when you flick your wrist to check the time.
 **Takeaway:** The smartwatch isn't running a heavy operating system 24/7. It is mostly dead (asleep). It only wakes up the power-hungry parts for the exact number of seconds it takes to show you the time.
 
 ### Example 2: Counting Steps on a Fitness Tracker
+
+<img width="612" height="413" alt="image" src="https://github.com/user-attachments/assets/9297c1e8-d835-48da-a2fa-088741f5bb0d" />
+
 How does a tiny tracker count your steps all day without needing a charge? 
 
 | Step | What is happening | Which Chip is working? | Power usage |
@@ -142,7 +160,15 @@ An engineer is designing a smart home thermostat. They decide to use a powerful 
 2. IBM, "What is a Microcontroller?" 
 3. TechTarget, "Sleep Mode"
 
-## 8) Notes
+## 8) Image References
+1. Fig. 1.1: Hot GPU https://www.cherryservers.com/blog/gpu-temperature-range
+2. Fig. 2.1: Low-Power Microchip https://www.futurity.org/robots-low-power-chip-2009832/
+3. Fig. 2.2 & 2.3: Microprocessor vs MCU vs SoC https://www.ampheo.com/blog/microprocessor-vs-microcontroller-vs-system-on-chip-what-are-the-differences-among-them
+4. Fig. 3.1: Alexa, a smart speaker https://reolink.com/blog/how-does-alexa-work/
+5. Fig. 4.1: Looking at a smartwatch https://unsplash.com/s/photos/smart-watch
+6. Fig. 4.2: Steps Tracker https://gettyimages.com/photos/count-steps
+
+## Notes
 - **MCU (Microcontroller Unit)** — A compact, low-power integrated circuit designed to govern a specific operation in an embedded system.
 - **SoC (System on a Chip)** — A microchip that integrates all the components of a computer (CPU, GPU, RAM, Wi-Fi) into a single chip.
 - **Sleep Mode** — A low-power state that a computer enters when it is not actively being used.
