@@ -14,7 +14,7 @@ A **GPU** is a specialized computer chip designed to do thousands of simple calc
 
 Here is how a CPU compares to a GPU:
 
-| Feature | CPU (Central Processing Unit) | GPU (Graphics Processing Unit) |
+| Feature | **CPU (Central Processing Unit)** <img width="100" height="100" alt="image" align="left" src="https://github.com/user-attachments/assets/a0b01e03-6d90-4b87-8d64-16296d437a14" /> | **GPU (Graphics Processing Unit)** <img width="100" height="100" alt="image" align="left" src="https://github.com/user-attachments/assets/a2b24edc-e232-4311-b5d2-bda41574dcff" /> |
 | :--- | :--- | :--- |
 | **Design** | Few, very smart "cores" | Thousands of simple "cores" |
 | **Work style** | **Sequential:** Does one complex task, then the next. | **Parallel:** Does thousands of simple tasks all at once. |
@@ -30,7 +30,11 @@ AI uses a specific type of math called Tensor math. TPUs strip away all the extr
 
 **- Tensor:** In computing, a tensor is just a concept of a multi-dimensional grid of numbers (like a giant spreadsheet of data). AI models use tensors to process images, text, and sound.
 
+<img width="800" height="300" alt="image" src="https://github.com/user-attachments/assets/c1039201-2512-4754-9c93-d1bbec6a9267" />
+
 **- TPU (Tensor Processing Unit):** A specialized chip designed specifically to accelerate machine learning and AI workloads.
+
+<img width="500" height="357" alt="image" src="https://github.com/user-attachments/assets/0d07a832-1ce5-405e-9f8b-2f8cfa921c76" />
 
 ## 4) Worked Example: 
 ### How AI Processes an Image
@@ -44,6 +48,9 @@ Here is the step-by-step comparison of how a CPU and a GPU would handle this:
 | **1** | CPU fetches pixel #1, decodes it, executes the math. | GPU sends the math for all 10,000 pixels to its thousands of cores at once. |
 | **2** | CPU fetches pixel #2, decodes it, executes the math. | 1,000 cores each grab 10 pixels and calculate them all at the exact same time. |
 | **3** | CPU fetches pixel #3... | The GPU finishes all 10,000 calculations before the CPU even finishes pixel #10. |
+
+<img width="1672" height="941" alt="image" src="https://github.com/user-attachments/assets/3b6f70f9-5ed9-40bd-a879-04afc87bdb24" />
+
 
 **What this example shows:** The GPU doesn't have a higher "clock speed" (it doesn't think faster than a CPU). It just has **more hands** to do the work all at once. This is why AI training dropped from months to days when developers started using GPUs.
 
@@ -63,16 +70,22 @@ Imagine the AI needs to solve 10,000 simple math problems (this is what it does 
 **Scenario 1: The Self-Driving Car**
 You are designing the computer for a self-driving car. The car has 8 cameras that record video at 60 frames per second. The car needs to instantly identify pedestrians and stop signs. Do you use a CPU or a GPU/TPU? Why?
 
+<img width="462" height="280" alt="image" src="https://github.com/user-attachments/assets/33606fbe-3dbe-4b18-9af6-a60d38d32831" />
+
 **Scenario 2: The Word Processor**
 You are writing a simple program that lets a user type a 5-page essay and runs a spell checker once every 5 minutes. Do you need a powerful GPU for this? Why or why not?
+
+<img width="860" height="528" alt="image" src="https://github.com/user-attachments/assets/b05176da-31a4-4d8c-b3e8-f3ccb58bbda6" />
 
 **Scenario 3: Finding the Error**
 A student says: "I upgraded my computer's CPU from 4 cores to 8 cores so it will definitely train my AI model faster than my friend's GPU." Based on what you learned, is this statement correct or incorrect? Explain.
 
+<img width="780" height="438" alt="image" src="https://github.com/user-attachments/assets/3110231a-85de-4baa-add0-17b8c010f79f" />
+
 ## 6) Answer Key
 
 **Scenario 1:**
-**Expected Answer:** A **GPU or TPU**. The car needs to process millions of pixels from 8 cameras every single second. This requires thousands of simple calculations to happen at the exact same time (parallel processing). A CPU would bottleneck and be too slow, which would be dangerous for a moving car.
+**Expected Answer:** A **GPU or TPU**. The car needs to process millions of pixels from 8 cameras every single second. This requires thousands of simple calculations to happen at the same time (parallel processing). A CPU would bottleneck and be too slow, which would be dangerous for a moving car.
 
 **Scenario 2:**
 **Expected Answer:** **No, a CPU is fine.** A spell checker processes one word at a time (sequential). The workload is very small and doesn't require thousands of parallel calculations. A standard CPU handles this easily.
@@ -87,8 +100,14 @@ A student says: "I upgraded my computer's CPU from 4 cores to 8 cores so it will
 4. TechTarget, "Tensor" — Definition of tensors in computing and machine learning.
 
 ## 8) Image References
-1.
-2.
+1. Fig. 2.1: Computer Processor https://digibuggy.com/blog-details/top-5-processors-for-gaming-pcs-in-2025
+2. Fig. 2.2: GPU https://www.hellotech.com/blog/whats-a-gpu-what-gpu-do-you-have?srsltid=AYCX9vJHt4TEhAjow4onmCUGeg5rhaSDsPj-xPk8VU_TJlH8Cjfz0cMj4TEhAjow4onmCUGeg5rhaSDsPj-xPk8VU_TJlH8Cjfz0cMj
+3.  Fig. 3.1: Tensor Comparison https://www.kdnuggets.com/2018/05/wtf-tensor.html
+4.  Fig. 3.2: TPU https://en.wikipedia.org/wiki/Tensor_Processing_Unit
+5.  Fig. 4.1: Sequential vs Parallel Computing (image created with ChatGP
+6.  Fig. 5.1: Self-driving Car https://www.shutterstock.com/search/self-driving-car
+7.  Fig. 5.2: Essay Checker https://textcortex.com/templates/free-essay-checker
+8.  Fig. 5.3: CPU Comparison https://www.slashgear.com/1720609/cpu-cores-explained-how-many-you-need/
 
 ## Notes
 - **CPU (Central Processing Unit)** — The primary processor of a computer, designed to handle a wide variety of general-purpose, sequential tasks.
