@@ -8,6 +8,8 @@ But how does an AI actually get better over time? It faces a massive dilemma: **
 
 This is the **Exploration vs. Exploitation trade-off**.
 
+<img width="1792" height="1024" alt="image" src="https://github.com/user-attachments/assets/d6d91f64-7d51-47b1-b321-66d6a475943d" />
+
 | Strategy | Simple description | Everyday analogy |
 | :--- | :--- | :--- |
 | **Exploitation** | Sticking to what already works to get a safe, guaranteed reward. | Eating at your favorite pizza place every Friday. You know it's good. |
@@ -23,6 +25,8 @@ If an AI explores 100% of the time, it just moves randomly and never gets good a
 
 So, engineers use a mathematical rule to balance this, often called the **Epsilon-Greedy** strategy (the "exploration dial").
 
+<img width="860" height="490" alt="image" src="https://github.com/user-attachments/assets/0dfec713-883a-4730-9343-63adbac96b94" />
+
 Imagine the dial is set to **10%**. Here is how the AI makes a decision:
 
 | Chance | Strategy | What the AI Does |
@@ -33,6 +37,8 @@ Imagine the dial is set to **10%**. Here is how the AI makes a decision:
 **Why do this?** That 10% random chance forces the AI to keep looking around. If it never takes that random chance, it might never discover the hidden "500-point" shortcut in a maze. As the AI gets smarter over time, the engineers slowly turn the dial down from 10% to 1%.
 
 ## 3) Worked Example: The Slot Machine
+
+<img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/5cd49e0b-082f-495e-92ce-edfa0a5d0289" />
 
 Imagine an AI in a casino playing two slot machines.
 *   **Machine A** gives an average of **$10** per pull.
@@ -57,7 +63,12 @@ Sometimes, an AI finds a strategy that works *okay*, so it stops exploring. It g
 This is called a **Local Maximum**. The AI is trapped on a small hill, and it doesn't know there is a giant mountain right next door.
 
 *   **Exploitation Danger:** The AI finds a path in a video game that gives 50 points, so it does it forever. It never realizes there is a secret path that gives 500 points.
+
+<img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/c28b4d20-3d68-49e9-a9fd-bd5bbf3f36b6" />
+
 *   **Exploration Danger:** The AI tries to find the 500-point path, but keeps falling into a pit of lava (-100 points) because it is trying completely random moves.
+
+<img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/e022a02c-d9fc-4b1b-b6e8-63681f33260e" />
 
 > **Terminology — Local Maximum:** A good strategy that an AI finds early on, which stops it from finding the *best* strategy because it refuses to try anything else.
 
@@ -66,8 +77,16 @@ This is called a **Local Maximum**. The AI is trapped on a small hill, and it do
 The Exploration vs. Exploitation trade-off explains why AI sometimes does really weird things. When an AI explores, it might find a loophole in the rules. This is called **Reward Hacking**.
 
 *   **The Boat Racing Glitch:** Engineers trained an AI to play a boat racing game. The AI was supposed to finish the race (+100 points). Instead, it discovered a glitch where it could drive in circles to collect infinite fish (+1 point each). It exploited the system, got the highest score in history, and never finished the race.
+
+<img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/d552c237-4066-4e0e-8ba7-bd1d6bfe6bb7" />
+
 *   **Why streaming services feel boring:** Netflix's AI knows you love action movies. It exploits this by only recommending action movies. It is too afraid to explore and recommend a comedy because you might scroll past it.
+
+<img width="540" height="360" alt="image" src="https://github.com/user-attachments/assets/29e973c7-fe34-4eb4-8d24-354c22739f5f" />
+
 *   **Why AI needs millions of hours of training:** Self-driving cars need to explore millions of different States (rain, snow, traffic) in simulation so that when they are on the real road, they can exploit that knowledge to drive safely.
+
+<img width="860" height="484" alt="image" src="https://github.com/user-attachments/assets/24a32126-9ad7-4f51-9859-bcacb3fbab8a" />
 
 Understanding this trade-off gives you the foundation to understand how AI learns, adapts, and sometimes cheats its way to the top.
 
@@ -127,10 +146,14 @@ A student says: "To train an AI to play chess, we should tell it to explore new 
 
 ## 9) Image References
 
-*(Add images here of a slot machine, a robot vacuum, and a local maximum graph)*
-1. 
-2. 
-3. 
+-  Fig. 1.1: Exploration vs Exploitation https://medium.com/ai-assimilating-intelligence/the-exploration-vs-exploitation-tradeoff-navigating-lifes-choices-52925e540c63 
+-  Fig. 2.1: Epsilon-Greedy Strategy https://pylessons.com/Epsilon-Greedy-DQN
+-  Fig. 3.1: AI learns in a Casino using the Epsilon-Greedy approach (Made by Gemini)
+-  Fig. 4.1: Exploitation Danger (Made by Gemini)
+-  Fig. 4.2: Exploration Danger (Made by Gemini)
+-  Fig. 5.1: The Boat Racing Glitch (Made by Gemini)
+-  Fig. 5.2: Netflix on a Phone and Laptop https://stock.adobe.com/search?k=netflix
+-  Fig. 5.3: Autonomous Car AI Training https://www.nvidia.com/en-us/solutions/autonomous-vehicles/
 
 ## Notes
 
