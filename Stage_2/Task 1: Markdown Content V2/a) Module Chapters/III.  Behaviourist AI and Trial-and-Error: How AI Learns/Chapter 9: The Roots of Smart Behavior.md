@@ -6,6 +6,8 @@ Before we can understand how a robot learns to walk or how an AI learns to play 
 
 In the early 1900s, psychologists studied how animals learn through **trial and error**. A dog learns to sit because it gets a treat. A rat learns to avoid a button because it gets a shock. This idea is called **Behaviorism**. 
 
+<img width="640" height="480" alt="image" src="https://github.com/user-attachments/assets/7c69d1ae-94fa-48dd-99f6-4f2806f76200" />
+
 Computer scientists borrowed this exact idea to create **Behaviorist AI** (often called Reinforcement Learning). Instead of complex programming, the AI learns by interacting with its environment and receiving **rewards** (treats) and **penalties** (punishments).
 
 Here is how animal training compares to AI training:
@@ -32,6 +34,8 @@ The learning process is a **Feedback Loop**:
 3. **Evaluate:** The environment gives a reward or penalty.
 4. **Update:** The AI remembers this and changes its future behavior.
 
+<img width="950" height="1060" alt="image" src="https://github.com/user-attachments/assets/d31f05af-8a7b-4824-8d0f-08a1aee1e68b" />
+
 ### Worked example 1: Training a Robot Dog
 
 Suppose we want to teach an AI robot dog to sit. Here is how the feedback loop works over three attempts:
@@ -56,7 +60,11 @@ Engineers use a system called **RLHF (Reinforcement Learning from Human Feedback
 
 **What this shows:** DeepSeek doesn't know what a cake is, and it doesn't know what a "good" answer is. It just knows that when it produces answers similar to B, humans click the "thumbs up," and it gets a high score. It is chasing the points!
 
+<img width="463" height="360" alt="image" src="https://github.com/user-attachments/assets/70bf20cc-66d6-4915-9ce7-33546e021742" />
+
 ## 3) The Reward Bottleneck: Exploration vs. Exploitation
+
+<img width="1792" height="1024" alt="image" src="https://github.com/user-attachments/assets/d6d91f64-7d51-47b1-b321-66d6a475943d" />
 
 In Chapter 1, we learned about the hardware bottleneck. But in Behaviorist AI, there is a **learning bottleneck**: The AI must constantly choose between trying new things and doing what it already knows.
 
@@ -81,9 +89,20 @@ If the AI explores too much, it never gets good at anything. If it exploits too 
 Behaviorist AI is how we get computers to do things that are too hard to program by hand.
 
 *   **Why robots can walk on uneven ground:** Programmers can't write code for every single rock or bump. Instead, the robot is trained with a reward system. If it falls, it loses points. If it moves forward, it gets points. Eventually, it learns to balance perfectly.
+
+<img width="860" height="644" alt="image" src="https://github.com/user-attachments/assets/a24d2b37-e4ed-4196-9a9a-c7d866c19b2a" />
+
 *   **Why AI can beat humans at video games:** An AI plays millions of games of *Super Mario*. It gets points for moving right and loses points for dying. It learns by trial and error until it is unbeatable.
+
+<img width="860" height="568" alt="image" src="https://github.com/user-attachments/assets/c9428e2c-3e6e-4877-9e9f-eb6a230cfcff" />
+
 *   **Why AI learns to be polite:** If an AI says something rude, human testers give it a "thumbs down" (-1). If it is polite and helpful, they give it a "thumbs up" (+1). The AI learns to behave properly to get the reward.
+
+<img width="1200" height="800" alt="image" src="https://github.com/user-attachments/assets/7dffe3eb-d008-450b-b339-38419ff29fc1" />
+
 *   **Why this requires powerful GPUs (Chapter 2):** Learning by trial and error takes thousands of mistakes. Running millions of simulations at the same time is incredibly heavy. This is why we need the powerful GPUs and TPUs from Chapter 2!
+
+<img width="640" height="448" alt="image" src="https://github.com/user-attachments/assets/3a697bc4-372b-4d6e-847f-47070bcba0a1" />
 
 Understanding behaviorism gives you the foundation to understand how AI "thinks" and learns without being explicitly programmed.
 
@@ -143,10 +162,14 @@ A student says: "To train an AI to play chess, we just need to give it a ruleboo
 
 ## 8) Image References
 
-*(Add images here of a dog training, a robot dog, and a feedback loop diagram)*
-1. 
-2. 
-3. 
+1. Fig. 1.1: Behaviorism https://slideshare.net/slideshow/tolman-theory/235131073 
+2. Fig. 2.1: Feedback Loop https://screencloud.com/corporate-culture/feedback-loops
+3. Fig. 2.2: Reinforcement Learning https://stock.adobe.com/search?k=reinforcement+learning
+4. Fig. 3.1: Exploration vs Exploitation https://medium.com/ai-assimilating-intelligence/the-exploration-vs-exploitation-tradeoff-navigating-lifes-choices-52925e540c63
+5. Fig. 4.1: Robot on Uneven Ground https://arxiv.org/html/2606.06790v1
+6. Fig. 4.2: AI playing Chess https://www.expressvpn.com/blog/why-games-are-ideal-for-ai-training/
+7. Fig. 4.3: Polite AI https://www.scientificamerican.com/article/should-you-be-nice-to-ai-chatbots-such-as-chatgpt/
+8. Fig. 4.4: GPU server for AI https://ofzenandcomputing.com/best-graphics-cards-gpus-for-server
 
 ## Notes
 
