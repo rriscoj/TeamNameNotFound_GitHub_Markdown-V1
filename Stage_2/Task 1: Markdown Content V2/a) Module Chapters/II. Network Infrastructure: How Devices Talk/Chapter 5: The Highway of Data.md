@@ -6,17 +6,19 @@ In the previous chapter, we learned how a computer processes data, how GPUs hand
 
 But what happens if a security camera sees a burglar, and the AI brain is 1,000 kilometers away in a cloud server? How does the video get there in time?
 
-The answer is **Networks**. A network is the invisible highway that connects devices to each other and to the internet. Without networks, a smart device is trapped in its own little world, unable to share its data or access powerful AI brains in the cloud.
+The answer is **Networks**. A network is the invisible highway that connects devices and to the internet. Without networks, a smart device is trapped in its own little world, unable to share its data or access powerful AI brains in the cloud.
+
+<img width="800" height="457" alt="image" src="https://github.com/user-attachments/assets/8b6aadbc-e8ec-44b5-9e1f-9267a837b521" />
 
 Here are the three main ways devices connect to networks:
 
 | Network Type | Simple description | Everyday analogy |
 | :--- | :--- | :--- |
-| **Wi-Fi** | A wireless network that covers a small area (like a house, school, or café). | A local neighborhood road. |
-| **Cellular (4G/5G)** | A wireless network provided by cell towers that covers a massive area. | A national highway system. |
-| **Fiber Optic Cables** | Physical cables buried underground or under the ocean that carry data using pulses of light. | A high-speed underground train. |
+| **Wi-Fi** <img width="100" height="100" alt="image" align="left" src="https://github.com/user-attachments/assets/907a92f3-5e1d-4e67-8314-0c88ce8f95ed" /> | A wireless network that covers a small area (like a house, school, or café). | A local neighborhood road. |
+| **Cellular (4G/5G)** <img width="100" height="100" alt="image" src="https://github.com/user-attachments/assets/f648bee7-ddba-49aa-b38a-6af0c2633ef9" />| A wireless network provided by cell towers that covers a massive area. | A national highway system. |
+| **Fiber Optic Cables** <img width="100" height="100" alt="image" src="https://github.com/user-attachments/assets/c2a9acb2-ff38-4602-b27b-f361d960618f" /> | Physical cables buried underground or under the ocean that carry data using pulses of light. | A high-speed underground train. |
 
-> **Terminology — Network:** A group of connected devices that can share data and resources with each other.
+> **Terminology — Network:** A group of connected devices that can share data and resources.
 
 > **Terminology — Server:** A powerful computer designed to store data and run programs for other devices (clients) over a network.
 
@@ -27,6 +29,8 @@ When you send a photo, a video, or a message, the computer doesn't send it as on
 Instead, the network breaks the data into tiny chunks called **Packets**.
 
 Imagine you want to mail a 100-page book to a friend. You don't put it in one giant envelope. You tear it into 100 pages, put each page in a small envelope, number them (1 of 100, 2 of 100), and mail them. They might take different routes, but your friend can put them back in order when they arrive.
+
+<img width="612" height="408" alt="image" src="https://github.com/user-attachments/assets/590c4f94-feeb-4536-8114-77b2a6719b28" />
 
 ### Worked Example: Sending a Selfie
 
@@ -47,10 +51,10 @@ Because the internet is a physical network of wires and radio waves, things can 
 
 | Problem | What it means | How Engineers Fix It (Solution) |
 | :--- | :--- | :--- |
-| **1. Packet Loss** | A packet completely disappears and never arrives. | **TCP** resends the lost packet. **UDP** ignores it to save time. |
-| **2. Latency (Lag)** | The time it takes for the packet to arrive is too long. | **Edge Computing** (processing data closer to the user) and faster **5G** networks. |
-| **3. Jitter** | The delay keeps changing (packets arrive unevenly). | The receiving device uses a **Buffer** (a tiny waiting room) to hold packets and play them smoothly. |
-| **4. Corruption** | The packet arrives, but the data inside is scrambled (0s turn into 1s). | The network uses **Checksums** (math stamps). If the math is wrong, it throws the packet away and asks for a new one. |
+| **1. Packet Loss** <img width="200" height="150" alt="image" src="https://github.com/user-attachments/assets/cdb7273e-49d9-4737-83d2-1045e984def8" /> | A packet completely disappears and never arrives. | **TCP** resends the lost packet. **UDP** ignores it to save time. |
+| **2. Latency (Lag)** <img width="200" height="150" alt="image" src="https://github.com/user-attachments/assets/a4d9c8af-1328-4e11-8b69-e1a5184d010d" /> | The time it takes for the packet to arrive is too long. | **Edge Computing** (processing data closer to the user) and faster **5G** networks. |
+| **3. Jitter** <img width="200" height="150" alt="image" src="https://github.com/user-attachments/assets/8fc8a87d-02c5-4f53-b585-ec8060594918" /> | The delay keeps changing (packets arrive unevenly). | The receiving device uses a **Buffer** (a tiny waiting room) to hold packets and play them smoothly. |
+| **4. Corruption** <img width="200" height="150" alt="image" src="https://github.com/user-attachments/assets/2b0a2d7a-ec71-4196-b9bb-27590f0355fd" /> | The packet arrives, but the data inside is scrambled (0s turn into 1s). | The network uses **Checksums** (math stamps). If the math is wrong, it throws the packet away and asks for a new one. |
 | **5. Out-of-Order** | Packets arrive in the wrong sequence (Page 5 arrives before Page 4). | **TCP** uses sequence numbers to reorder the packets before giving them to the AI. |
 
 How does the network actually apply these fixes? It uses special rules called **Protocols**.
@@ -61,11 +65,15 @@ If you are downloading a file or loading a website, you need **every single pack
 *   **How it works:** The receiver checks the packet numbers and a math "checksum" (to check for corruption). If a packet is missing, corrupted, or out of order, it tells the sender: *"Hey, I missed packet 3. Send it again!"*
 *   **Analogy:** Sending a legal contract via registered mail. If a page is missing or damaged, you refuse to sign until they resend it. It is **100% accurate**, but it takes longer.
 
+<img width="860" height="484" alt="image" src="https://github.com/user-attachments/assets/15f60636-c6ff-4c2d-9c58-721994d8e89b" />
+
 ### UDP (User Datagram Protocol) - The Fast Mailman
 If you are on a video call or playing a live game, you don't care if you miss a tiny bit of data. You care about **speed**.
 
 *   **How it works:** The receiver does not ask for missing packets. If packet 3 is lost, it just skips it and plays packet 4. 
 *   **Analogy:** A live sports broadcast. If the TV signal glitches for half a second, the broadcast doesn't pause. It just keeps playing live. It is **extremely fast**, but you might lose a little quality.
+
+<img width="860" height="450" alt="image" src="https://github.com/user-attachments/assets/cc986a3c-2376-4462-9799-5b4e6ec6774f" />
 
 > **Terminology — Packet Loss:** When data packets fail to reach their destination.
 > **Terminology — Latency:** The time delay it takes for data to travel across a network.
@@ -83,6 +91,8 @@ Even if your computer has the fastest CPU and a super-fast GPU, it will still fe
 *   **High Bandwidth:** A 10-lane highway. Lots of cars (data) can drive at once.
 *   **Low Bandwidth:** A 1-lane dirt road. Cars have to wait in a long line.
 
+<img width="1500" height="837" alt="image" src="https://github.com/user-attachments/assets/bbc43032-ff03-460d-b176-b5d572e00870" />
+
 If you try to download a massive 4K video with low bandwidth, the packets get stuck in traffic. This is called **Network Congestion**.
 
 > **Terminology — Packet:** A small chunk of data that travels across a network.
@@ -95,8 +105,16 @@ If you try to download a massive 4K video with low bandwidth, the packets get st
 Networks are the glue that holds modern AI and smart devices together.
 
 *   **Why smart home devices need Wi-Fi:** Your smart thermostat uses Wi-Fi to send its sensor data to the cloud so you can control it from your phone at work.
+
+<img width="661" height="360" alt="image" src="https://github.com/user-attachments/assets/296f0aea-84b4-4b02-b8c5-0482e389f03a" />
+
 *   **Why self-driving cars need 5G:** A self-driving car generates massive amounts of sensor data. It needs a high-bandwidth, low-latency network to share that data with traffic lights and other cars instantly.
+
+<img width="860" height="484" alt="image" src="https://github.com/user-attachments/assets/0ad97fb3-942a-4841-a77c-7cce129717b5" />
+
 *   **Why video calls freeze:** If your bandwidth drops or packet loss happens, the video freezes and the audio cuts out.
+
+<img width="860" height="430" alt="image" src="https://github.com/user-attachments/assets/fda81aaf-bee0-4806-8d14-5bfa5143b291" />
 
 Understanding how data travels is the first step to understanding how cloud servers and network delays affect AI.
 
@@ -157,10 +175,22 @@ Based on what you know about TCP and UDP, why is this a terrible idea?
 
 ## 9) Image References
 
-*(Add images here of a network router, a map of undersea internet cables, and a packet diagram)*
-1. 
-2. 
-3. 
+1. Fig. 1.1: Network https://www.dreamstime.com/photos-images/network-picture.html 
+2. Fig. 1.2: Wi-Fi https://www.magnific.com/photos/wifi-router 
+3. Fig. 1.3: Celullar 5G Network https://depositphotos.com/photos/5g.html
+4. Fig. 1.4: Fiber Optic Cables https://www.istockphoto.com/photos/fiber-cable
+5. Fig. 2.1: Sending Messages https://www.gettyimages.com/photos/send-data
+6. Fig. 3.1: Packet Loss https://resources.l-p.com/glossary/what-does-packet-loss-mean-for-your-internet-connection
+7. Fig. 3.2: Lattency (Lag) https://phoenixnap.com/blog/network-latency
+8. Fig. 3.3: Jitter (made by ChatGPT)
+9. Fig. 3.4: Corruption https://dreamstime.com/photos-images/corrupted-data.html
+10. Fig. 3.5: Out-of-order 
+11. Fig. 3.6: Transmission Control Protocol (TCP) https://www.cloudns.net/blog/tcp-transmission-control-protocol-what-is-it-and-how-does-it-work/
+12. Fig. 3.7: User Datagram Protocol (UDP) https://cheapsslsecurity.com/blog/what-is-the-udp-protocol-a-user-datagram-protocol-definition/
+13. Fig. 4.1: Low vs High Bandwidth https://broadbandnow.com/guides/bandwidth-vs-latency
+14. Fig. 5.1: Smart Devices in Home https://stock.adobe.com/search?k=%22smart+home%22
+15. Fig. 5.2: Smart Car connected to 5G https://dgtlinfra.com/autonomous-vehicles-5g-and-digital-infrastructure/
+16. Fig. 5.3: Video Call Freezing https://imo.im/blog/guides/what-to-do-when-video-call-keeps-freezing
 
 ## Notes
 
