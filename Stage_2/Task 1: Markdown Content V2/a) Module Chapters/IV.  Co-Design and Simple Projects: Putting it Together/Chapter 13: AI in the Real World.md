@@ -28,7 +28,7 @@ Also, if the hardware runs out of memory (RAM), the AI has to swap data to stora
 
 > **Terminology — Thermal Throttling:** When a computer chip gets too hot, it intentionally slows itself down to prevent melting and catching fire.
 
-### How do Engineers Solve These Problems?
+### How to  Solve These Problems?
 Since robots and smartwatches can't carry giant fans or desktop-sized RAM, engineers use clever tricks to solve these hardware limits:
 
 | Problem | The Solution | How it Works |
