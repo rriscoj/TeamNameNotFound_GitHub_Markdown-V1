@@ -14,6 +14,9 @@ Once you understand these three concepts, you understand exactly how an AI makes
 | **Action** | The choices the AI can make from its current state. | Rolling the dice to move forward, or drawing a card. |
 | **Reward** | The points (positive or negative) given for an action. | Landing on a snake (-10 points) or reaching the finish line (+100 points). |
 
+<img width="1999" height="1125" alt="image" src="https://github.com/user-attachments/assets/937b407e-2208-4bbf-82a9-1b8d5ee094c0" />
+
+
 > **Terminology — State:** A snapshot of the current situation the AI is in (its location in a maze, or the speed of a car).
 
 > **Terminology — Action:** A specific move the AI can take ("move left," "hit the brakes," or "say hello").
@@ -31,20 +34,30 @@ This is the **State-Action-Reward Loop**:
 3. **Get a Reward:** The environment gives a score. (e.g., "+5 points for stopping safely.")
 4. **New State:** The environment updates. (e.g., "The car is now stopped.")
 
-### Worked example 1: The Grid-World Maze
+<img width="420" height="420" alt="image" src="https://github.com/user-attachments/assets/f33d441f-b4b9-49dc-9b6a-c3cb708a466c" />
 
-Imagine an AI trapped in a simple 3x3 grid. It wants to reach the exit (the star).
+
+### Worked Example 1: The Grid-World Maze (Trial and Error)
+
+<img width="353" height="315" alt="image" src="https://github.com/user-attachments/assets/957e7743-0b0a-462d-9598-e236c7e4ca0e" />
+
+Imagine an AI trapped in a 4x4 grid. It wants to reach the exit (Dest.) in the bottom right corner. But it doesn't know the way yet! Let's watch it make a mistake by hitting a grey wall, learn from the penalty, and then follow the green path to win.
 
 | Step | State (Where am I?) | Action (What do I do?) | Reward | New State |
 | :--- | :--- | :--- | :--- | :--- |
-| **1** | Top-Left corner | Move Right | 0 points (Safe) | Top-Middle |
-| **2** | Top-Middle | Move Down | -10 points (Hit a wall!) | Top-Middle (Didn't move) |
-| **3** | Top-Middle | Move Right | 0 points (Safe) | Top-Right |
-| **4** | Top-Right | Move Down | +100 points (Reached the exit!) | Game Over (Win) |
+| **1** | Top-Left corner (Source) | Move Down | 0 points (Safe) | Row 2, Col 1 |
+| **2** | Row 2, Col 1 | Move Down | -10 points (Hit a grey wall!) | Row 2, Col 1 (Didn't move) |
+| **3** | Row 2, Col 1 | Move Right | 0 points (Safe) | Row 2, Col 2 |
+| **4** | Row 2, Col 2 | Move Right | 0 points (Safe) | Row 2, Col 3 |
+| **5** | Row 2, Col 3 | Move Down | 0 points (Safe) | Row 3, Col 3 |
+| **6** | Row 3, Col 3 | Move Down | 0 points (Safe) | Row 4, Col 3 |
+| **7** | Row 4, Col 3 | Move Right | +100 points (Reached Dest!) | Game Over (Win) |
 
-**What this shows:** The AI learned that "Move Down" from the top-middle is a bad Action because it resulted in a negative Reward. It will remember this for the next time it plays.
+**What this shows:** The AI made a mistake on Step 2 by trying to move Down into a grey wall. By getting a **-10 penalty**, it learned that moving Down from Row 2, Col 1 is a bad **Action**. It then chose to move Right instead, which allowed it to follow the safe green path and eventually earn the **+100 Reward**. This is exactly how AI learns through trial and error!
 
 ### Worked example 2: The Self-Driving Car
+
+<img width="576" height="347" alt="image" src="https://github.com/user-attachments/assets/135cd1a5-2cbc-42ee-9245-6c004aa6b3f5" />
 
 In the real world, the "game" is much faster and more dangerous.
 
@@ -61,10 +74,13 @@ Previously, we learned that computers have memory and processing limits. This be
 
 The **State Space** is the total number of possible situations the AI could be in.
 
-*   In a 3x3 maze, there are only **9 states**. A cheap CPU can easily calculate the best action for 9 states.
+*   In a 4x4 maze, there are only **16 states**. A cheap CPU can easily calculate the best action for 16 states.
 *   In a self-driving car, the state includes the speed, the steering angle, the location of 10 other cars, the color of the traffic light, and the weather. The state space is almost **infinite**.
 
 To calculate the best action for millions of different states, the AI needs to process massive amounts of data. This is why we need powerful GPUs and TPUs!
+
+<img width="503" height="491" alt="image" src="https://github.com/user-attachments/assets/01332227-b726-4df7-b82d-95d2e615201d" />
+
 
 > **Terminology — State Space:** The collection of every possible state an AI can be in within its environment.
 
@@ -73,8 +89,18 @@ To calculate the best action for millions of different states, the AI needs to p
 By breaking down an AI's behavior into States, Actions, and Rewards, we can train computers to solve incredibly complex problems.
 
 *   **Why Netflix recommends movies:** **State:** Your watch history. **Action:** Recommend a movie. **Reward:** You click play (+1) or you scroll past (-1).
+
+<img width="384" height="520" alt="image" src="https://github.com/user-attachments/assets/dd7fe6b9-ded3-4730-86f1-875b334405ae" />
+
 *   **Why robots can play chess:** **State:** The layout of the pieces on the board. **Action:** Moving a knight. **Reward:** Checkmate (+100) or losing a queen (-50).
+
+<img width="700" height="471" alt="image" src="https://github.com/user-attachments/assets/39bc45f7-f1dd-4e90-9331-7483c1167bf8" />
+
+  
 *   **Why AI can trade stocks:** **State:** The current market prices. **Action:** Buy or sell. **Reward:** Making money (+10) or losing money (-10).
+
+  <img width="738" height="414" alt="image" src="https://github.com/user-attachments/assets/699ebbe6-a67c-4387-b0d9-d1c3c5661911" />
+
 
 Understanding this "Rules of the Game" framework gives you the vocabulary to understand how AI actually decides what to do next.
 
@@ -139,10 +165,22 @@ A student says: "To train an AI to play basketball, we should only give it a +10
 
 ## 8) Image References
 
-*(Add images here of a grid maze, a state-action-reward loop diagram, and a traffic light)*
-1. 
-2. 
-3. 
+Figure 1.1 https://www.kdnuggets.com/2023/07/reinforcement-learning-teaching-computers-make-optimal-decisions.html
+
+Figure 2.1 https://snusforsale.com/loop/loop-red-chili-melon-strong/?srsltid=AYCX9vKizEvz_1pjIGW11EDCOFrcOngjCEhXqLGy8SbSYCOhMSDNoDTa
+
+Figure 2.2 https://www.geeksforgeeks.org/dsa/tutorial-on-path-problems-in-a-grid-maze-or-matrix/
+
+Figure 2.3 https://ingenia.org.uk/articles/how-do-self-driving-cars-navigate-roads-and-traffic/
+
+Figure 3.1 https://www.geeksforgeeks.org/artificial-intelligence/state-space-search-in-ai/
+
+Figure 4.1 https://www.facebook.com/brittany.simms.524035/posts/whats-some-good-movies-to-watch-on-netflix/1139352945321686/
+
+Figure 4.2 https://blog.arduino.cc/2023/04/11/the-weird-and-wonderful-history-of-chess-playing-robots/
+
+Figure 4.3 https://www.linkedin.com/pulse/can-ai-predict-market-what-traders-should-shouldnt-trust-cptconnect-htghf
+
 
 ## Notes
 
