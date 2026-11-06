@@ -6,12 +6,14 @@ Before we can understand how AI learns, we need to understand where the AI actua
 
 The Cloud is actually a physical place on Earth called a **Data Center**.
 
+<img width="740" height="370" alt="image" src="https://github.com/user-attachments/assets/836abf12-8727-4b68-9525-96a11d53f700" />
+
 A Data Center is a massive warehouse filled with thousands of computers stacked in metal racks. These aren't normal laptops; they are **Cloud Servers**. They have incredibly powerful CPUs and GPUs, massive amounts of memory, and giant air conditioners to keep them from melting.
 
 | Concept | Simple description | Everyday analogy |
 | :--- | :--- | :--- |
-| **Your Device (The Client)** | The phone or laptop you are holding right now. | Your house. |
-| **The Cloud (Data Center)** | A massive warehouse filled with thousands of servers. | A giant factory across the country. |
+| **Your Device (The Client)** <img width="100" height="100" alt="image" align="left" src="https://github.com/user-attachments/assets/a7b9dfc9-3de7-4101-9579-5b2e884720e8" /> | The phone or laptop you are holding right now. | Your house. |
+| **The Cloud (Data Center)** <img width="100" height="100" alt="image" align="left" src="https://github.com/user-attachments/assets/836abf12-8727-4b68-9525-96a11d53f700" />| A massive warehouse filled with thousands of servers. | A giant factory across the country. |
 
 > **Terminology — Data Center:** A large, physical building filled with thousands of connected computers (servers) and cooling systems.
 
@@ -25,9 +27,9 @@ It uses the same method we learned about earlier. The data is still chopped up i
 
 | Connection Type | Where it is used | How it works |
 | :--- | :--- | :--- |
-| **Home Wi-Fi** | From your phone to your router. | Radio waves (invisible, but slows down through walls). |
-| **Undersea Fiber Optic Cables** | From your country to a Data Center across the ocean. | Tiny glass tubes. Data travels as **pulses of light** (lasers) at the speed of light! |
-| **Internal Cloud Networks** | Between servers *inside* the Data Center. | Dedicated ultra-fast cables that connect thousands of servers in the same building. |
+| **Home Wi-Fi** <img width="100" height="100" alt="image" align="left" src="https://github.com/user-attachments/assets/907a92f3-5e1d-4e67-8314-0c88ce8f95ed" /> | From your phone to your router. | Radio waves (invisible, but slows down through walls). |
+| **Undersea Fiber Optic Cables** <img width="150" height="100" alt="image" src="https://github.com/user-attachments/assets/e43adbd9-c0ab-4ea9-84a3-a2b34b4420cc" /> | From your country to a Data Center across the ocean. | Tiny glass tubes. Data travels as **pulses of light** (lasers) at the speed of light! |
+| **Internal Cloud Networks** <img width="150" height="100" alt="image" src="https://github.com/user-attachments/assets/313335af-d40b-4190-892e-8918103fd4e3" /> | Between servers *inside* the Data Center. | Dedicated ultra-fast cables that connect thousands of servers in the same building. |
 
 **Why this matters:** The internet is held together by massive cables at the bottom of the ocean. When you send a selfie to a friend in another country, those packets literally travel through glass tubes underwater using laser beams.
 
@@ -41,12 +43,14 @@ To solve this, engineers don't build one giant supercomputer. They connect thous
 
 | Concept | Simple description | Everyday analogy |
 | :--- | :--- | :--- |
-| **Single Computer** | One person trying to build an entire skyscraper alone. | A single CPU or GPU working on a small task. |
-| **Distributed Computing** | A team of 1,000 construction workers building the skyscraper together. | Thousands of Cloud Servers working on one massive AI model. |
+| **Single Computer** <img width="100" height="100" alt="image" align="left" src="https://github.com/user-attachments/assets/a7b9dfc9-3de7-4101-9579-5b2e884720e8" /> | One person trying to build an entire skyscraper alone. | A single CPU or GPU working on a small task. |
+| **Distributed Computing** <img width="150" height="100" alt="image" src="https://github.com/user-attachments/assets/852203ed-53d0-46c6-9d54-1746b8614be7" /> | A team of 1,000 construction workers building the skyscraper together. | Thousands of Cloud Servers working on one massive AI model. |
 
 > **Terminology — Distributed Computing:** Using multiple computers connected by a network to work on a single problem at the same time.
 
 ## 4) How Do They Share the Work? (Data Parallelism)
+
+<img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/2074365a-a120-4f2c-8747-a6c4d3f89dab" />
 
 If you have 1,000 servers in a Data Center, how do you get them to work together on one AI model without getting confused?
 
@@ -61,6 +65,8 @@ In AI, the "textbook" is the data. The AI model is copied onto 1,000 different s
 > **Terminology — Data Parallelism:** A method of training AI where the same model is copied across multiple computers, and each computer is given a different chunk of data to process simultaneously.
 
 ## 5) The Network Bottleneck 
+
+<img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/4d82d16b-a34e-418e-a0d4-82f611ec3243" />
 
 If you have 1,000 servers working together, they have to communicate constantly to share their notes. This creates a massive **Network Bottleneck**.
 
@@ -148,10 +154,14 @@ Based on what you know about Network Latency and Data Centers, what is the major
 
 ## 11) Image References
 
-*(Add images here of a data center, a map of undersea fiber optic cables, and a diagram showing data splitting across multiple GPUs)*
-1. 
-2. 
-3. 
+1. Fig. 1.1 & 1.3: Data Cloud Server https://www.magnific.com/free-photos-vectors/cloud-server 
+2. Fig. 1.2 & 3.1: PC https://stock.adobe.com/search?k=desktop+computer
+3. Fig. 2.1: Wi-Fi https://www.magnific.com/photos/wifi-router
+4. Fig. 2.2: Intercontinental Fiber Optic Cables https://www.gettyimages.com/photos/undersea-cables
+5. Fig. 2.3: Internal Cloud Network (made by Gemini)
+6. Fig. 3.2: Distributed Computing https://buzzclan.com/cloud/what-is-distributed-computing/
+7. Fig. 4.1: Data Parallelism Illustration (made by Gemini)
+8. Fig. 5.1: Network Bottleneck Illustration (made by Gemini)
 
 ## Notes
 
