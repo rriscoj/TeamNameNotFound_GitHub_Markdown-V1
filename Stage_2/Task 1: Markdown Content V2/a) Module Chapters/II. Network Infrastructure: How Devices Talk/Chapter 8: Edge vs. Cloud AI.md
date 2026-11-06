@@ -5,6 +5,9 @@
 Previously, we learned two major things:
 
 *   **Cloud AI** lives in massive Data Centers with thousands of powerful GPUs. It is incredibly smart, but it requires sending data across networks.
+
+<img width="811" height="456" alt="image" src="https://github.com/user-attachments/assets/3f14cd79-b445-430a-acac-780f9f2259f3" />
+
 *   **Networks** can be slow. Latency and bandwidth limits mean sending data to the Cloud takes time and energy.
 
 This creates a massive engineering dilemma: **If you are building a smart device (like a self-driving car, a security camera, or a smartwatch), should the AI brain live directly on the device, or should it live in the Cloud?**
@@ -16,6 +19,8 @@ This is the choice between **Edge AI** and **Cloud AI**.
 | **Edge AI** | Directly on the device (the "edge" of the network). | A student doing their homework in their bedroom without asking for help. |
 | **Cloud AI** | On a massive server in a Data Center far away. | A student calling a genius tutor on the phone to get the answer. |
 
+<img width="800" height="533" alt="image" src="https://github.com/user-attachments/assets/7adac86d-debd-4078-b61c-ffe05b400d65" />
+
 > **Terminology — Edge AI:** Processing data directly on the local device (like a phone, camera, or car) rather than sending it to a remote server.
 
 > **Terminology — Cloud AI:** Processing data on powerful servers in a remote Data Center, accessed over the internet.
@@ -26,11 +31,11 @@ Neither Edge nor Cloud is perfect. Engineers have to balance the trade-offs.
 
 | Factor | Edge AI (On the Device) | Cloud AI (In the Data Center) |
 | :--- | :--- | :--- |
-| **Speed (Latency)** | **Instant.** No network delay. Perfect for self-driving cars. | **Delayed.** Data must travel across the internet. |
-| **Computing Power** | **Weak.** Limited by the device's small battery and CPU/GPU. | **Massive.** Can use thousands of GPUs to run huge AI models. |
-| **Internet Needed?** | **No.** Works even if you are in a dead zone (offline). | **Yes.** If the Wi-Fi drops, the AI stops working. |
-| **Privacy & Security** | **High.** Your data never leaves your device. | **Lower.** Your data travels across the internet to a company's server. |
-| **Battery & Heat** | **High drain.** Running the AI locally uses the device's battery and generates heat. | **Low drain.** The heavy lifting is done far away, saving your device's battery. |
+| **Speed (Latency)** <img width="200" height="150" alt="image" src="https://github.com/user-attachments/assets/a4d9c8af-1328-4e11-8b69-e1a5184d010d" /> | **Instant.** No network delay. Perfect for self-driving cars. | **Delayed.** Data must travel across the internet. |
+| **Computing Power** <img width="200" height="150" alt="image" src="https://github.com/user-attachments/assets/6c2d6236-c6fd-4653-8ac9-723c44d6d983" /> | **Weak.** Limited by the device's small battery and CPU/GPU. | **Massive.** Can use thousands of GPUs to run huge AI models. |
+| **Internet Needed?** <img width="200" height="150" alt="image" align="left" src="https://github.com/user-attachments/assets/907a92f3-5e1d-4e67-8314-0c88ce8f95ed" /> | **No.** Works even if you are in a dead zone (offline). | **Yes.** If the Wi-Fi drops, the AI stops working. |
+| **Privacy & Security** <img width="200" height="150" alt="image" src="https://github.com/user-attachments/assets/2b7264b7-1754-4a85-909c-22fc21b2e386" />| **High.** Your data never leaves your device. | **Lower.** Your data travels across the internet to a company's server. |
+| **Battery & Heat** <img width="150" height="150" alt="image" src="https://github.com/user-attachments/assets/3c9e92fa-34e9-4c7b-bb0b-8afb8afe0959" /> | **High drain.** Running the AI locally uses the device's battery and generates heat. | **Low drain.** The heavy lifting is done far away, saving your device's battery. |
 
 ## 3) How Engineers Decide 
 
@@ -65,6 +70,8 @@ Here is how engineers apply these questions to real devices:
 
 ## 4) Worked Example: The Smart Security Camera
 
+<img width="860" height="336" alt="image" src="https://github.com/user-attachments/assets/942a1fb8-797b-458a-b21d-c308e5009a70" />
+
 Imagine you are designing a battery-powered security camera for your front door. How do you decide between Edge or Cloud?
 
 | Step | The Edge AI Approach | The Cloud AI Approach |
@@ -78,11 +85,15 @@ Imagine you are designing a battery-powered security camera for your front door.
 
 ## 5) The Hybrid Approach (The Best of Both Worlds)
 
+<img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/4c1e48b9-f202-4598-a168-e32a60aba102" />
+
 In the real world, engineers rarely choose 100% Edge or 100% Cloud. They use a **Hybrid Approach**.
 
 Think about a self-driving car:
 *   **The Edge (Reflexes):** If a child runs into the street, the car cannot wait for the Cloud to respond (latency would cause a crash). The car's local Edge AI hits the brakes instantly.
 *   **The Cloud (Thinking):** Later that night, the car uploads its driving data to the Cloud to help train the next version of the AI, and downloads a new map of the city.
+
+<img width="462" height="280" alt="image" src="https://github.com/user-attachments/assets/33606fbe-3dbe-4b18-9af6-a60d38d32831" />
 
 > **Terminology — Hybrid Approach:** Using both Edge AI and Cloud AI together—Edge for fast, critical tasks, and Cloud for heavy, complex tasks.
 
@@ -91,8 +102,16 @@ Think about a self-driving car:
 The Edge vs. Cloud decision determines how well a smart device actually works.
 
 *   **Why Alexa needs the Cloud:** The smart speaker has a weak chip. It sends your voice to the Cloud to be processed by a massive AI. If your internet is down, Alexa is basically a brick.
+
+<img width="650" height="400" alt="image" src="https://github.com/user-attachments/assets/d945bb93-530f-4093-a159-314d844bfa49" />
+
 *   **Why self-driving cars need Edge:** A car cannot rely on the Cloud because a 1-second network delay is fatal. The AI must be built into the car.
+
+<img width="462" height="280" alt="image" src="https://github.com/user-attachments/assets/33606fbe-3dbe-4b18-9af6-a60d38d32831" />
+
 *   **Why your phone's face unlock works instantly:** Apple uses **Edge AI** for Face ID. The data never leaves your phone; it is processed locally by the Neural Engine chip, making it fast and highly secure.
+
+<img width="643" height="366" alt="image" src="https://github.com/user-attachments/assets/abc931d9-b580-4be1-9236-960cb61f4210" />
 
 ## 7) QnA
 
@@ -154,10 +173,18 @@ Based on what you know about Latency and Edge vs. Cloud, what is the major flaw 
 
 ## 10) Image References
 
-*(Add images here of a Cloud Data Center, a smartwatch processing data on the wrist, and a hybrid car diagram)*
-1. 
-2. 
-3. 
+-  Fig. 1.1: Examples of Cloud AIs https://redblink.com/llm-comparison-chatgpt-gemini-grok-claude-deepseek/
+-  Fig. 1.2: Edge vs Cloud AI https://www.justcodify.com/edge-ai-vs-cloud-ai-differences/
+-  Fig. 2.1: Lattency (Lag) https://phoenixnap.com/blog/network-latency
+-  Fig. 2.2: Computing Power https://www.vecteezy.com/free-photos/computing-power?page=2
+-  Fig. 2.3: Wi-Fi https://www.magnific.com/photos/wifi-router
+-  Fig. 2.4: Privacy and Security https://pixabay.com/images/search/privacy/
+-  Fig. 2.5: Battery and Heat https://storeshoppe.com/blogs/news/6-laptop-battery-safety-tips-to-prevent-overheating-and-explosions
+-  Fig. 4.1: Set of Security Cameras https://www.wyze.com/collections/smart-cameras
+-  Fig. 5.1: Meme of Cloud & Edge AI (made by Gemini)
+-  Fig. 5.2 & 6.2: Self-driving Car about to Knock Down a Man https://www.shutterstock.com/search/self-driving-car
+-  Fig. 6.1: Alexa, a smart speaker https://reolink.com/blog/how-does-alexa-work/
+-  Fig. 6.3: Apple's Face ID https://insights.greyb.com/apple-facial-recognition-patents/
 
 ## Notes
 
