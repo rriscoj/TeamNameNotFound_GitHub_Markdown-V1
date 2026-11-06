@@ -10,10 +10,10 @@ Here are the four main types of sensors used in modern AI and smart devices:
 
 | Sensor Type | Simple description | Everyday analogy |
 | :--- | :--- | :--- |
-| **Camera** | Captures light to create images or video (like human eyes). | Reading a comic book to see what is happening. |
-| **LiDAR** | Shoots invisible lasers to measure distance and create a 3D map of the room. | A bat using echolocation to "see" in the dark. |
-| **Sonar** | Uses sound waves to detect objects, usually underwater. | A submarine pinging to find out how deep the ocean is. |
-| **Temperature Sensor** | Measures how hot or cold the environment is. | Touching a cup of coffee to see if it is warm. |
+| **Camera** <img width="100" height="100" alt="image" align="left" src="https://github.com/user-attachments/assets/e2d33223-6870-4123-b6e9-4dc12e200aa7" /> | Captures light to create images or video (like human eyes). | Reading a comic book to see what is happening. |
+| **LiDAR** <img width="100" height="100" alt="image" align="left" src="https://github.com/user-attachments/assets/aad803f5-61d5-46a0-abaa-a499ed593cbd" /> | Shoots invisible lasers to measure distance and create a 3D map of the room. | A bat using echolocation to "see" in the dark. |
+| **Sonar** <img width="100" height="100" alt="image" align="left" src="https://github.com/user-attachments/assets/b3814f5e-44e9-49a9-9367-79734cdf8e6c" /> | Uses sound waves to detect objects, usually underwater. | A submarine pinging to find out how deep the ocean is. |
+| **Temperature Sensor** <img width="100" height="100" alt="image" align="left" src="https://github.com/user-attachments/assets/2d46162d-0ba7-4a70-93a4-9154c5587215" /> | Measures how hot or cold the environment is. | Touching a cup of coffee to see if it is warm. |
 
 > **Terminology — Sensor:** A device that detects physical changes in the environment (like light, heat, or motion) and converts them into digital signals a computer can read.
 
@@ -33,6 +33,8 @@ The computer has to process this raw data to understand it. This process is call
 
 ### Worked example: The Self-Driving Car
 
+<img width="462" height="280" alt="image" src="https://github.com/user-attachments/assets/33606fbe-3dbe-4b18-9af6-a60d38d32831" />
+
 Suppose a self-driving car is approaching a crosswalk. How do its sensors and AI work together?
 
 | Step | Sensor / Component | What happens | Output |
@@ -41,6 +43,8 @@ Suppose a self-driving car is approaching a crosswalk. How do its sensors and AI
 | **2** | **LiDAR** | Shoots lasers to see how far away the object is. | "The object is 5 meters away." |
 | **3** | **AI Processor** | The GPU runs an AI model to analyze the image. | "Those pixels match a STOP sign." |
 | **4** | **Decision** | The car's computer combines the data. | "Stop sign 5 meters ahead. Apply brakes." |
+
+<img width="1024" height="423" alt="image" src="https://github.com/user-attachments/assets/03afde47-200e-4f94-acf6-92eb535c5ab9" />
 
 **What this example shows:** The car doesn't rely on just one sensor. It uses **Data Fusion**—combining the camera (which knows *what* the object is) with LiDAR (which knows exactly *how far* it is). This makes the AI much safer and more accurate.
 
@@ -56,6 +60,8 @@ Sensors create a massive amount of data. A temperature sensor might send one num
 | **Camera** | Extremely High (millions of pixels per second). | Sent directly to the GPU/TPU for parallel processing. |
 | **LiDAR** | High (millions of 3D points per second). | Needs specialized AI chips to map the room in real-time. |
 
+<img width="1672" height="941" alt="image" src="https://github.com/user-attachments/assets/2efd7c01-a204-4da7-8275-13b2aa7b6d31" />
+
 To fix this, engineers use **Edge Filtering**. Instead of sending all 60 frames of video to the cloud, the smart camera itself has a tiny chip that deletes useless frames (like when nothing is moving) and only sends the important data.
 
 > **Terminology — Data Fusion:** The process of combining data from multiple different sensors (like a camera and LiDAR) to get a more accurate understanding of the world.
@@ -67,9 +73,20 @@ To fix this, engineers use **Edge Filtering**. Instead of sending all 60 frames 
 Sensors and perception are the bridge between the physical world and the digital AI world. They explain how everyday smart devices work:
 
 *   **Why a smartphone screen turns off when you hold it to your ear:** A proximity sensor (using light or sound) detects an object nearby, so the computer turns off the screen to save battery and prevent accidental clicks.
+
+<img width="1120" height="630" alt="image" src="https://github.com/user-attachments/assets/db2940c9-1dc6-412e-a8d0-8c79f6b847ff" />
+
 *   **Why a robot vacuum doesn't fall down the stairs:** It uses cliff sensors and bumpers to detect the edge of the floor and the walls, telling the AI to change direction.
+
+<img width="600" height="400" alt="image" src="https://github.com/user-attachments/assets/28470d0a-cdc8-4508-a7dc-092ad58372df" />
+
 *   **Why smart home thermostats save energy:** They use temperature sensors and motion sensors. If the AI "perceives" that nobody is in the room, it automatically turns down the heat.
+
+<img width="860" height="448" alt="image" src="https://github.com/user-attachments/assets/e4bcd2bf-943b-4776-9b43-fb315193698c" />
+
 *   **Why self-driving cars need so much computing power:** A car's sensors generate gigabytes of data every second. The AI needs powerful GPUs/TPUs just to process what the car is "seeing."
+
+<img width="1920" height="1280" alt="image" src="https://github.com/user-attachments/assets/0bb117a0-9752-40a4-824b-461d19db62f7" />
 
 Understanding perception gives you the foundation to understand how AI actually interacts with the real world.
 
@@ -129,11 +146,17 @@ A student says: "A self-driving car only needs a camera. If the AI is smart enou
 
 ## 8) Image References
 
-*(Add images here of a camera, LiDAR, Sonar, and Temperature sensors)*
-1. 
-2. 
-3. 
-4. 
+1. Fig. 1.1: Camera https://www.instructables.com/DIY-Image-Sensor-and-Digital-Camera/
+2. Fig. 1.2: LiDAR https://advexure.com/collections/lidar-drones-sensors
+3. Fig. 1.3: Sonar Sensor https://www.adafruit.com/product/3942
+4. Fig. 1.4: Temperature Sensor https://www.dreamstime.com/illustration/temperature-sensor.html
+5. Fig. 2.1: Self-driving Car https://www.shutterstock.com/search/self-driving-car
+6. Fig. 2.2: Camera and LiDAR Data https://imerit.ai/resources/blog/the-modular-pipeline-solving-key-challenges-in-av-perception/
+7. Fig. 3.1: Sensor Data Bottleneck (Made by ChatGPT)
+8. Fig. 4.1: Smartphone Screen Off by Proximity Sensor https://www.aethovpn.com/en/blog/device-and-app-guides/phone-proximity-sensor-screen-turns-off
+9. Fig. 4.2: Vacuum Cleaner Robot near to the Stairs https://us.narwal.com/blogs/robot-vacuum/robot-vacuum-fall-down-stairs
+10. Fig. 4.3: Smart Home Thermostat https://www.apge.com/blog/smart-thermostats-your-secret-weapon-for-saving-money-and-the-environment
+11. Fig. 4.4: Self-driving Car and its Energectic System https://www.wired.com/story/self-driving-cars-power-consumption-nvidia-chip/
 
 ## Notes
 
