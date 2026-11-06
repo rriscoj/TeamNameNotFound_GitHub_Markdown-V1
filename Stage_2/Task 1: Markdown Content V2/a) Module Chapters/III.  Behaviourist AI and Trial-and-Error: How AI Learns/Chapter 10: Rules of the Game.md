@@ -165,21 +165,14 @@ A student says: "To train an AI to play basketball, we should only give it a +10
 
 ## 8) Image References
 
-Figure 1.1 https://www.kdnuggets.com/2023/07/reinforcement-learning-teaching-computers-make-optimal-decisions.html
-
-Figure 2.1 https://snusforsale.com/loop/loop-red-chili-melon-strong/?srsltid=AYCX9vKizEvz_1pjIGW11EDCOFrcOngjCEhXqLGy8SbSYCOhMSDNoDTa
-
-Figure 2.2 https://www.geeksforgeeks.org/dsa/tutorial-on-path-problems-in-a-grid-maze-or-matrix/
-
-Figure 2.3 https://ingenia.org.uk/articles/how-do-self-driving-cars-navigate-roads-and-traffic/
-
-Figure 3.1 https://www.geeksforgeeks.org/artificial-intelligence/state-space-search-in-ai/
-
-Figure 4.1 https://www.facebook.com/brittany.simms.524035/posts/whats-some-good-movies-to-watch-on-netflix/1139352945321686/
-
-Figure 4.2 https://blog.arduino.cc/2023/04/11/the-weird-and-wonderful-history-of-chess-playing-robots/
-
-Figure 4.3 https://www.linkedin.com/pulse/can-ai-predict-market-what-traders-should-shouldnt-trust-cptconnect-htghf
+- Figure 1.1: https://www.kdnuggets.com/2023/07/reinforcement-learning-teaching-computers-make-optimal-decisions.html
+- Figure 2.1: https://snusforsale.com/loop/loop-red-chili-melon-strong/?srsltid=AYCX9vKizEvz_1pjIGW11EDCOFrcOngjCEhXqLGy8SbSYCOhMSDNoDTa
+- Figure 2.2: https://www.geeksforgeeks.org/dsa/tutorial-on-path-problems-in-a-grid-maze-or-matrix/
+- Figure 2.3: https://ingenia.org.uk/articles/how-do-self-driving-cars-navigate-roads-and-traffic/
+- Figure 3.1: https://www.geeksforgeeks.org/artificial-intelligence/state-space-search-in-ai/
+- Figure 4.1: https://www.facebook.com/brittany.simms.524035/posts/whats-some-good-movies-to-watch-on-netflix/1139352945321686/
+- Figure 4.2: https://blog.arduino.cc/2023/04/11/the-weird-and-wonderful-history-of-chess-playing-robots/
+- Figure 4.3: https://www.linkedin.com/pulse/can-ai-predict-market-what-traders-should-shouldnt-trust-cptconnect-htghf
 
 
 ## Notes
