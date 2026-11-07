@@ -8,6 +8,9 @@ Previously, we learned how AI learns:
 *   It uses States, Actions, and Rewards to make decisions.
 *   It balances Exploration (trying new things) and Exploitation (using what it knows) to find the best strategy.
 
+   <img width="597" height="335" alt="image" src="https://github.com/user-attachments/assets/9ee707a1-b17f-441e-8ff2-087a22d64cf2" />
+
+
 Now, it's time to put it all together. Instead of a confusing maze, we are going to design a **Robot Basketball Game**. This is exactly the kind of simulation used to train AI before putting it into real robots.
 
 ## 2) The Game Rules: Setting up the Environment
@@ -24,6 +27,8 @@ Here are the rules (the three building blocks):
 *   **Reward:** 
     *   If the ball goes in the hoop: **+10 points** (Swish!)
     *   If the ball misses: **-5 points** (Bounce off the rim)
+ 
+<img width="547" height="365" alt="image" src="https://github.com/user-attachments/assets/3fcebd8d-5007-4749-a7fc-5707ee316389" />
 
 > **Terminology — Simulation:** A computer program that mimics real-world physics so an AI can practice without breaking anything in real life.
 
@@ -43,16 +48,27 @@ When the AI is first turned on, it knows nothing about basketball. It starts by 
 ### The Next 10 Shots (Exploitation)
 Previously, we learned about Exploitation. Now that the AI knows Level 2 works, it will stop guessing. For its next 10 shots, it will use **Power Level 2** every single time to keep getting that +10 reward.
 
+
+<img width="650" height="366" alt="image" src="https://github.com/user-attachments/assets/7c8664ef-7477-43ad-aeaa-c1a7427e49e1" />
+
+
 ## 4) The Hardware Reality 
 
 In a real-world device, this simple game becomes much harder because of **Hardware Limits**.
 
 If this AI was running inside a real robot with a tiny battery, it would face a problem: It takes a lot of battery and processing power to calculate physics (wind, gravity, angle) in real-time.
 
+<img width="1024" height="576" alt="image" src="https://github.com/user-attachments/assets/f34ac780-651c-4029-b7e3-e5159cae8e92" />
+
+
 **How to fix this:**
 
 *   **Offloading to the Cloud:** The robot's Edge chip just detects the distance. It sends that data to the Cloud, which uses massive GPUs to calculate the perfect shooting power, and sends the answer back.
+<img width="738" height="411" alt="image" src="https://github.com/user-attachments/assets/7b2e5920-e651-43b0-889e-4dc7ec176f83" />
+
 *   **Model Compression:** Shrink the AI model so it runs directly on the robot's local chip without draining the battery.
+<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/b4c22223-0c5c-4f4e-a08a-7a30a21d9c76" />
+
 
 ## 5) Soooo, why does this matter?
 
@@ -119,10 +135,17 @@ You put **two** basketball robots on the court at the same time. They are playin
 
 ## 9) Image References
 
-*(Add images here of a robot shooting a basketball, a basketball hoop, and a physics simulation screen)*
-1. 
-2. 
-3. 
+Figure 1.1 https://www.carvertical.com/en/blog/wmi-suggest-learning-by-trial-and-error-with-the-help-of-ai
+
+Figure 2.1 https://as1.ftcdn.net/v2/jpg/05/57/02/64/1000_F_557026430_ifz99ah9t9Wtk3B8K0zvPl7RymE4hrSx.jpg
+
+Figure 3.1 https://www.theaustralian.com.au/sport/toyota-unveils-aipowered-basketball-robot-cue7/video/90a4b8cae5e2da1c4fef493a8a7f142d
+
+Figure 4.1 https://imageit.ie/common-computer-hardware-and-software-problems/
+
+Figure 4.2 https://wpfitter.com/blog/what-is-media-offloading-in-wordpress/
+
+Figure 4.3 https://blog.devgenius.io/when-smaller-is-smarter-how-model-compression-unlocks-machine-learning-at-the-edge-e481d851ae2b?gi=ce46ccbf6a70
 
 ## Notes
 
