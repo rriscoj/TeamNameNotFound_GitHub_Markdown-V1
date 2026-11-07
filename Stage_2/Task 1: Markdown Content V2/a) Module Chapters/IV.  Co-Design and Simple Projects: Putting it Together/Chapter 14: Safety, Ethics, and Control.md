@@ -6,6 +6,8 @@ Previously, we learned that the real world is messy. Hardware breaks, chips over
 
 Because AI learns through trial and error and makes its own decisions, it can sometimes behave in ways its creators didn't expect. If an AI encounters a situation it has never seen before—like a network failure or a broken sensor—it might make a dangerous choice.
 
+<img width="1600" height="899" alt="image" src="https://github.com/user-attachments/assets/910228f5-9995-43bf-8b5a-3816949ec6bd" />
+
 Therefore, engineers must build systems that guarantee three things:
 
 *   **Safety:** The AI must not cause harm if something breaks.
@@ -22,6 +24,9 @@ A Fail-Safe means that if the system fails, it defaults to the safest possible s
 
 *   **Fail-Dangerous (Bad):** A robot arm loses power and collapses on a worker.
 *   **Fail-Safe (Good):** A robot arm loses power, and a mechanical brake instantly locks the arm in place.
+
+<img width="520" height="520" alt="image" src="https://github.com/user-attachments/assets/611f6bc2-da72-4ed6-a51b-d3fa91274a1c" />
+
 
 | Control Mechanism | How it Works | Everyday Analogy |
 | :--- | :--- | :--- |
@@ -52,6 +57,9 @@ AI is not naturally evil, but it can be **biased**. How? Because of the data it 
 | **Hidden Discrimination** | **Fairness Testing (Red Teaming)** | Before releasing the AI, human testers try to trick it into being unfair. If the AI shows bias, they retrain it. |
 | **Harmful Outputs** | **Content Filters & Guardrails** | Hard-coded rules that physically prevent the AI from generating hate speech or dangerous instructions. |
 
+<img width="612" height="612" alt="image" src="https://github.com/user-attachments/assets/9c701345-087c-4d76-b8a1-43e321c2a3c8" />
+
+
 > **Terminology — Algorithmic Bias:** When an AI system produces unfair results because it learned from biased data or was programmed with flawed rules.
 
 > **Terminology — Explainable AI (XAI):** An AI system designed so that humans can understand *why* it made a specific decision.
@@ -59,6 +67,9 @@ AI is not naturally evil, but it can be **biased**. How? Because of the data it 
 ## 4) Worked Example: The Autonomous Delivery Robot in a Storm
 
 Imagine a delivery robot navigating a sidewalk. Suddenly, a massive thunderstorm hits. Let's see how the safety and control mechanisms solve the problems.
+
+<img width="678" height="452" alt="image" src="https://github.com/user-attachments/assets/ffdd77ff-da37-441f-b919-a400e9fc1122" />
+
 
 | Situation | The System Failure | The Solution |
 | :--- | :--- | :--- |
@@ -136,11 +147,13 @@ Based on the "Trust Factor" section, why are people comfortable using AI to help
 
 ## 9) Image References
 
-*(Add images here of a stop button, a human reviewing data on a screen, and a balanced scale)*
-1. 
-2. 
-3. 
+Figure 1.1 https://www.forbes.com/sites/andreamorris/2023/06/15/why-experts-cant-understand-or-predict-ai-behaviors/
 
+Figure 2.1 https://visionify.ai/machine-guarding
+
+Figure 3.1 istockphoto.com/illustrations/fairness-ethics
+
+Figure 4.1 https://policyoptions.irpp.org/2025/01/sidewalk-robot-delivery-safety/
 ## Notes
 
 - **Ethics** — The study of what is morally right and wrong, applied to AI to ensure fairness and prevent harm.
