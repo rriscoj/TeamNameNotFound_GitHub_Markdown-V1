@@ -4,6 +4,8 @@
 
 Previously, we learned how AI thinks, how it learns from rewards, and how it communicates. But all of that was mostly theory. In the real world, AI doesn't run in a perfect computer simulation. It runs in physical robots, drones, and smart devices.
 
+<img width="1376" height="768" alt="image" src="https://github.com/user-attachments/assets/dc98c9da-9c98-49b5-ab16-ddcde2e011ff" />
+
 And the real world has three massive challenges that can ruin an AI's day:
 
 *   **Hardware Limits:** Small batteries and weak processors.
@@ -17,6 +19,9 @@ If an AI is running on a powerful desktop computer in a server room, these aren'
 | **Hardware Limits** | Drains the battery and runs out of memory. | Trying to run a marathon while carrying a heavy backpack. |
 | **Heat** | Slows down the processor so it doesn't melt. | A runner who has to stop and walk because they are overheating. |
 | **Network Delays** | The AI has to wait too long for an answer from the cloud. | Asking a friend for directions, but your car is already at the intersection. |
+
+<img width="548" height="364" alt="image" src="https://github.com/user-attachments/assets/9a6776ab-8c75-4c31-97e5-2bbbd6ba2d6b" />
+
 
 ## 2) How Heat and Limits Affect the AI 
 
@@ -33,11 +38,11 @@ Since robots and smartwatches can't carry giant fans or desktop-sized RAM, engin
 
 | Problem | The Solution | How it Works |
 | :--- | :--- | :--- |
-| **Too Much Heat** | **Low-Power Chips** | Instead of using a power-hungry GPU, engineers use efficient MCUs or specialized AI chips that do the exact same math but generate far less heat. |
-| **Too Much Heat** | **Hybrid Cooling** | Devices use passive cooling (metal heat sinks) or tiny internal fans to pull heat away from the chip. |
-| **Not Enough RAM** | **Model Compression (Quantization)** | Engineers shrink the AI model. Instead of using highly precise numbers (like 3.14159), they round the math to simpler numbers. The AI takes up 4x less memory but stays just as smart. |
-| **Not Enough RAM** | **Offloading to the Cloud** | The device uses a tiny Edge AI chip to do quick reflexes, and sends the heavy data to the Cloud so the device's RAM doesn't overflow. |
-| **Processing is Too Slow** | **Edge Filtering** | The device doesn't process every single pixel. It ignores useless data (like a blank wall) and only uses its RAM to process important things (like a moving human). |
+| **Too Much Heat** <img width="220" height="220" alt="image" src="https://github.com/user-attachments/assets/4924ccaf-2aef-4053-b1d8-719733650b62" />| **Low-Power Chips** | Instead of using a power-hungry GPU, engineers use efficient MCUs or specialized AI chips that do the exact same math but generate far less heat. |
+| **Too Much Heat** <img width="220" height="220" alt="image" src="https://github.com/user-attachments/assets/4924ccaf-2aef-4053-b1d8-719733650b62" />| **Hybrid Cooling** | Devices use passive cooling (metal heat sinks) or tiny internal fans to pull heat away from the chip. |
+| **Not Enough RAM** <img width="250" height="334" alt="image" src="https://github.com/user-attachments/assets/1336cb0d-530f-47db-aabd-a069d3430944" />| **Model Compression (Quantization)** | Engineers shrink the AI model. Instead of using highly precise numbers (like 3.14159), they round the math to simpler numbers. The AI takes up 4x less memory but stays just as smart. |
+| **Not Enough RAM** <img width="250" height="334" alt="image" src="https://github.com/user-attachments/assets/1336cb0d-530f-47db-aabd-a069d3430944" />| **Offloading to the Cloud** | The device uses a tiny Edge AI chip to do quick reflexes, and sends the heavy data to the Cloud so the device's RAM doesn't overflow. |
+| **Processing is Too Slow** <img width="210" height="210" alt="image" src="https://github.com/user-attachments/assets/1c4f4d17-e2c2-4c5e-8758-8413887d2b07" />| **Edge Filtering** | The device doesn't process every single pixel. It ignores useless data (like a blank wall) and only uses its RAM to process important things (like a moving human). |
 
 **What this shows:** Engineers don't just hope the hardware survives. They design specific chips and AI models that are "lightweight" enough to fit inside the device without melting it or crashing the memory.
 
@@ -52,13 +57,16 @@ Here is exactly how a Hybrid Approach splits the work to fight hardware limits a
 
 | Task | Who Handles It? | Why? (The Real-World Reason) |
 | :--- | :--- | :--- |
-| **Emergency Reflexes** (e.g., dodging a bird, hitting the brakes) | **Edge AI** | **Network delays:** The Cloud is too slow. A 1-second lag causes a crash. The Edge reacts instantly. |
-| **Basic Filtering** (e.g., ignoring a blank wall, detecting motion) | **Edge AI** | **Hardware limits:** If the device sends 4K video to the Cloud constantly, the battery will die in minutes and the Wi-Fi will clog. |
-| **Heavy Thinking** (e.g., calculating the fastest route, analyzing traffic) | **Cloud AI** | **Hardware limits:** The device doesn't have the RAM or GPU power for this. The Cloud has unlimited power. |
-| **Fleet Learning** (e.g., downloading new maps, sharing data with other robots) | **Cloud AI** | **Heat:** Doing this on the device would overheat the chip. The Cloud does the heavy math and sends a lightweight update back. |
+| **Emergency Reflexes** (e.g., dodging a bird, hitting the brakes) | **Edge AI** <img width="320" height="240" alt="image" src="https://github.com/user-attachments/assets/9af630ec-dd5d-4a69-838f-7b3f5c410c49" />| **Network delays:** The Cloud is too slow. A 1-second lag causes a crash. The Edge reacts instantly. |
+| **Basic Filtering** (e.g., ignoring a blank wall, detecting motion) | **Edge AI**<img width="320" height="240" alt="image" src="https://github.com/user-attachments/assets/9af630ec-dd5d-4a69-838f-7b3f5c410c49" />| **Hardware limits:** If the device sends 4K video to the Cloud constantly, the battery will die in minutes and the Wi-Fi will clog. |
+| **Heavy Thinking** (e.g., calculating the fastest route, analyzing traffic) | **Cloud AI** <img width="230" height="230" alt="image" src="https://github.com/user-attachments/assets/118eed04-b812-4e4d-ba9e-3259f1b9da0a" />| **Hardware limits:** The device doesn't have the RAM or GPU power for this. The Cloud has unlimited power. |
+| **Fleet Learning** (e.g., downloading new maps, sharing data with other robots) | **Cloud AI**<img width="230" height="230" alt="image" src="https://github.com/user-attachments/assets/118eed04-b812-4e4d-ba9e-3259f1b9da0a" />| **Heat:** Doing this on the device would overheat the chip. The Cloud does the heavy math and sends a lightweight update back. |
 
 ### How the Hybrid Loop Actually Works
 Imagine a delivery drone using a Hybrid Approach:
+
+<img width="738" height="384" alt="image" src="https://github.com/user-attachments/assets/3a537892-6daa-403c-a379-ea5258d1083f" />
+
 1.  **The Edge watches:** The drone's local Edge chip constantly scans the camera feed. It uses very little battery and doesn't overheat.
 2.  **The Network drops:** The drone flies into a dead zone (no Wi-Fi). The Cloud is gone, but the drone doesn't crash. The Edge chip takes full control of basic navigation and obstacle avoidance.
 3.  **The Network returns:** The drone flies back into 5G range. It uploads a tiny, compressed summary of its journey to the Cloud.
@@ -69,6 +77,8 @@ Imagine a delivery drone using a Hybrid Approach:
 ## 4) Worked Example: The Delivery Robot
 
 Imagine a six-wheeled delivery robot bringing food to a house. Let's trace how the three challenges affect its journey.
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/422fd92d-1c12-4b81-b84e-7c8d7977acb5" />
+
 
 | Situation | Challenges | What Happens | The AI's Decision |
 | :--- | :--- | :--- | :--- |
@@ -89,7 +99,11 @@ If we tried to put a powerful, heavy AI entirely on a smart ring, the battery wo
 **The Solution (The Hybrid Reality):**
 To make these modern gadgets work, engineers **must** combine the concepts from this chapter:
 *   **Hardware Limits & Heat:** Devices use ultra-low-power Edge chips for immediate tasks, so they don't overheat or drain the battery.
+  <img width="745" height="459" alt="image" src="https://github.com/user-attachments/assets/cce12130-8523-4f52-b75c-3bdda1612d4b" />
+
 *   **Network Delays:** They rely on the Cloud for heavy thinking (like analyzing long-term health data), but they buffer the data to ensure network delays don't ruin the user experience.
+  <img width="260" height="280" alt="image" src="https://github.com/user-attachments/assets/ecd40749-7e4a-44e9-9d88-a5431a6f47d4" />
+
 *   **The Result:** By combining Edge AI for local survival and Cloud AI for heavy processing, we get smart devices that are fast, safe, and can actually last all day on a single charge.
 
 ## 6) QnA
@@ -148,10 +162,37 @@ A student says: "To make a robot dog learn how to walk, we should put the most p
 
 ## 9) Image References
 
-*(Add images here of a delivery robot, a drone, and a thermal camera showing a hot CPU)*
-1. 
-2. 
-3. 
+Figure 1.1 https://heptner.dev/blog/messy-data-broken-ai-why-your-data-holds-you-back/
+
+Figure 1.2 https://vegavid.com/blog/what-challenges-does-generative-ai-face-with-respect-to-data
+
+Figure 2.1 https://www.nedc.com/the-thermal-problem-why-your-ai-hardware-is-running-on-borrowed-time/
+
+Figure 2.2 https://www.nedc.com/the-thermal-problem-why-your-ai-hardware-is-running-on-borrowed-time/
+
+Figure 2.3 https://www.redbubble.com/i/sticker/Too-Many-Prompts-Not-Enough-RAM-Funny-Overloaded-AI-Robot-Design-by-WarehouseGoods/171717194/7sgk
+
+Figure 2.4 https://www.redbubble.com/i/sticker/Too-Many-Prompts-Not-Enough-RAM-Funny-Overloaded-AI-Robot-Design-by-WarehouseGoods/171717194/7sgk
+
+Figure 2.5 https://www.dreamstime.com/illustration/slow-computer.html
+
+Figure 3.1 https://www.edgeir.com/ai-shifts-to-the-edge-as-smaller-models-and-smarter-chips-redefine-compute-20250715
+
+Figure 3.2 https://www.edgeir.com/ai-shifts-to-the-edge-as-smaller-models-and-smarter-chips-redefine-compute-20250715
+
+Figure 3.3 https://www.vecteezy.com/vector-art/47554569-ai-cloud-isometric-stock-illustration-eps-file-stock-illustration
+
+Figure 3.4 https://www.vecteezy.com/vector-art/47554569-ai-cloud-isometric-stock-illustration-eps-file-stock-illustration
+
+Figure 3.5 https://www.cardinalpeak.com/blog/at-the-edge-vs-in-the-cloud-artificial-intelligence-and-machine-learning
+
+Figure 4.1 https://www.vecteezy.com/vector-art/55573123-delivery-robot-carrying-a-box-in-a-futuristic-design
+
+Figure 5.1 https://www.digitalcitizen.life/what-is-thermal-throttling-and-how-to-tell-if-your-pc-is-doing-it/
+
+Figure 5.2 https://www.shutterstock.com/image-vector/network-latency-icon-vector-illustration-outline-2571138379?dd_referrer=https%3A%2F%2Fwww.google.com%2F
+
+
 
 ## Notes
 
