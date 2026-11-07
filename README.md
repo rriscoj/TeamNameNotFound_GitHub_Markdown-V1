@@ -38,7 +38,8 @@ Here is the high-level overview of our repository:
     *   📁 `Task 5: Project Log and Meeting Summaries/` — Link to the team tracking for the second stage.
     *   📁 `Task 6: Personal Learning and Work Log/` — Link to the individual logs for the second stage.
     *   📁 `Task 7: Peer Review/` — To develop after other team's submission.
-
+*   📁 **`Simulators_SG/`** — A suite of browser-based HTML interactive tools that accompany the Study Guide. These allow learners to test hardware bottlenecks, network limits, and AI decision loops locally.
+  
 ## 📋 Project Plan and Task List Location
 Our master project plan and task list are maintained in the Stage 1 directory for reference. You can find them here:
 👉 **`Stage_1/Task 1: Team Project Plan and Task List/`**
