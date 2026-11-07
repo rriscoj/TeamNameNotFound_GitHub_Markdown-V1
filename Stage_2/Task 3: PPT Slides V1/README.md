@@ -1,4 +1,4 @@
-# 📊 Task 4: PPT Slides
+# 📊 Task 3: PPT Slides
 
 Welcome to the presentation folder! This directory contains the slide deck developed for our **Hardware, Networks & Behaviorist AI** learning module. 
 
