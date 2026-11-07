@@ -7,12 +7,16 @@ In the previous chapter, we looked at a single AI agent playing a solo game like
 But the real world is not a solo game. It is multiplayer. 
 What happens when 100 robot vacuums are cleaning a giant warehouse? What happens when thousands of self-driving cars are on the same highway? What happens when two AI bots are playing chess against each other?
 
+<img width="612" height="367" alt="image" src="https://github.com/user-attachments/assets/82e60a64-3940-4b14-a571-4d9b2e758cca" />
+
 When multiple AI agents share the same environment, we call it a **Multi-Agent System (MAS)**.
 
 | Concept | Simple description | Everyday analogy |
 | :--- | :--- | :--- |
 | **Single-Agent System** | One AI learns and acts alone in an empty environment. | Playing a single-player video game. |
 | **Multi-Agent System** | Multiple AIs share the same environment. | Playing a multiplayer game like *Minecraft* or *Call of Duty*. |
+
+<img width="860" height="380" alt="image" src="https://github.com/user-attachments/assets/6e6d4b0f-1fe3-4281-9faf-2248b0ad6aea" />
 
 > **Terminology — Multi-Agent System (MAS):** A computer system made up of multiple interacting intelligent agents within a shared environment.
 
@@ -23,12 +27,22 @@ When AI agents are put into the same environment, they usually have to do one of
 ### Cooperation (Working Together)
 The agents share the same goal. The reward is given to the group, not just one individual.
 *   *Example:* A team of warehouse robots moving a heavy sofa. If one robot drops it, everyone fails.
+
+<img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/0f0c9095-9e60-424b-a8db-8c7345827539" />
+
 *   *Analogy:* A soccer team. It doesn't matter who scores the goal, as long as the team wins.
+
+<img width="612" height="408" alt="image" src="https://github.com/user-attachments/assets/6ca1f85c-c688-4088-ab7c-1aed8fa5fb66" />
 
 ### Competition (Fighting Each Other)
 The agents have opposite goals. One agent's reward is another agent's penalty.
 *   *Example:* Two AI bots playing 1-on-1 poker.
+
+<img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/0b604730-99e4-44f9-9ec3-a639058ce89d" />
+
 *   *Analogy:* A game of chess. If you win (+10 points), the other player loses (-10 points).
+
+<img width="612" height="459" alt="image" src="https://github.com/user-attachments/assets/25eeb94d-c3df-411a-8ba0-93cb6b25d447" />
 
 | Strategy | Goal | Reward System | Example |
 | :--- | :--- | :--- | :--- |
@@ -38,6 +52,8 @@ The agents have opposite goals. One agent's reward is another agent's penalty.
 ## 3) Worked Example 1: The 4-Way Stop (Cooperation)
 
 Imagine 4 self-driving cars arriving at an empty intersection at the exact same time. If they all just "Exploit" what they know (which is to drive forward), they will crash.
+
+<img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/0f23cd6b-d24f-491b-8f42-c85e2a106bb3" />
 
 To avoid this, they must **communicate**. But how do cars talk? They don't speak English; they use invisible radio signals.
 
@@ -50,9 +66,13 @@ To avoid this, they must **communicate**. But how do cars talk? They don't speak
 
 **How do they actually talk?** Real self-driving cars use **V2V (Vehicle-to-Vehicle)** communication. They send tiny data packets up to 10 times per second to each other, sharing their exact GPS location, speed, and direction. Sometimes, they even talk to the traffic light itself using **V2I (Vehicle-to-Infrastructure)** to ask for permission to cross.
 
+<img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/8b7d1234-2e3c-47d9-a40c-d7e3798a5f63" />
+
 **What this shows:** The cars used radio communication to share their "States." By cooperating and taking turns, they avoided a massive -100 penalty (a car crash).
 
 ## 4) Worked Example 2: AI Hide-and-Seek (Competition)
+
+<img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/d2d5cf4e-c7bc-4b8d-bf04-679bd8fd4447" />
 
 Researchers at OpenAI trained AI agents to play hide-and-seek.
 
@@ -73,6 +93,8 @@ Previously, we learned about **Network Latency** (lag). In a Multi-Agent System,
 
 If Car A sends a V2V signal saying, "I am turning left," but the network is slow and Car B receives the message 2 seconds late, Car B will crash into Car A.
 
+<img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/826c002d-5193-4b60-9b97-daf124d385e6" />
+
 To fix this, multi-agent robots (like in a warehouse) or cars use an **Edge Network** (Wi-Fi, 5G, or DSRC) so they can communicate in milliseconds. If the network drops, the agents must have a backup plan. Usually, this means stopping immediately and relying on their own sensors to avoid a crash.
 
 > **Terminology — V2V (Vehicle-to-Vehicle):** A wireless technology that allows cars to send data (speed, location, braking) directly to each other.
@@ -84,8 +106,16 @@ To fix this, multi-agent robots (like in a warehouse) or cars use an **Edge Netw
 Multi-Agent Systems are how we scale AI from a single device to the whole world.
 
 *   **Why traffic jams happen (and how AI fixes them):** Human drivers cause "phantom traffic jams" by braking too late. A MAS of self-driving cars can communicate via V2V and all brake at the exact same time, keeping traffic flowing smoothly.
+
+<img width="640" height="334" alt="image" src="https://github.com/user-attachments/assets/8d2813e6-e04e-4ee7-9eed-1d176b7e4ae6" />
+
 *   **Why multiplayer games are so hard to build:** The game engine has to run the physics and AI for dozens of players at the exact same time, which requires massive GPU power.
+
+<img width="860" height="573" alt="image" src="https://github.com/user-attachments/assets/812b4e43-6f34-43e3-8627-73b058cd5190" />
+
 *   **Why robots can build cars together:** Instead of one giant robot building a whole car, a team of smaller robots cooperates on the assembly line, handing off parts to each other.
+
+<img width="640" height="360" alt="image" src="https://github.com/user-attachments/assets/d079fde5-d347-44ed-b41d-7678de274765" />
 
 ## 7) QnA
 
@@ -145,10 +175,19 @@ Based on what you learned about Reward Hacking and Multi-Agent Systems, what is 
 
 ## 10) Image References
 
-*(Add images here of self-driving cars at an intersection, a team of warehouse robots, and the OpenAI hide-and-seek agents)*
-1. 
-2. 
-3. 
+-  Fig. 1.1: Autonomous Cars with Visible Connection https://www.istockphoto.com/photos/autonomous-vehicles
+-  Fig. 1.2: Single vs Multi Agent System https://www.codecademy.com/article/multi-agent-systems-in-ai
+-  Fig. 2.1: Robots moving a Sofa (Made by Gemini)
+-  Fig. 2.2: Robots playing Soccer https://www.gettyimages.com/photos/robot-soccer
+-  Fig. 2.3: 1v1 Between Robots in Poker (Made by Gemini)
+-  Fig. 2.4: 1v1 Between Robots in Chess https://www.gettyimages.com/photos/robot-chess
+-  Fig. 3.1: 4 Self-driving Cars about to crash (Made by Gemini)
+-  Fig. 3.2: 4 Self-driving Cars communicating using V2V and V2I (Made by Gemini)
+-  Fig. 4.1: AI Hide and Seek (Made by Gemini)
+-  Fig. 5.1: Self-driving Car Crash (Made by Gemini)
+-  Fig. 6.1: Traffic Jam https://www.reddit.com/r/todayilearned/comments/8k3o4v/til_phantom_traffic_jams_queues_of_traffic_not/
+-  Fig. 6.2: Man playing Multiplayer Videogames https://unsplash.com/s/photos/multiplayer
+-  Fig. 6.3: Machining of a Car Chassis (Tesla) https://www.autoweek.com/news/green-cars/a1816391/where-el-caminos-and-vibes-were-born-new-teslas-are-built-california/
 
 ## Notes
 
