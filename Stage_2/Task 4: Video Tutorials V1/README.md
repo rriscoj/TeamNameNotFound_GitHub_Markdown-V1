@@ -8,7 +8,7 @@ These videos bring our Markdown content and Study Guide to life through narrated
 
 You can access our finalized video tutorials using the link below:
 
-👉 [**Click here to watch the Video Tutorials**](INSERT_YOUR_LINK_HERE)
+👉 [**Click here to watch the Video Tutorials**](https://canva.link/690mtz9ns42bv7t)
 
 ---
 *🔙 Return to the [Main Repository README](../../README.md)*
