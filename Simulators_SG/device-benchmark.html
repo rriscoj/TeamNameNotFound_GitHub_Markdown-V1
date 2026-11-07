@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Device benchmark: which hardware does which AI need? · Inside the Machine</title>
+<style>:root{--red:#FF3B21;--redd:#C92A12;--ink:#0D0D0D;--grey:#5f5f5f;--line:#d8d8d8;--soft:#f5f5f5;--tint:#fff1ee}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:#fff}
+.top{background:var(--ink);color:#fff;padding:12px 20px;border-bottom:6px solid var(--red);display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.brand{font-weight:800;letter-spacing:.5px;font-size:1.05rem}.brand b{color:var(--red)}
+.crumb{font-size:.85rem;opacity:.85}
+.chip{margin-left:auto;background:var(--redd);color:#fff;border-radius:999px;padding:3px 12px;font-size:.8rem;font-weight:700;letter-spacing:.4px}
+.wrap{max-width:1000px;margin:0 auto;padding:18px 20px 40px}
+h1{font-size:1.6rem;margin:.2em 0 .1em}h2{font-size:1.12rem;margin:1.1em 0 .4em}h3{font-size:1rem;margin:.8em 0 .3em}
+.lead{color:var(--grey);margin:.2em 0 1em}
+.panel{border:2px solid var(--ink);border-top:6px solid var(--red);border-radius:4px;padding:14px 16px;margin:14px 0;background:#fff}
+.panel>h2:first-child{margin-top:0}
+.row{display:flex;flex-wrap:wrap;gap:12px 22px;align-items:flex-end}
+.field{display:flex;flex-direction:column;gap:4px;min-width:150px;flex:1 1 170px}
+.field.narrow{min-width:90px;flex:0 0 110px}
+.field label,.lbl{font-weight:700;font-size:.9rem}
+.val{font-weight:800;color:var(--redd)}
+input[type=range]{width:100%;accent-color:var(--redd)}
+input[type=number],input[type=text],input:not([type]),select{font:inherit;padding:6px 8px;border:2px solid var(--ink);border-radius:4px;width:100%;background:#fff}
+.btn{font:inherit;font-weight:700;border:2px solid var(--ink);background:var(--ink);color:#fff;padding:8px 14px;border-radius:4px;cursor:pointer}
+.btn:hover{background:#333}.btn.red{background:var(--redd);border-color:var(--redd)}.btn.ghost{background:#fff;color:var(--ink)}
+.btn:focus-visible,input:focus-visible,select:focus-visible,[role=tab]:focus-visible{outline:3px solid #1f5fbf;outline-offset:2px}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.btns{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 2px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:10px 0}
+.stat{background:var(--soft);border-left:6px solid var(--red);padding:8px 12px;border-radius:3px}
+.stat .k{font-size:.74rem;text-transform:uppercase;letter-spacing:.6px;color:var(--grey);font-weight:700}
+.stat .v{font-size:1.45rem;font-weight:800;line-height:1.2}
+.stat .s{font-size:.82rem;color:var(--grey)}
+canvas.chart{width:100%;height:260px;display:block;border:1px solid var(--line);border-radius:4px;background:#fff}
+table.t{border-collapse:collapse;width:100%;font-size:.88rem}
+table.t th{background:var(--ink);color:#fff;text-align:left;padding:5px 8px}
+table.t td{border-bottom:1px solid var(--line);padding:4px 8px}
+.notice{background:var(--tint);border-left:6px solid var(--red);padding:10px 14px;border-radius:3px;margin:12px 0}
+.notice ul,.notice ol{margin:.3em 0 .3em 1.2em;padding:0}
+.tabs{display:flex;gap:6px;border-bottom:3px solid var(--ink);margin-top:14px;flex-wrap:wrap}
+[role=tab]{font:inherit;font-weight:700;border:2px solid var(--ink);border-bottom:none;background:var(--soft);padding:8px 14px;border-radius:4px 4px 0 0;cursor:pointer}
+[role=tab][aria-selected=true]{background:var(--ink);color:#fff}
+[hidden]{display:none!important}
+footer.foot{border-top:1px solid var(--line);margin-top:24px;padding-top:10px;font-size:.82rem;color:var(--grey)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.pill{display:inline-block;border-radius:999px;padding:1px 10px;font-size:.8rem;font-weight:700;color:#fff;background:var(--ink)}
+.pill.red{background:var(--redd)}.pill.green{background:#12794a}.pill.blue{background:#1f5fbf}.pill.amber{background:#8a5300}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.tw{overflow-x:auto;max-width:100%}
+@media (max-width:760px){.two{grid-template-columns:1fr}}
+@media (max-width:520px){table.t{font-size:.76rem}table.t th,table.t td{padding:4px 4px}table.t th{font-size:.7rem}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head><body>
+<div class="top"><span class="brand">Not <b>Found</b></span><span class="crumb">Inside the Machine · Study Guide V1.0 · Interactive lab</span><span class="chip">Chapter 16 · Labs 16.1 and 16.2</span></div>
+<div class="wrap" id="shot-root">
+<h1>Device benchmark: which hardware does which AI need?</h1><p class="lead">Seven devices, three AI jobs. First read the benchmark results (made-up numbers) and find each device's weakest link. Then use the numbers in a self-driving car: can it stop for a pedestrian?</p>
+<noscript><div class="notice">This simulator needs JavaScript. Turn it on, or use the paper activities in the guide.</div></noscript>
+<div class="tabs" role="tablist" aria-label="Lab parts">
+ <button role="tab" id="t-bench" data-tab="bench" aria-controls="p-bench" aria-selected="true">Lab 16.1 · Benchmark</button>
+ <button role="tab" id="t-car" data-tab="car" aria-controls="p-car" aria-selected="false">Lab 16.2 · Can the car stop?</button>
+</div>
+
+<section class="panel" id="p-bench" role="tabpanel" aria-labelledby="t-bench">
+ <h2>Run the benchmark</h2>
+ <p style="margin:0 0 6px">Device A is the reference: 16 GB RAM, fast CPU, strong GPU, 5G. Devices C, D, E and F change <strong>one</strong> thing compared with A; devices B and G change several. Choose an AI job and a device.</p>
+ <div class="row">
+  <div class="field"><label for="tk">AI job</label><select id="tk"><option value="chat" selected>Test 1 · Chatbot (text, runs on the device)</option><option value="image">Test 2 · Image generation / 3D modelling</option><option value="car">Test 3 · Self-driving car (reaction time)</option></select></div>
+  <div class="field"><label for="dv">Device</label><select id="dv"></select></div>
+ </div>
+ <div class="stats">
+  <div class="stat"><div class="k">Hardware</div><div class="v" id="kH" style="font-size:1.05rem">–</div><div class="s" id="kHs"></div></div>
+  <div class="stat"><div class="k">Result</div><div class="v" id="kR">–</div><div class="s" id="kRs"></div></div>
+  <div class="stat"><div class="k">Compared with Device A</div><div class="v" id="kX">–</div><div class="s" id="kXs"></div></div>
+  <div class="stat"><div class="k">Bottleneck</div><div class="v" id="kB" style="font-size:1.05rem">–</div><div class="s" id="kBs"></div></div>
+ </div>
+ <canvas class="chart" id="cB" role="img" aria-label="Result of every device for the chosen AI job" style="height:250px;margin-top:10px"></canvas>
+ <div class="tw" tabindex="0" role="region" aria-label="All seven devices for the chosen AI job (a table)"><table class="t" id="tbB"><thead><tr><th>Device</th><th>Hardware</th><th>Result</th><th>Bottleneck</th></tr></thead><tbody></tbody></table></div>
+ <div class="notice"><strong>What to notice</strong><ul>
+  <li>Chatbot, Device C: the 3G network changes <b>nothing</b> (0.2 s, as Device A), because the chatbot runs on the device. Device D (slow CPU) takes 4 s: 20 times slower.</li>
+  <li>Image generation, Device F: only the GPU is outdated, but it takes 45 s, 9 times slower than Device A. A slow CPU (Device D) costs only 3 times (15 s). The task decides which part matters most.</li>
+  <li>Self-driving car: every device except A is too slow or fails. Device C is fine <b>only if it uses Edge AI</b>: with the Cloud it waits 0.5 s.</li>
+  <li>This is a made-up benchmark of one chatbot, one image model and one car. Real benchmarks use standard tests and many runs, and real chatbots also use GPUs.</li></ul></div>
+</section>
+
+<section class="panel" id="p-car" role="tabpanel" aria-labelledby="t-car" hidden>
+ <h2>Can the car stop for the pedestrian?</h2>
+ <p style="margin:0 0 6px">A pedestrian steps out. The car moves <strong>speed × reaction time</strong> before the brakes start, then needs <strong>braking distance = speed² ÷ 20</strong> (speed in metres per second). It is safe if the total is at most the distance to the pedestrian.</p>
+ <div class="row">
+  <div class="field"><label for="sp">Car speed: <span class="val" id="spO"></span></label><input type="range" id="sp" min="10" max="100" step="1" value="54"></div>
+  <div class="field"><label for="ds">Pedestrian is: <span class="val" id="dsO"></span></label><input type="range" id="ds" min="5" max="60" step="1" value="15"></div>
+ </div>
+ <label style="display:block;margin-top:6px"><input type="checkbox" id="edge"> Device C runs Edge AI instead of waiting for the Cloud (the fix from the chapter)</label>
+ <div class="stats">
+  <div class="stat"><div class="k">Speed</div><div class="v" id="kV">–</div><div class="s" id="kVs"></div></div>
+  <div class="stat"><div class="k">Braking distance</div><div class="v" id="kBr">–</div><div class="s" id="kBrs"></div></div>
+  <div class="stat"><div class="k">Room for reacting</div><div class="v" id="kRm">–</div><div class="s" id="kRms"></div></div>
+  <div class="stat"><div class="k">Devices that stop in time</div><div class="v" id="kOk">–</div><div class="s" id="kOks"></div></div>
+ </div>
+ <div class="tw" tabindex="0" role="region" aria-label="Stopping distance of all seven devices (a table)"><table class="t" id="tbC"><thead><tr><th>Device</th><th>Reaction time</th><th>Moves while reacting</th><th>Total to stop</th><th>Result</th><th>Highest safe speed</th></tr></thead><tbody></tbody></table></div>
+ <canvas class="chart" id="cC" role="img" aria-label="Total stopping distance of every device compared with the distance to the pedestrian" style="height:250px;margin-top:10px"></canvas>
+ <div class="notice"><strong>What to notice</strong><ul>
+  <li>With the start settings (54 km/h = 15 m/s, pedestrian 15 m away) the braking distance is 11.25 m. Device A reacts in 0.1 s, moves 1.5 m, and stops with 2.25 m to spare. Device C with the Cloud waits 0.5 s, moves 7.5 m and needs 18.75 m: a crash.</li>
+  <li>Tick the Edge AI box: Device C reacts in 0.1 s like Device A and is safe.</li>
+  <li>Slow the car to 30 km/h: the Cloud version of Device C now stops in time (7.6 m), but Device D (2 s) still needs 20.1 m and crashes. A slower car gives every device more room, but only up to a point.</li>
+  <li>The <b>highest safe speed</b> column shows how fast each device could drive for the distance you chose. Devices E and G never react, so their safe speed is 0.</li>
+  <li>The braking rule (speed² ÷ 20) is a simple model; real braking depends on the road, the tyres and the car.</li></ul></div>
+</section>
+<footer class="foot">Simplified teaching model with made-up numbers: real systems are more complex. Team Name Not Found · Stage 2 Study Guide V1.0. It works offline and sends no data anywhere.</footer>
+</div>
+<div id="live" class="sr-only" aria-live="polite"></div>
+<script>const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+const fmt=(n,d=1)=>Number(n).toLocaleString('en-US',{maximumFractionDigits:d,minimumFractionDigits:0});
+const SUP={'0':'⁰','1':'¹','2':'²','3':'³','4':'⁴','5':'⁵','6':'⁶','7':'⁷','8':'⁸','9':'⁹','-':'⁻'};
+function sci(n,d=1){if(!isFinite(n)||n===0)return String(n);const e=Math.floor(Math.log10(Math.abs(n)));const m=n/Math.pow(10,e);return m.toFixed(d)+' × 10'+String(e).split('').map(c=>SUP[c]).join('')}
+function announce(msg){const l=$('#live');if(l)l.textContent=msg}
+function el(tag,attrs={},html=''){const e=document.createElement(tag);for(const k in attrs)e.setAttribute(k,attrs[k]);e.innerHTML=html;return e}
+const C={ink:'#0D0D0D',red:'#FF3B21',redd:'#C92A12',grey:'#6b6b6b',grid:'#e3e3e3',blue:'#1f5fbf',green:'#12794a',amber:'#b06a00'};
+const redrawers=[];let _rt;function onRedraw(f){redrawers.push(f)}
+window.addEventListener('resize',()=>{clearTimeout(_rt);_rt=setTimeout(()=>redrawers.forEach(f=>f()),60)});
+function prep(c){const dpr=Math.max(1,window.devicePixelRatio||1);const r=c.getBoundingClientRect();const w=Math.max(200,r.width),h=Math.max(120,r.height);c.width=Math.round(w*dpr);c.height=Math.round(h*dpr);const x=c.getContext('2d');x.setTransform(dpr,0,0,dpr,0,0);x.clearRect(0,0,w,h);x.font='13px system-ui,"Segoe UI",Arial,sans-serif';return{x,w,h}}
+function niceTicks(lo,hi,n=5){const span=hi-lo||1,s0=span/n,mag=Math.pow(10,Math.floor(Math.log10(s0))),er=s0/mag,st=(er>=7?10:er>=3?5:er>=1.5?2:1)*mag,t=[];for(let v=Math.ceil(lo/st-1e-9)*st;v<=hi+1e-9;v+=st)t.push(+v.toFixed(10));return t}
+function tag(x,t,xr,y,col){const w=x.measureText(t).width;x.fillStyle='rgba(255,255,255,.88)';x.fillRect(xr-w-4,y-16,w+8,17);x.fillStyle=col;x.textAlign='right';x.textBaseline='bottom';x.fillText(t,xr,y)}
+function lineChart(c,o){
+  const{x,w,h}=prep(c),ser=o.series,names=ser.filter(s=>s.name),lg0=w<460?8:82,LG=[];let lgx=lg0,lgr=0;
+  names.forEach(s=>{const tw=44+x.measureText(s.name).width;if(lgx>lg0&&lgx+tw-16>w-6){lgx=lg0;lgr++}LG.push({s,x:lgx,r:lgr});lgx+=tw});
+  const m={l:78,r:28,t:names.length?20+16*(lgr+1):14,b:46};
+  const xs=[],ys=[];ser.forEach(s=>s.pts.forEach(p=>{xs.push(p[0]);ys.push(p[1])}));(o.hlines||[]).forEach(l=>ys.push(l.y));
+  const x0=o.xmin??Math.min(...xs),x1v=o.xmax??Math.max(...xs),y0=o.ymin??Math.min(0,...ys);let x1=x1v===x0?x0+1:x1v,y1=o.ymax??Math.max(...ys);if(y1===y0)y1=y0+1;if(o.ymax==null)y1+=(y1-y0)*.06;
+  const lg=!!o.xlog,fx=v=>lg?Math.log10(v):v,X=v=>m.l+(fx(v)-fx(x0))/(fx(x1)-fx(x0))*(w-m.l-m.r),Y=v=>h-m.b-(v-y0)/(y1-y0)*(h-m.t-m.b);
+  x.lineWidth=1;x.fillStyle=C.grey;x.textAlign='right';x.textBaseline='middle';
+  niceTicks(y0,y1,5).forEach(v=>{x.strokeStyle=C.grid;x.beginPath();x.moveTo(m.l,Y(v));x.lineTo(w-m.r,Y(v));x.stroke();x.fillStyle=C.grey;x.fillText((o.fmtY||fmt)(v),m.l-6,Y(v))});
+  x.textAlign='center';x.textBaseline='top';let xe=-1e9;(o.xticks||niceTicks(x0,x1,6)).forEach(v=>{x.strokeStyle=C.grid;x.beginPath();x.moveTo(X(v),m.t);x.lineTo(X(v),h-m.b);x.stroke();const t=(o.fmtX||fmt)(v),tw=x.measureText(t).width;if(X(v)-tw/2>xe+6){x.fillStyle=C.grey;x.fillText(t,X(v),h-m.b+6);xe=X(v)+tw/2}});
+  x.strokeStyle=C.ink;x.lineWidth=1.5;x.beginPath();x.moveTo(m.l,m.t);x.lineTo(m.l,h-m.b);x.lineTo(w-m.r,h-m.b);x.stroke();
+  x.fillStyle=C.ink;x.textAlign='center';x.textBaseline='bottom';if(o.xlabel)x.fillText(o.xlabel,(m.l+w-m.r)/2,h-3);
+  if(o.ylabel){x.save();x.translate(13,(m.t+h-m.b)/2);x.rotate(-Math.PI/2);x.textBaseline='top';x.fillText(o.ylabel,0,-2);x.restore()}
+  (o.hlines||[]).forEach(l=>{x.strokeStyle=l.color||C.grey;x.setLineDash([6,4]);x.lineWidth=1.5;x.beginPath();x.moveTo(m.l,Y(l.y));x.lineTo(w-m.r,Y(l.y));x.stroke();x.setLineDash([]);if(l.label)tag(x,l.label,w-m.r-4,Y(l.y)-2,l.color||C.grey)});
+  ser.forEach(s=>{x.strokeStyle=s.color||C.ink;x.lineWidth=s.w||2.5;x.setLineDash(s.dash?[6,4]:[]);x.beginPath();s.pts.forEach((p,i)=>{i?x.lineTo(X(p[0]),Y(p[1])):x.moveTo(X(p[0]),Y(p[1]))});x.stroke();x.setLineDash([]);if(s.dots){x.fillStyle=s.color||C.ink;s.pts.forEach(p=>{x.beginPath();x.arc(X(p[0]),Y(p[1]),3.5,0,7);x.fill()})}});
+  x.textAlign='left';x.textBaseline='middle';LG.forEach(e=>{const s=e.s,ly=14+16*e.r;x.strokeStyle=s.color||C.ink;x.lineWidth=3;x.setLineDash(s.dash?[6,4]:[]);x.beginPath();x.moveTo(e.x,ly);x.lineTo(e.x+22,ly);x.stroke();x.setLineDash([]);x.fillStyle=C.ink;x.fillText(s.name,e.x+28,ly)});
+}
+function barChart(c,o){
+  const{x,w,h}=prep(c),V=o.values,m={l:78,r:16,t:26,b:o.bottom||54},lg=!!o.log,T=v=>lg?Math.log10(Math.max(v,1)):v;
+  const bw0=(w-m.l-m.r)/V.length-6,wrapL=ln=>{if(x.measureText(ln).width<=bw0)return[ln];const out=[];let cur='';ln.split(' ').forEach(wd=>{const t=cur?cur+' '+wd:wd;if(cur&&x.measureText(t).width>bw0){out.push(cur);cur=wd}else cur=t});if(cur)out.push(cur);return out},
+    LB=o.labels.map(l=>String(l).split('\n').flatMap(wrapL)),n0=Math.max(...o.labels.map(l=>String(l).split('\n').length)),n1=Math.max(...LB.map(a=>a.length));if(n1>n0)m.b=Math.max(m.b,14+15*n1);
+  const mx=o.ymax??Math.max(...V,...(o.lines||[]).map(l=>l.y),1)*(lg?1:1.12),tm=lg?Math.ceil(T(mx)):mx,Y=v=>h-m.b-T(v)/tm*(h-m.t-m.b);
+  x.textAlign='right';x.textBaseline='middle';x.lineWidth=1;
+  const lst=Math.max(1,Math.ceil(tm/6)),ticks=lg?Array.from({length:Math.floor(tm/lst)+1},(_,i)=>Math.pow(10,i*lst)):niceTicks(0,mx,5);
+  ticks.forEach(v=>{x.strokeStyle=C.grid;x.beginPath();x.moveTo(m.l,Y(v));x.lineTo(w-m.r,Y(v));x.stroke();x.fillStyle=C.grey;x.fillText(lg?(v<1e5?fmt(v,0):'10'+String(Math.round(Math.log10(v))).split('').map(c=>SUP[c]).join('')):(o.fmtTick||o.fmt||fmt)(v),m.l-6,Y(v))});
+  x.strokeStyle=C.ink;x.lineWidth=1.5;x.beginPath();x.moveTo(m.l,m.t);x.lineTo(m.l,h-m.b);x.lineTo(w-m.r,h-m.b);x.stroke();
+  const n=V.length,band=(w-m.l-m.r)/n,bw=Math.min(90,band*.62);
+  V.forEach((v,i)=>{const cx=m.l+band*(i+.5);x.fillStyle=(o.colors&&o.colors[i])||C.ink;x.fillRect(cx-bw/2,Y(v),bw,h-m.b-Y(v));x.fillStyle=C.ink;x.textAlign='center';x.textBaseline='bottom';x.font='bold 13px system-ui,Arial,sans-serif';x.fillText((o.fmt||fmt)(v),cx,Y(v)-3);x.font='13px system-ui,Arial,sans-serif';
+    x.textBaseline='top';LB[i].forEach((ln,k)=>x.fillText(ln,cx,h-m.b+6+k*15))});
+  (o.lines||[]).forEach(l=>{x.strokeStyle=l.color||C.grey;x.setLineDash([6,4]);x.lineWidth=1.8;x.beginPath();x.moveTo(m.l,Y(l.y));x.lineTo(w-m.r,Y(l.y));x.stroke();x.setLineDash([]);if(l.label)tag(x,l.label,w-m.r-4,Y(l.y)-2,l.color||C.grey)});
+  if(o.ylabel){x.save();x.fillStyle=C.ink;x.translate(13,(m.t+h-m.b)/2);x.rotate(-Math.PI/2);x.textAlign='center';x.textBaseline='top';x.fillText(o.ylabel,0,-2);x.restore()}
+}
+function initTabs(){const tabs=$$('[role=tab]');if(!tabs.length)return;
+  const show=id=>{tabs.forEach(t=>{const on=t.dataset.tab===id;t.setAttribute('aria-selected',on);t.tabIndex=on?0:-1;$('#'+t.getAttribute('aria-controls')).hidden=!on});try{history.replaceState(null,'','#'+id)}catch(e){}requestAnimationFrame(()=>{redrawers.forEach(f=>f())})};
+  tabs.forEach((t,i)=>{t.addEventListener('click',()=>show(t.dataset.tab));t.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){const n=tabs[(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length];n.focus();n.click();e.preventDefault()}})});
+  const hs=location.hash.slice(1);show(tabs.some(t=>t.dataset.tab===hs)?hs:tabs[0].dataset.tab)}
+function bindRange(id,outId,f){const r=$('#'+id),o=$('#'+outId);const u=()=>{o.textContent=f?f(+r.value):r.value};r.addEventListener('input',u);u()}
+</script>
+<script>
+const g=id=>document.getElementById(id);
+const DEV=[
+ {k:'A',ram:'16 GB',cpu:'Fast CPU',gpu:'Strong GPU',net:'5G'},
+ {k:'B',ram:'2 GB',cpu:'Slow CPU',gpu:'Outdated GPU',net:'5G'},
+ {k:'C',ram:'16 GB',cpu:'Fast CPU',gpu:'Strong GPU',net:'3G'},
+ {k:'D',ram:'16 GB',cpu:'Slow CPU',gpu:'Strong GPU',net:'5G'},
+ {k:'E',ram:'2 GB',cpu:'Fast CPU',gpu:'Strong GPU',net:'5G'},
+ {k:'F',ram:'16 GB',cpu:'Fast CPU',gpu:'Outdated GPU',net:'5G'},
+ {k:'G',ram:'16 GB',cpu:'Slow CPU',gpu:'Outdated GPU',net:'5G'}];
+/* t = seconds (null = never finishes), cat: ok / slow / fail */
+const RES={
+ chat:{unit:'response time',A:[0.2,'ok','Instant','None. Works perfectly.'],B:[10,'fail','Very slow','CPU and RAM: it struggles to load the AI and make words.'],C:[0.2,'ok','Instant','None: the chatbot runs locally, so the 3G network does not matter.'],D:[4,'slow','Slow','CPU: text needs the CPU, and a slow CPU takes long to make words.'],E:[null,'fail','Confused (forgets the start)','Memory: it runs out of RAM and forgets the first half of the talk.'],F:[0.3,'ok','Instant','None: a chatbot does not use the GPU much.'],G:[5,'slow','Very slow','CPU: even with 16 GB RAM the slow CPU lags behind Device A.']},
+ image:{unit:'generation time',A:[5,'ok','Fast','None. Works perfectly.'],B:[null,'fail','Fails / crashes','RAM and GPU: it cannot even load the image model.'],C:[5,'ok','Fast','None: it runs locally, so the bad network does not matter.'],D:[15,'slow','Stuttering','CPU/GPU mismatch: the GPU is fast, but the slow CPU cannot feed it data.'],E:[null,'fail','Fails / crashes','Memory: it runs out of RAM while building the picture.'],F:[45,'slow','Very slow','GPU: with fast CPU and 16 GB RAM, the outdated GPU still cannot calculate the pixels fast enough.'],G:[null,'fail','Fails / crashes','CPU and GPU: the old GPU struggles with the maths and the slow CPU cannot manage the files.']},
+ car:{unit:'reaction time',A:[0.1,'ok','Safe (0.1 s)','None. Works perfectly.'],B:[10,'fail','Crash (10 s)','Hardware: it needs 10 s to process the camera.'],C:[0.5,'fail','Crash if it uses the Cloud (0.5 s)','Network: it waits 500 ms for the Cloud, too slow to brake.'],D:[2,'fail','Crash (2 s)','CPU: the GPU sees the pedestrian at once, but the CPU needs 2 s to tell the brakes.'],E:[null,'fail','Crash (the system freezes)','Memory: it runs out of RAM with several 4K cameras and freezes.'],F:[3,'fail','Crash (3 s)','GPU: the CPU wants to brake, but the old GPU needs 3 s to recognise a pedestrian.'],G:[null,'fail','Crash (blind)','Hardware: it has too little power to see and react in time.']}};
+const CL={ok:C.green,slow:C.amber,fail:C.redd};
+DEV.forEach(d=>{const o=document.createElement('option');o.value=d.k;o.textContent='Device '+d.k+' · '+d.ram+' RAM, '+d.cpu+', '+d.gpu+', '+d.net;if(d.k==='D')o.selected=true;g('dv').appendChild(o)});
+const spec=d=>`${d.ram} RAM · ${d.cpu} · ${d.gpu} · ${d.net}`;
+function bench(){
+  const tk=g('tk').value,dk=g('dv').value,d=DEV.find(x=>x.k===dk),R=RES[tk],r=R[dk],a=R.A;
+  g('kH').textContent='Device '+dk;g('kHs').textContent=spec(d);
+  g('kR').textContent=r[2];g('kR').style.color=CL[r[1]];g('kRs').textContent=r[0]===null?'no valid result':fmt(r[0],1)+' s';
+  if(dk==='A'){g('kX').textContent='Reference';g('kXs').textContent=fmt(a[0],1)+' s'}
+  else if(r[0]===null){g('kX').textContent='No result';g('kXs').textContent='Device A needs '+fmt(a[0],1)+' s'}
+  else{const x=r[0]/a[0];g('kX').textContent=x<1.15?'About the same':fmt(x,1)+' times slower';g('kXs').textContent=`${fmt(r[0],1)} s ÷ ${fmt(a[0],1)} s`}
+  g('kB').textContent=r[3].split(':')[0];g('kBs').textContent=r[3].includes(':')?r[3].split(':').slice(1).join(':').trim():'';
+  const keys=DEV.map(x=>x.k),vals=keys.map(k=>R[k][0]===null?0:R[k][0]);
+  barChart(g('cB'),{labels:keys.map(k=>R[k][0]===null?`${k}\nno result`:'Device '+k),values:vals,colors:keys.map(k=>CL[R[k][1]]),ylabel:'Seconds ('+R.unit+')',fmt:v=>v===0?'':fmt(v,1)+' s',fmtTick:v=>fmt(v,0),bottom:60});
+  g('tbB').tBodies[0].innerHTML=DEV.map(x=>{const q=R[x.k];return`<tr style="${x.k===dk?'outline:2px solid #0D0D0D;outline-offset:-2px':''}"><td><b>Device ${x.k}</b></td><td>${spec(x)}</td><td style="font-weight:700;color:${CL[q[1]]}">${q[2]}${q[0]!==null&&tk!=='car'?' ('+fmt(q[0],1)+' s)':''}</td><td>${q[3]}</td></tr>`}).join('');
+  announce(`Device ${dk}, ${g('tk').selectedOptions[0].text}. Result: ${r[2]}. Bottleneck: ${r[3]}`)}
+['tk','dv'].forEach(id=>g(id).addEventListener('input',bench));
+/* ---- Lab 16.2 ---- */
+function reactT(k,edge){if(k==='C'&&edge)return 0.1;return RES.car[k][0]}
+function car(){
+  const kmh=+g('sp').value,d=+g('ds').value,edge=g('edge').checked,v=kmh/3.6,br=v*v/20;
+  g('spO').textContent=kmh+' km/h';g('dsO').textContent=d+' m away';
+  g('kV').textContent=fmt(v,2)+' m/s';g('kVs').textContent=`${kmh} ÷ 3.6`;
+  g('kBr').textContent=fmt(br,2)+' m';g('kBrs').textContent=`${fmt(v,2)}² ÷ 20`;
+  const room=d-br;g('kRm').textContent=fmt(room,2)+' m';g('kRms').textContent=room<=0?'the car cannot stop in time even with no delay':`${fmt(d,0)} − ${fmt(br,2)}`;
+  const rows=DEV.map(x=>{const t=reactT(x.k,edge),moved=t===null?null:v*t,tot=moved===null?null:moved+br,ok=tot!==null&&tot<=d+1e-9;
+    const vmax=t===null?0:(-10*t+Math.sqrt(100*t*t+20*d))*3.6;return{x,t,moved,tot,ok,vmax}});
+  const n=rows.filter(r=>r.ok).length;g('kOk').textContent=n+' of 7';g('kOks').textContent=rows.filter(r=>r.ok).map(r=>r.x.k).join(', ')||'none';
+  g('tbC').tBodies[0].innerHTML=rows.map(r=>`<tr><td><b>Device ${r.x.k}</b>${r.x.k==='C'&&edge?' (Edge AI)':''}</td><td>${r.t===null?'never reacts':fmt(r.t,1)+' s'+(r.x.k==='C'&&!edge?' (Cloud)':'')}</td><td>${r.moved===null?'–':fmt(r.moved,2)+' m'}</td><td>${r.tot===null?'–':fmt(r.tot,2)+' m'}</td><td style="font-weight:700;color:${r.ok?C.green:C.redd}">${r.ok?'Safe':'Crash'}</td><td>${fmt(r.vmax,1)} km/h</td></tr>`).join('');
+  const cap=Math.max(d*1.6,...rows.map(r=>r.tot===null?0:Math.min(r.tot,d*3)));
+  barChart(g('cC'),{labels:rows.map(r=>r.tot===null?`${r.x.k}\nnever`:'Device '+r.x.k),values:rows.map(r=>r.tot===null?0:Math.min(r.tot,d*3)),colors:rows.map(r=>r.ok?C.green:C.redd),ylabel:'Total distance to stop (m)',fmt:v=>v===0?'':fmt(v,1),fmtTick:v=>fmt(v,0),lines:[{y:d,label:'the pedestrian',color:C.ink}],bottom:60,ymax:Math.ceil(cap/10)*10});
+  announce(`${kmh} kilometres per hour, pedestrian ${d} metres away. ${n} of 7 devices stop in time.`)}
+['sp','ds','edge'].forEach(id=>g(id).addEventListener('input',car));
+initTabs();onRedraw(()=>{bench();car()});bench();car();
+</script>
+</body></html>

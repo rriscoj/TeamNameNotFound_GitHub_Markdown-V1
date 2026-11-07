@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Let the AI learn the maze · Inside the Machine</title>
+<style>:root{--red:#FF3B21;--redd:#C92A12;--ink:#0D0D0D;--grey:#5f5f5f;--line:#d8d8d8;--soft:#f5f5f5;--tint:#fff1ee}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:#fff}
+.top{background:var(--ink);color:#fff;padding:12px 20px;border-bottom:6px solid var(--red);display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.brand{font-weight:800;letter-spacing:.5px;font-size:1.05rem}.brand b{color:var(--red)}
+.crumb{font-size:.85rem;opacity:.85}
+.chip{margin-left:auto;background:var(--redd);color:#fff;border-radius:999px;padding:3px 12px;font-size:.8rem;font-weight:700;letter-spacing:.4px}
+.wrap{max-width:1000px;margin:0 auto;padding:18px 20px 40px}
+h1{font-size:1.6rem;margin:.2em 0 .1em}h2{font-size:1.12rem;margin:1.1em 0 .4em}h3{font-size:1rem;margin:.8em 0 .3em}
+.lead{color:var(--grey);margin:.2em 0 1em}
+.panel{border:2px solid var(--ink);border-top:6px solid var(--red);border-radius:4px;padding:14px 16px;margin:14px 0;background:#fff}
+.panel>h2:first-child{margin-top:0}
+.row{display:flex;flex-wrap:wrap;gap:12px 22px;align-items:flex-end}
+.field{display:flex;flex-direction:column;gap:4px;min-width:150px;flex:1 1 170px}
+.field.narrow{min-width:90px;flex:0 0 110px}
+.field label,.lbl{font-weight:700;font-size:.9rem}
+.val{font-weight:800;color:var(--redd)}
+input[type=range]{width:100%;accent-color:var(--redd)}
+input[type=number],input[type=text],input:not([type]),select{font:inherit;padding:6px 8px;border:2px solid var(--ink);border-radius:4px;width:100%;background:#fff}
+.btn{font:inherit;font-weight:700;border:2px solid var(--ink);background:var(--ink);color:#fff;padding:8px 14px;border-radius:4px;cursor:pointer}
+.btn:hover{background:#333}.btn.red{background:var(--redd);border-color:var(--redd)}.btn.ghost{background:#fff;color:var(--ink)}
+.btn:focus-visible,input:focus-visible,select:focus-visible,[role=tab]:focus-visible{outline:3px solid #1f5fbf;outline-offset:2px}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.btns{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 2px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:10px 0}
+.stat{background:var(--soft);border-left:6px solid var(--red);padding:8px 12px;border-radius:3px}
+.stat .k{font-size:.74rem;text-transform:uppercase;letter-spacing:.6px;color:var(--grey);font-weight:700}
+.stat .v{font-size:1.45rem;font-weight:800;line-height:1.2}
+.stat .s{font-size:.82rem;color:var(--grey)}
+canvas.chart{width:100%;height:260px;display:block;border:1px solid var(--line);border-radius:4px;background:#fff}
+table.t{border-collapse:collapse;width:100%;font-size:.88rem}
+table.t th{background:var(--ink);color:#fff;text-align:left;padding:5px 8px}
+table.t td{border-bottom:1px solid var(--line);padding:4px 8px}
+.notice{background:var(--tint);border-left:6px solid var(--red);padding:10px 14px;border-radius:3px;margin:12px 0}
+.notice ul,.notice ol{margin:.3em 0 .3em 1.2em;padding:0}
+.tabs{display:flex;gap:6px;border-bottom:3px solid var(--ink);margin-top:14px;flex-wrap:wrap}
+[role=tab]{font:inherit;font-weight:700;border:2px solid var(--ink);border-bottom:none;background:var(--soft);padding:8px 14px;border-radius:4px 4px 0 0;cursor:pointer}
+[role=tab][aria-selected=true]{background:var(--ink);color:#fff}
+[hidden]{display:none!important}
+footer.foot{border-top:1px solid var(--line);margin-top:24px;padding-top:10px;font-size:.82rem;color:var(--grey)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.pill{display:inline-block;border-radius:999px;padding:1px 10px;font-size:.8rem;font-weight:700;color:#fff;background:var(--ink)}
+.pill.red{background:var(--redd)}.pill.green{background:#12794a}.pill.blue{background:#1f5fbf}.pill.amber{background:#8a5300}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.tw{overflow-x:auto;max-width:100%}
+@media (max-width:760px){.two{grid-template-columns:1fr}}
+@media (max-width:520px){table.t{font-size:.76rem}table.t th,table.t td{padding:4px 4px}table.t th{font-size:.7rem}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head><body>
+<div class="top"><span class="brand">Not <b>Found</b></span><span class="crumb">Inside the Machine · Study Guide V1.0 · Interactive lab</span><span class="chip">Chapter 10 · Labs 10.1 and 10.2</span></div>
+<div class="wrap" id="shot-root">
+<h1>Let the AI learn the maze</h1><p class="lead">The maze from Activity 10.2. The AI starts knowing nothing and learns from rewards only: a small cost for each move, a penalty for hitting a wall and a big prize at the destination. Then count the states of bigger worlds.</p>
+<noscript><div class="notice">This simulator needs JavaScript. Turn it on, or use the paper activities in the guide.</div></noscript>
+<style>
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;width:100%;max-width:400px;aspect-ratio:1/1}
+.cell{border:2px solid var(--ink);border-radius:4px;background:#fff;position:relative;font:inherit;display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:800;cursor:pointer;padding:0;color:var(--ink)}
+.cell.wall{background:#444;cursor:default;border-color:#444}
+.cell .tag{position:absolute;top:2px;left:5px;font-size:.78rem;font-weight:800;color:var(--redd)}
+.cell .pos{position:absolute;bottom:2px;right:5px;font-size:.62rem;color:#444;font-weight:600}
+.cell .num{position:absolute;bottom:2px;left:5px;font-size:.72rem;font-weight:800;background:var(--redd);color:#fff;border-radius:8px;padding:0 5px}
+.cell.path{outline:4px solid var(--redd);outline-offset:-5px}
+.cell.sel{box-shadow:0 0 0 4px #1f5fbf}
+.agent{width:18px;height:18px;border-radius:50%;background:var(--ink);position:absolute;top:5px;right:5px;border:3px solid var(--redd)}
+.two2{display:grid;grid-template-columns:minmax(260px,400px) 1fr;gap:18px;align-items:start}
+@media (max-width:760px){.two2{grid-template-columns:1fr}}
+.partrow{display:grid;grid-template-columns:2fr 1fr 1fr auto;gap:8px;margin:4px 0;align-items:center}
+@media (max-width:520px){.partrow{grid-template-columns:3fr 1fr 1fr auto}}
+</style>
+<div class="tabs" role="tablist" aria-label="Lab parts">
+ <button role="tab" id="t-maze" data-tab="maze" aria-controls="p-maze" aria-selected="true">Lab 10.1 · Learn the maze</button>
+ <button role="tab" id="t-space" data-tab="space" aria-controls="p-space" aria-selected="false">Lab 10.2 · Count the states</button>
+</div>
+
+<section class="panel" id="p-maze" role="tabpanel" aria-labelledby="t-maze">
+ <h2>The AI explores, gets rewards and remembers</h2>
+ <div class="row">
+  <div class="field"><label for="eps">Exploration ε: <span class="val" id="epsO"></span></label><input type="range" id="eps" min="0" max="1" step="0.05" value="0.2"></div>
+  <div class="field"><label for="al">Learning speed α: <span class="val" id="alO"></span></label><input type="range" id="al" min="0.1" max="1" step="0.1" value="0.5"></div>
+  <div class="field"><label for="ga">Looking ahead γ: <span class="val" id="gaO"></span></label><input type="range" id="ga" min="0" max="0.99" step="0.01" value="0.9"></div>
+  <div class="field narrow"><label for="seed">Random seed</label><input type="number" id="seed" value="3" min="1" max="9999"></div>
+ </div>
+ <details style="margin-top:8px"><summary class="lbl" style="cursor:pointer">Change the rewards (reward design)</summary>
+  <div class="row" style="margin-top:8px">
+   <div class="field"><label for="stc">Cost of each move: <span class="val" id="stcO"></span></label><input type="range" id="stc" min="0" max="5" step="1" value="1"></div>
+   <div class="field"><label for="bmp">Penalty for hitting a wall: <span class="val" id="bmpO"></span></label><input type="range" id="bmp" min="0" max="20" step="1" value="10"></div>
+   <div class="field"><label for="gl">Prize at the destination: <span class="val" id="glO"></span></label><input type="range" id="gl" min="0" max="200" step="10" value="100"></div>
+  </div>
+ </details>
+ <div class="btns"><button class="btn" id="b1">One move</button><button class="btn" id="bE">Run 1 episode</button><button class="btn red" id="b10">Run 10 episodes</button><button class="btn red" id="b50">Run 50 episodes</button><button class="btn ghost" id="bR">Reset (forget everything)</button></div>
+ <label style="display:block;margin:6px 0"><input type="checkbox" id="showp" checked> Show the route the AI would take now if it stopped exploring</label>
+ <div class="two2">
+  <div><div class="grid4" id="grid" role="group" aria-label="The 4 by 4 maze. S is the start, D the destination, dark squares are walls."></div>
+   <p style="margin:.4em 0 0;font-size:.85rem;color:var(--grey)">Colour = how good the AI thinks the square is (green good, red bad). Arrow = the move it prefers. Click a square to see its numbers.</p></div>
+  <div>
+   <div class="stats" style="grid-template-columns:1fr 1fr">
+    <div class="stat"><div class="k">Episodes played</div><div class="v" id="sEp">0</div><div class="s" id="sSteps">&nbsp;</div></div>
+    <div class="stat"><div class="k">Last episode score</div><div class="v" id="sRew">–</div><div class="s" id="sBump">&nbsp;</div></div>
+    <div class="stat" style="grid-column:1/-1"><div class="k">Score if it stopped exploring now</div><div class="v" id="sGr">–</div><div class="s" id="sGrS">&nbsp;</div></div>
+   </div>
+   <h3 id="selH">Click a square</h3>
+   <table class="t" id="qt"><thead><tr><th>Move</th><th>Value (what the AI expects)</th></tr></thead><tbody><tr><td colspan="2">Nothing selected yet.</td></tr></tbody></table>
+  </div>
+ </div>
+ <canvas class="chart" id="cLine" role="img" aria-label="Score of each episode and score of the greedy route" style="height:250px;margin-top:12px"></canvas>
+ <div class="notice"><strong>What to notice</strong><ul>
+  <li>Early episodes bump into walls a lot. After a handful of episodes the best route scores 95: 5 moves × −1, then +100 (your paper answer to Activity 10.2).</li>
+  <li>Nobody told the AI the map. The arrows come only from rewards.</li>
+  <li>Here even ε = 0 can work, because every move costs points, so moves not yet tried look better than moves that were. Compare with the prize machines in Chapter 11, where this does not happen.</li>
+  <li>Open “Change the rewards”: set the wall penalty to 0 and the prize to 0. What does the AI learn to do? Is that the AI's fault?</li></ul></div>
+</section>
+
+<section class="panel" id="p-space" role="tabpanel" aria-labelledby="t-space" hidden>
+ <h2>How many states? Multiply the options of every part</h2>
+ <div class="btns" style="margin-top:0"><button class="btn ghost" id="pv">Robot vacuum</button><button class="btn ghost" id="pc">Toy car</button><button class="btn ghost" id="pc10">Toy car + 10 other cars</button></div>
+ <div id="parts"></div>
+ <div class="btns"><button class="btn" id="addp">Add a part</button></div>
+ <div class="row"><div class="field" style="max-width:260px"><label for="bps">Memory to remember one state (bytes)</label><input type="number" id="bps" value="1" min="1" step="1"></div></div>
+ <div class="stats">
+  <div class="stat"><div class="k">Number of states</div><div class="v" id="nS">–</div><div class="s" id="nSs"></div></div>
+  <div class="stat"><div class="k">Memory needed</div><div class="v" id="nM">–</div><div class="s" id="nMs"></div></div>
+ </div>
+ <canvas class="chart" id="cBar" role="img" aria-label="Number of states after adding each part, on a log scale" style="height:270px"></canvas>
+ <p class="lbl" id="spMsg" style="margin-top:8px"></p>
+ <div class="notice"><strong>What to notice</strong><ul>
+  <li>The number of states is a <b>product</b>. Each new part multiplies it. The chart is on a log scale: each gridline is 10 times bigger.</li>
+  <li>The toy car with 10 other cars needs about 32 petabytes if every state needs 1 byte. That does not fit in any normal computer, so real systems use clever shortcuts and powerful hardware (Chapters 1 and 2).</li>
+  <li>Change “repeat” for the other cars from 0 to 10 and watch the explosion.</li></ul></div>
+</section>
+<footer class="foot">Simplified teaching model with made-up numbers: real systems are more complex. Team Name Not Found · Stage 2 Study Guide V1.0. It works offline and sends no data anywhere.</footer>
+</div>
+<div id="live" class="sr-only" aria-live="polite"></div>
+<script>const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+const fmt=(n,d=1)=>Number(n).toLocaleString('en-US',{maximumFractionDigits:d,minimumFractionDigits:0});
+const SUP={'0':'⁰','1':'¹','2':'²','3':'³','4':'⁴','5':'⁵','6':'⁶','7':'⁷','8':'⁸','9':'⁹','-':'⁻'};
+function sci(n,d=1){if(!isFinite(n)||n===0)return String(n);const e=Math.floor(Math.log10(Math.abs(n)));const m=n/Math.pow(10,e);return m.toFixed(d)+' × 10'+String(e).split('').map(c=>SUP[c]).join('')}
+function announce(msg){const l=$('#live');if(l)l.textContent=msg}
+function el(tag,attrs={},html=''){const e=document.createElement(tag);for(const k in attrs)e.setAttribute(k,attrs[k]);e.innerHTML=html;return e}
+const C={ink:'#0D0D0D',red:'#FF3B21',redd:'#C92A12',grey:'#6b6b6b',grid:'#e3e3e3',blue:'#1f5fbf',green:'#12794a',amber:'#b06a00'};
+const redrawers=[];let _rt;function onRedraw(f){redrawers.push(f)}
+window.addEventListener('resize',()=>{clearTimeout(_rt);_rt=setTimeout(()=>redrawers.forEach(f=>f()),60)});
+function prep(c){const dpr=Math.max(1,window.devicePixelRatio||1);const r=c.getBoundingClientRect();const w=Math.max(200,r.width),h=Math.max(120,r.height);c.width=Math.round(w*dpr);c.height=Math.round(h*dpr);const x=c.getContext('2d');x.setTransform(dpr,0,0,dpr,0,0);x.clearRect(0,0,w,h);x.font='13px system-ui,"Segoe UI",Arial,sans-serif';return{x,w,h}}
+function niceTicks(lo,hi,n=5){const span=hi-lo||1,s0=span/n,mag=Math.pow(10,Math.floor(Math.log10(s0))),er=s0/mag,st=(er>=7?10:er>=3?5:er>=1.5?2:1)*mag,t=[];for(let v=Math.ceil(lo/st-1e-9)*st;v<=hi+1e-9;v+=st)t.push(+v.toFixed(10));return t}
+function tag(x,t,xr,y,col){const w=x.measureText(t).width;x.fillStyle='rgba(255,255,255,.88)';x.fillRect(xr-w-4,y-16,w+8,17);x.fillStyle=col;x.textAlign='right';x.textBaseline='bottom';x.fillText(t,xr,y)}
+function lineChart(c,o){
+  const{x,w,h}=prep(c),ser=o.series,names=ser.filter(s=>s.name),lg0=w<460?8:82,LG=[];let lgx=lg0,lgr=0;
+  names.forEach(s=>{const tw=44+x.measureText(s.name).width;if(lgx>lg0&&lgx+tw-16>w-6){lgx=lg0;lgr++}LG.push({s,x:lgx,r:lgr});lgx+=tw});
+  const m={l:78,r:28,t:names.length?20+16*(lgr+1):14,b:46};
+  const xs=[],ys=[];ser.forEach(s=>s.pts.forEach(p=>{xs.push(p[0]);ys.push(p[1])}));(o.hlines||[]).forEach(l=>ys.push(l.y));
+  const x0=o.xmin??Math.min(...xs),x1v=o.xmax??Math.max(...xs),y0=o.ymin??Math.min(0,...ys);let x1=x1v===x0?x0+1:x1v,y1=o.ymax??Math.max(...ys);if(y1===y0)y1=y0+1;if(o.ymax==null)y1+=(y1-y0)*.06;
+  const lg=!!o.xlog,fx=v=>lg?Math.log10(v):v,X=v=>m.l+(fx(v)-fx(x0))/(fx(x1)-fx(x0))*(w-m.l-m.r),Y=v=>h-m.b-(v-y0)/(y1-y0)*(h-m.t-m.b);
+  x.lineWidth=1;x.fillStyle=C.grey;x.textAlign='right';x.textBaseline='middle';
+  niceTicks(y0,y1,5).forEach(v=>{x.strokeStyle=C.grid;x.beginPath();x.moveTo(m.l,Y(v));x.lineTo(w-m.r,Y(v));x.stroke();x.fillStyle=C.grey;x.fillText((o.fmtY||fmt)(v),m.l-6,Y(v))});
+  x.textAlign='center';x.textBaseline='top';let xe=-1e9;(o.xticks||niceTicks(x0,x1,6)).forEach(v=>{x.strokeStyle=C.grid;x.beginPath();x.moveTo(X(v),m.t);x.lineTo(X(v),h-m.b);x.stroke();const t=(o.fmtX||fmt)(v),tw=x.measureText(t).width;if(X(v)-tw/2>xe+6){x.fillStyle=C.grey;x.fillText(t,X(v),h-m.b+6);xe=X(v)+tw/2}});
+  x.strokeStyle=C.ink;x.lineWidth=1.5;x.beginPath();x.moveTo(m.l,m.t);x.lineTo(m.l,h-m.b);x.lineTo(w-m.r,h-m.b);x.stroke();
+  x.fillStyle=C.ink;x.textAlign='center';x.textBaseline='bottom';if(o.xlabel)x.fillText(o.xlabel,(m.l+w-m.r)/2,h-3);
+  if(o.ylabel){x.save();x.translate(13,(m.t+h-m.b)/2);x.rotate(-Math.PI/2);x.textBaseline='top';x.fillText(o.ylabel,0,-2);x.restore()}
+  (o.hlines||[]).forEach(l=>{x.strokeStyle=l.color||C.grey;x.setLineDash([6,4]);x.lineWidth=1.5;x.beginPath();x.moveTo(m.l,Y(l.y));x.lineTo(w-m.r,Y(l.y));x.stroke();x.setLineDash([]);if(l.label)tag(x,l.label,w-m.r-4,Y(l.y)-2,l.color||C.grey)});
+  ser.forEach(s=>{x.strokeStyle=s.color||C.ink;x.lineWidth=s.w||2.5;x.setLineDash(s.dash?[6,4]:[]);x.beginPath();s.pts.forEach((p,i)=>{i?x.lineTo(X(p[0]),Y(p[1])):x.moveTo(X(p[0]),Y(p[1]))});x.stroke();x.setLineDash([]);if(s.dots){x.fillStyle=s.color||C.ink;s.pts.forEach(p=>{x.beginPath();x.arc(X(p[0]),Y(p[1]),3.5,0,7);x.fill()})}});
+  x.textAlign='left';x.textBaseline='middle';LG.forEach(e=>{const s=e.s,ly=14+16*e.r;x.strokeStyle=s.color||C.ink;x.lineWidth=3;x.setLineDash(s.dash?[6,4]:[]);x.beginPath();x.moveTo(e.x,ly);x.lineTo(e.x+22,ly);x.stroke();x.setLineDash([]);x.fillStyle=C.ink;x.fillText(s.name,e.x+28,ly)});
+}
+function barChart(c,o){
+  const{x,w,h}=prep(c),V=o.values,m={l:78,r:16,t:26,b:o.bottom||54},lg=!!o.log,T=v=>lg?Math.log10(Math.max(v,1)):v;
+  const bw0=(w-m.l-m.r)/V.length-6,wrapL=ln=>{if(x.measureText(ln).width<=bw0)return[ln];const out=[];let cur='';ln.split(' ').forEach(wd=>{const t=cur?cur+' '+wd:wd;if(cur&&x.measureText(t).width>bw0){out.push(cur);cur=wd}else cur=t});if(cur)out.push(cur);return out},
+    LB=o.labels.map(l=>String(l).split('\n').flatMap(wrapL)),n0=Math.max(...o.labels.map(l=>String(l).split('\n').length)),n1=Math.max(...LB.map(a=>a.length));if(n1>n0)m.b=Math.max(m.b,14+15*n1);
+  const mx=o.ymax??Math.max(...V,...(o.lines||[]).map(l=>l.y),1)*(lg?1:1.12),tm=lg?Math.ceil(T(mx)):mx,Y=v=>h-m.b-T(v)/tm*(h-m.t-m.b);
+  x.textAlign='right';x.textBaseline='middle';x.lineWidth=1;
+  const lst=Math.max(1,Math.ceil(tm/6)),ticks=lg?Array.from({length:Math.floor(tm/lst)+1},(_,i)=>Math.pow(10,i*lst)):niceTicks(0,mx,5);
+  ticks.forEach(v=>{x.strokeStyle=C.grid;x.beginPath();x.moveTo(m.l,Y(v));x.lineTo(w-m.r,Y(v));x.stroke();x.fillStyle=C.grey;x.fillText(lg?(v<1e5?fmt(v,0):'10'+String(Math.round(Math.log10(v))).split('').map(c=>SUP[c]).join('')):(o.fmtTick||o.fmt||fmt)(v),m.l-6,Y(v))});
+  x.strokeStyle=C.ink;x.lineWidth=1.5;x.beginPath();x.moveTo(m.l,m.t);x.lineTo(m.l,h-m.b);x.lineTo(w-m.r,h-m.b);x.stroke();
+  const n=V.length,band=(w-m.l-m.r)/n,bw=Math.min(90,band*.62);
+  V.forEach((v,i)=>{const cx=m.l+band*(i+.5);x.fillStyle=(o.colors&&o.colors[i])||C.ink;x.fillRect(cx-bw/2,Y(v),bw,h-m.b-Y(v));x.fillStyle=C.ink;x.textAlign='center';x.textBaseline='bottom';x.font='bold 13px system-ui,Arial,sans-serif';x.fillText((o.fmt||fmt)(v),cx,Y(v)-3);x.font='13px system-ui,Arial,sans-serif';
+    x.textBaseline='top';LB[i].forEach((ln,k)=>x.fillText(ln,cx,h-m.b+6+k*15))});
+  (o.lines||[]).forEach(l=>{x.strokeStyle=l.color||C.grey;x.setLineDash([6,4]);x.lineWidth=1.8;x.beginPath();x.moveTo(m.l,Y(l.y));x.lineTo(w-m.r,Y(l.y));x.stroke();x.setLineDash([]);if(l.label)tag(x,l.label,w-m.r-4,Y(l.y)-2,l.color||C.grey)});
+  if(o.ylabel){x.save();x.fillStyle=C.ink;x.translate(13,(m.t+h-m.b)/2);x.rotate(-Math.PI/2);x.textAlign='center';x.textBaseline='top';x.fillText(o.ylabel,0,-2);x.restore()}
+}
+function initTabs(){const tabs=$$('[role=tab]');if(!tabs.length)return;
+  const show=id=>{tabs.forEach(t=>{const on=t.dataset.tab===id;t.setAttribute('aria-selected',on);t.tabIndex=on?0:-1;$('#'+t.getAttribute('aria-controls')).hidden=!on});try{history.replaceState(null,'','#'+id)}catch(e){}requestAnimationFrame(()=>{redrawers.forEach(f=>f())})};
+  tabs.forEach((t,i)=>{t.addEventListener('click',()=>show(t.dataset.tab));t.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){const n=tabs[(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length];n.focus();n.click();e.preventDefault()}})});
+  const hs=location.hash.slice(1);show(tabs.some(t=>t.dataset.tab===hs)?hs:tabs[0].dataset.tab)}
+function bindRange(id,outId,f){const r=$('#'+id),o=$('#'+outId);const u=()=>{o.textContent=f?f(+r.value):r.value};r.addEventListener('input',u);u()}
+</script>
+<script>
+const g=id=>document.getElementById(id);
+const NR=4,NC=4,WALLS=new Set(['2,2','3,4']),START=[1,1],DEST=[4,4],ACT=[[-1,0],[1,0],[0,-1],[0,1]],ARW=['↑','↓','←','→'],AN=['Up','Down','Left','Right'];
+const key=(r,c)=>r+','+c;let Q,rnd,hist,ep,cfg,sel=null,agent=null;
+const rd=()=>({eps:+g('eps').value,al:+g('al').value,ga:+g('ga').value,step:+g('stc').value,bump:+g('bmp').value,goal:+g('gl').value,seed:+g('seed').value||1});
+function reset(){cfg=rd();rnd=mulberry32(cfg.seed);Q={};for(let r=1;r<=NR;r++)for(let c=1;c<=NC;c++)Q[key(r,c)]=[0,0,0,0];hist=[];ep=null;agent=null;renderM()}
+function mv(s,a){const r=s[0]+ACT[a][0],c=s[1]+ACT[a][1];if(r<1||r>NR||c<1||c>NC||WALLS.has(key(r,c)))return{s2:s,rw:-cfg.bump,done:false,bump:true};if(r===DEST[0]&&c===DEST[1])return{s2:[r,c],rw:cfg.goal,done:true,bump:false};return{s2:[r,c],rw:-cfg.step,done:false,bump:false}}
+function best(s,tie){const v=Q[key(...s)],m=Math.max(...v),ix=[];v.forEach((x,i)=>{if(x===m)ix.push(i)});return tie?ix[Math.floor(rnd()*ix.length)]:ix[0]}
+function greedy(){let s=START.slice(),tot=0,path=[],ok=false;for(let i=0;i<20;i++){const a=best(s,false),m=mv(s,a);tot+=m.rw;if(!m.bump){path.push(m.s2.slice())}s=m.s2;if(m.done){ok=true;break}}return{tot,ok,path}}
+function oneMove(){if(!ep||ep.done)ep={s:START.slice(),steps:0,tot:0,bumps:0,done:false,reached:false};
+  const a=rnd()<cfg.eps?Math.floor(rnd()*4):best(ep.s,true),m=mv(ep.s,a),k=key(...ep.s),tg=m.done?m.rw:m.rw+cfg.ga*Math.max(...Q[key(...m.s2)]);
+  Q[k][a]+=cfg.al*(tg-Q[k][a]);ep.s=m.s2;ep.steps++;ep.tot+=m.rw;if(m.bump)ep.bumps++;
+  if(m.done||ep.steps>=50){ep.done=true;ep.reached=m.done;const ev=greedy();hist.push({n:hist.length+1,tot:ep.tot,steps:ep.steps,bumps:ep.bumps,gr:ev.tot,ok:ev.ok,reached:m.done})}}
+function runEp(){if(ep&&!ep.done){while(!ep.done)oneMove()}else{oneMove();while(!ep.done)oneMove()}}
+function shortest(){const q=[[START,0]],seen=new Set([key(...START)]);while(q.length){const[s,d]=q.shift();if(s[0]===DEST[0]&&s[1]===DEST[1])return d;for(let a=0;a<4;a++){const r=s[0]+ACT[a][0],c=s[1]+ACT[a][1];if(r<1||r>NR||c<1||c>NC||WALLS.has(key(r,c))||seen.has(key(r,c)))continue;seen.add(key(r,c));q.push([[r,c],d+1])}}return 0}
+function colour(s){const v=Q[key(...s)],m=Math.max(...v),any=v.some(x=>x!==0);if(!any)return'#fff';return m>=0?`rgba(18,121,74,${Math.min(.75,.12+Math.abs(m)/110)})`:`rgba(201,42,18,${Math.min(.55,.08+Math.abs(m)/30)})`}
+function renderM(){const G=g('grid');G.innerHTML='';const gp=greedy(),pathIdx=new Map();gp.path.forEach((p,i)=>{if(!pathIdx.has(key(...p)))pathIdx.set(key(...p),i+1)});
+  for(let r=1;r<=NR;r++)for(let c=1;c<=NC;c++){const w=WALLS.has(key(r,c)),b=document.createElement('button');b.className='cell'+(w?' wall':'')+(sel&&sel[0]===r&&sel[1]===c?' sel':'')+(g('showp').checked&&pathIdx.has(key(r,c))&&!(r===START[0]&&c===START[1])||g('showp').checked&&r===START[0]&&c===START[1]?' path':'');b.setAttribute('aria-label',w?`Wall at row ${r}, column ${c}`:`Row ${r}, column ${c}`);
+    if(w){b.disabled=true}else{const v=Q[key(r,c)],any=v.some(x=>x!==0),isD=r===DEST[0]&&c===DEST[1];b.style.background=isD?'#d8f3e3':colour([r,c]);b.innerHTML=(isD?'':(any?ARW[best([r,c],false)]:''))+(r===START[0]&&c===START[1]?'<span class="tag">S</span>':'')+(isD?'<span class="tag" style="color:#12794a">D</span>':'')+`<span class="pos">${r},${c}</span>`+(g('showp').checked&&pathIdx.has(key(r,c))?`<span class="num">${pathIdx.get(key(r,c))}</span>`:'')+(agent&&ep&&!ep.done&&ep.s[0]===r&&ep.s[1]===c?'<span class="agent"></span>':'');b.onclick=()=>{sel=[r,c];renderM()}}
+    G.appendChild(b)}
+  const last=hist[hist.length-1];g('sEp').textContent=hist.length;g('sSteps').textContent=last?`last: ${last.steps} moves${last.reached?'':' (gave up at 50)'}`:(ep&&!ep.done?`move ${ep.steps} of the first episode`:'');
+  g('sRew').textContent=last?fmt(last.tot,0):(ep&&!ep.done?fmt(ep.tot,0):'–');g('sBump').textContent=last?`${last.bumps} wall hits`:'';
+  const nb=cfg.goal-(shortest()-1)*cfg.step;g('sGr').textContent=fmt(gp.tot,0)+(gp.ok?'  ✓':'  ✗');g('sGrS').textContent=(gp.ok?'reaches D':'does not reach D yet')+' · shortest route: '+fmt(nb,0);
+  if(sel){const v=Q[key(...sel)],m=Math.max(...v);g('selH').textContent=`Square (row ${sel[0]}, column ${sel[1]})`;g('qt').tBodies[0].innerHTML=v.map((x,i)=>`<tr${x===m&&v.some(y=>y!==0)?' style="background:#fff1ee;font-weight:700"':''}><td>${ARW[i]} ${AN[i]}</td><td>${x.toFixed(1)}</td></tr>`).join('')}
+  const pts=a=>a.map(h=>[h.n,Math.max(-120,h[a===0?'tot':'gr'])]);
+  const s1=hist.map(h=>[h.n,Math.max(-120,h.tot)]),s2=hist.map(h=>[h.n,Math.max(-120,h.gr)]);
+  lineChart(g('cLine'),{xmin:1,xmax:Math.max(10,hist.length),ymin:-120,xlabel:'Episode',ylabel:'Score (clipped at −120)',fmtX:v=>fmt(v,0),
+   hlines:[{y:nb,label:'Shortest route: '+fmt(nb,0),color:C.green}],series:hist.length?[{name:'Episode score (with exploring)',color:C.redd,pts:s1,dots:hist.length<30},{name:'Score if it stopped exploring',color:C.ink,pts:s2,dash:true}]:[{pts:[[1,0],[10,0]],color:'#fff'}]});
+  announce(`Episodes played ${hist.length}. Score if it stopped exploring now: ${gp.tot}${gp.ok?', it reaches the destination':', it does not reach the destination yet'}.`)}
+['eps','al','ga','stc','bmp','gl','seed'].forEach(id=>g(id).addEventListener('input',reset));
+bindRange('eps','epsO',v=>(v*100).toFixed(0)+'%');bindRange('al','alO');bindRange('ga','gaO');bindRange('stc','stcO',v=>'−'+v);bindRange('bmp','bmpO',v=>'−'+v);bindRange('gl','glO',v=>'+'+v);
+g('showp').addEventListener('input',renderM);
+g('b1').onclick=()=>{agent=true;oneMove();renderM()};g('bE').onclick=()=>{agent=null;runEp();renderM()};g('b10').onclick=()=>{agent=null;for(let i=0;i<10;i++)runEp();renderM()};g('b50').onclick=()=>{agent=null;for(let i=0;i<50;i++)runEp();renderM()};g('bR').onclick=reset;
+/* ---- state-space ---- */
+let parts=[];const PR={v:[['Position (10 × 10 squares)',100,1],['Battery level',4,1],['Dirt sensor (dirty or clean)',2,1]],c:[['Speed (0 to 120 km/h, steps of 10)',13,1],['Traffic light colour',3,1],['Distance to car ahead',20,1],['Weather type',4,1]]};
+function human(b){const U=['bytes','KB','MB','GB','TB','PB','EB','ZB'];let i=0,v=b;while(v>=1000&&i<U.length-1){v/=1000;i++}return(v>=10?Math.round(v):Math.round(v*10)/10)+' '+U[i]}
+function words(n){const W=[[1e18,'quintillion'],[1e15,'quadrillion'],[1e12,'trillion'],[1e9,'billion'],[1e6,'million']];for(const[v,w]of W)if(n>=v){const x=n/v;return(x>=10?Math.round(x):Math.round(x*10)/10)+' '+w}return fmt(n,0)}
+function big(n){return n<1e6?fmt(n,0):sci(n,1)}
+function drawParts(){g('parts').innerHTML='<div class="partrow lbl"><span>Part</span><span>Options</span><span>Repeat</span><span></span></div>'+parts.map((p,i)=>`<div class="partrow"><input aria-label="Name of part ${i+1}" data-i="${i}" data-f="0" value="${p[0].replace(/"/g,'&quot;')}"><input type="number" aria-label="Options of part ${i+1}" data-i="${i}" data-f="1" min="1" step="1" value="${p[1]}"><input type="number" aria-label="Repeat of part ${i+1}" data-i="${i}" data-f="2" min="0" step="1" value="${p[2]}"><button class="btn ghost" data-del="${i}" aria-label="Remove part ${i+1}">✕</button></div>`).join('')}
+function calcS(){const bps=Math.max(1,+g('bps').value||1);let tot=1;const cum=[];parts.forEach(p=>{tot*=Math.pow(Math.max(1,p[1]),Math.max(0,p[2]));cum.push(tot)});
+  g('nS').textContent=big(tot);g('nSs').textContent=tot>=1e6?'about '+words(tot):'a number you can count';
+  const mem=tot*bps;g('nM').textContent=human(mem);g('nMs').textContent=mem>1.6e10?'about '+big(mem/1.6e10)+' × the memory of a 16 GB laptop':'fits in a 16 GB laptop';
+  barChart(g('cBar'),{labels:parts.map(p=>p[0].replace(/\s*\(.*\)/,'').split(' ').slice(0,3).join(' ')+(p[2]>1?'\n× '+p[2]:'')),values:cum,colors:cum.map((v,i)=>i===cum.length-1?C.redd:C.ink),fmt:big,fmtTick:v=>big(v),log:true,ylabel:'States (log scale)',bottom:62});
+  g('spMsg').textContent=`Total: ${parts.map(p=>p[2]===1?fmt(p[1],0):fmt(p[1],0)+'^'+p[2]).join(' × ')} = ${big(tot)} states. At ${bps} byte${bps>1?'s':''} each, that needs ${human(mem)}.`;announce(g('spMsg').textContent)}
+g('parts').addEventListener('input',e=>{const t=e.target,i=+t.dataset.i,f=+t.dataset.f;if(isNaN(i))return;parts[i][f]=f===0?t.value:+t.value;calcS()});
+g('parts').addEventListener('click',e=>{const b=e.target.closest('[data-del]');if(!b)return;parts.splice(+b.dataset.del,1);if(!parts.length)parts.push(['Part',2,1]);drawParts();calcS()});
+g('bps').addEventListener('input',calcS);g('addp').onclick=()=>{parts.push(['New part',2,1]);drawParts();calcS()};
+const load=(arr,extra)=>{parts=arr.map(p=>p.slice());if(extra)parts.push(extra);drawParts();calcS()};
+g('pv').onclick=()=>load(PR.v);g('pc').onclick=()=>load(PR.c);g('pc10').onclick=()=>load(PR.c,['Other cars (20 positions each)',20,10]);
+onRedraw(()=>{renderM();calcS()});
+initTabs();reset();load(PR.c,['Other cars (20 positions each)',20,10]);
+</script>
+</body></html>

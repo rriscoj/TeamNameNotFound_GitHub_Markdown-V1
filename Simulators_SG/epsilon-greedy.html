@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Prize-machine simulator: the exploration dial · Inside the Machine</title>
+<style>:root{--red:#FF3B21;--redd:#C92A12;--ink:#0D0D0D;--grey:#5f5f5f;--line:#d8d8d8;--soft:#f5f5f5;--tint:#fff1ee}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:#fff}
+.top{background:var(--ink);color:#fff;padding:12px 20px;border-bottom:6px solid var(--red);display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.brand{font-weight:800;letter-spacing:.5px;font-size:1.05rem}.brand b{color:var(--red)}
+.crumb{font-size:.85rem;opacity:.85}
+.chip{margin-left:auto;background:var(--redd);color:#fff;border-radius:999px;padding:3px 12px;font-size:.8rem;font-weight:700;letter-spacing:.4px}
+.wrap{max-width:1000px;margin:0 auto;padding:18px 20px 40px}
+h1{font-size:1.6rem;margin:.2em 0 .1em}h2{font-size:1.12rem;margin:1.1em 0 .4em}h3{font-size:1rem;margin:.8em 0 .3em}
+.lead{color:var(--grey);margin:.2em 0 1em}
+.panel{border:2px solid var(--ink);border-top:6px solid var(--red);border-radius:4px;padding:14px 16px;margin:14px 0;background:#fff}
+.panel>h2:first-child{margin-top:0}
+.row{display:flex;flex-wrap:wrap;gap:12px 22px;align-items:flex-end}
+.field{display:flex;flex-direction:column;gap:4px;min-width:150px;flex:1 1 170px}
+.field.narrow{min-width:90px;flex:0 0 110px}
+.field label,.lbl{font-weight:700;font-size:.9rem}
+.val{font-weight:800;color:var(--redd)}
+input[type=range]{width:100%;accent-color:var(--redd)}
+input[type=number],input[type=text],input:not([type]),select{font:inherit;padding:6px 8px;border:2px solid var(--ink);border-radius:4px;width:100%;background:#fff}
+.btn{font:inherit;font-weight:700;border:2px solid var(--ink);background:var(--ink);color:#fff;padding:8px 14px;border-radius:4px;cursor:pointer}
+.btn:hover{background:#333}.btn.red{background:var(--redd);border-color:var(--redd)}.btn.ghost{background:#fff;color:var(--ink)}
+.btn:focus-visible,input:focus-visible,select:focus-visible,[role=tab]:focus-visible{outline:3px solid #1f5fbf;outline-offset:2px}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.btns{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 2px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:10px 0}
+.stat{background:var(--soft);border-left:6px solid var(--red);padding:8px 12px;border-radius:3px}
+.stat .k{font-size:.74rem;text-transform:uppercase;letter-spacing:.6px;color:var(--grey);font-weight:700}
+.stat .v{font-size:1.45rem;font-weight:800;line-height:1.2}
+.stat .s{font-size:.82rem;color:var(--grey)}
+canvas.chart{width:100%;height:260px;display:block;border:1px solid var(--line);border-radius:4px;background:#fff}
+table.t{border-collapse:collapse;width:100%;font-size:.88rem}
+table.t th{background:var(--ink);color:#fff;text-align:left;padding:5px 8px}
+table.t td{border-bottom:1px solid var(--line);padding:4px 8px}
+.notice{background:var(--tint);border-left:6px solid var(--red);padding:10px 14px;border-radius:3px;margin:12px 0}
+.notice ul,.notice ol{margin:.3em 0 .3em 1.2em;padding:0}
+.tabs{display:flex;gap:6px;border-bottom:3px solid var(--ink);margin-top:14px;flex-wrap:wrap}
+[role=tab]{font:inherit;font-weight:700;border:2px solid var(--ink);border-bottom:none;background:var(--soft);padding:8px 14px;border-radius:4px 4px 0 0;cursor:pointer}
+[role=tab][aria-selected=true]{background:var(--ink);color:#fff}
+[hidden]{display:none!important}
+footer.foot{border-top:1px solid var(--line);margin-top:24px;padding-top:10px;font-size:.82rem;color:var(--grey)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.pill{display:inline-block;border-radius:999px;padding:1px 10px;font-size:.8rem;font-weight:700;color:#fff;background:var(--ink)}
+.pill.red{background:var(--redd)}.pill.green{background:#12794a}.pill.blue{background:#1f5fbf}.pill.amber{background:#8a5300}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.tw{overflow-x:auto;max-width:100%}
+@media (max-width:760px){.two{grid-template-columns:1fr}}
+@media (max-width:520px){table.t{font-size:.76rem}table.t th,table.t td{padding:4px 4px}table.t th{font-size:.7rem}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head><body>
+<div class="top"><span class="brand">Not <b>Found</b></span><span class="crumb">Inside the Machine · Study Guide V1.0 · Interactive lab</span><span class="chip">Chapter 11 · Lab 11.1</span></div>
+<div class="wrap" id="shot-root">
+<h1>Prize-machine simulator: the exploration dial</h1><p class="lead">An AI must choose between two prize machines without knowing how they work. Turn the exploration dial (epsilon) and watch what it learns.</p>
+<noscript><div class="notice">This simulator needs JavaScript. Turn it on, or use the paper activities in the guide.</div></noscript>
+<div class="panel" id="setup">
+<h2>1) Set the machines and the dial</h2>
+<div class="row">
+ <div class="field"><label for="eps">Exploration dial ε: <span class="val" id="epsOut"></span></label><input type="range" id="eps" min="0" max="1" step="0.01" value="0.2"></div>
+ <div class="field"><label for="n">Number of pulls: <span class="val" id="nOut"></span></label><input type="range" id="n" min="10" max="300" step="10" value="100"></div>
+ <div class="field"><label for="k">Machine B pays $100 about 1 pull in: <span class="val" id="kOut"></span></label><input type="range" id="k" min="2" max="30" step="1" value="6"></div>
+ <div class="field narrow"><label for="seed">Random seed</label><input type="number" id="seed" value="1" min="1" max="9999"></div>
+</div>
+<label id="decay-wrap" style="display:block;margin-top:8px"><input type="checkbox" id="decay"> Turn the dial down over time (ε shrinks to 10% of its start value by the last pull)</label>
+<p class="lbl" id="truth" style="margin:.6em 0 0"></p>
+<div class="btns"><button class="btn" id="step">Next pull</button><button class="btn red" id="run">Run to the end</button><button class="btn ghost" id="reset">Reset (same seed)</button></div>
+</div>
+
+<div class="panel" id="live1">
+<h2>2) What the AI sees and learns</h2>
+<div class="stats">
+ <div class="stat"><div class="k">Pulls so far</div><div class="v" id="sT">0</div><div class="s" id="sE">&nbsp;</div></div>
+ <div class="stat"><div class="k">Total reward</div><div class="v" id="sTot">$0</div><div class="s" id="sPer">&nbsp;</div></div>
+ <div class="stat"><div class="k">Machine A (steady $10)</div><div class="v" id="sA">–</div><div class="s" id="sAn">0 tries</div></div>
+ <div class="stat"><div class="k">Machine B (rare $100)</div><div class="v" id="sB">–</div><div class="s" id="sBn">0 tries</div></div>
+ <div class="stat"><div class="k">The AI prefers</div><div class="v" id="sPref">–</div><div class="s" id="sPrefS">&nbsp;</div></div>
+</div>
+<canvas class="chart" id="cLine" role="img" aria-label="Running total reward after each pull" style="height:270px"></canvas>
+<h3>Last pulls</h3>
+<div class="tw" tabindex="0" role="region" aria-label="Last pulls (a table; it scrolls sideways on a small screen)"><table class="t" id="log"><thead><tr><th>#</th><th>Choice type</th><th>Machine</th><th>Reward</th><th>Estimate A</th><th>Estimate B</th></tr></thead><tbody></tbody></table></div>
+</div>
+
+<div class="panel" id="cmp">
+<h2>3) Compare dial settings (300 games each)</h2>
+<p style="margin:0 0 6px">Uses the machine settings and number of pulls above. Each bar is an average over 300 games.</p>
+<div class="btns"><button class="btn red" id="cmpGo">Run the comparison</button></div>
+<canvas class="chart" id="cBar" role="img" aria-label="Average total reward for different epsilon settings" style="height:270px"></canvas>
+<div class="tw" tabindex="0" role="region" aria-label="Comparison results (a table; it scrolls sideways on a small screen)"><table class="t" id="cmpT" style="margin-top:8px"><thead><tr><th>ε</th><th>Average total reward</th><th>Games that ended up preferring the <span id="worse">worse</span> machine</th></tr></thead><tbody></tbody></table></div>
+<p class="lbl" id="cmpMsg" style="margin-top:8px"></p>
+</div>
+
+<div class="notice"><strong>What to notice</strong>
+<ul><li>With ε = 0 the AI never explores: if it happens to like Machine A first, it can stay there for ever (a <b>local maximum</b>).</li>
+<li>With ε = 100% it explores every time, so it never uses what it learned.</li>
+<li>One lucky or unlucky pull can mislead the average. More pulls make the estimates more reliable.</li>
+<li>Change “1 pull in” to 20: Machine B is now the <em>worse</em> machine. Does exploring still help?</li></ul></div>
+<footer class="foot">Simplified teaching model with made-up numbers: real systems are more complex. Team Name Not Found · Stage 2 Study Guide V1.0. It works offline and sends no data anywhere.</footer>
+</div>
+<div id="live" class="sr-only" aria-live="polite"></div>
+<script>const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+const fmt=(n,d=1)=>Number(n).toLocaleString('en-US',{maximumFractionDigits:d,minimumFractionDigits:0});
+const SUP={'0':'⁰','1':'¹','2':'²','3':'³','4':'⁴','5':'⁵','6':'⁶','7':'⁷','8':'⁸','9':'⁹','-':'⁻'};
+function sci(n,d=1){if(!isFinite(n)||n===0)return String(n);const e=Math.floor(Math.log10(Math.abs(n)));const m=n/Math.pow(10,e);return m.toFixed(d)+' × 10'+String(e).split('').map(c=>SUP[c]).join('')}
+function announce(msg){const l=$('#live');if(l)l.textContent=msg}
+function el(tag,attrs={},html=''){const e=document.createElement(tag);for(const k in attrs)e.setAttribute(k,attrs[k]);e.innerHTML=html;return e}
+const C={ink:'#0D0D0D',red:'#FF3B21',redd:'#C92A12',grey:'#6b6b6b',grid:'#e3e3e3',blue:'#1f5fbf',green:'#12794a',amber:'#b06a00'};
+const redrawers=[];let _rt;function onRedraw(f){redrawers.push(f)}
+window.addEventListener('resize',()=>{clearTimeout(_rt);_rt=setTimeout(()=>redrawers.forEach(f=>f()),60)});
+function prep(c){const dpr=Math.max(1,window.devicePixelRatio||1);const r=c.getBoundingClientRect();const w=Math.max(200,r.width),h=Math.max(120,r.height);c.width=Math.round(w*dpr);c.height=Math.round(h*dpr);const x=c.getContext('2d');x.setTransform(dpr,0,0,dpr,0,0);x.clearRect(0,0,w,h);x.font='13px system-ui,"Segoe UI",Arial,sans-serif';return{x,w,h}}
+function niceTicks(lo,hi,n=5){const span=hi-lo||1,s0=span/n,mag=Math.pow(10,Math.floor(Math.log10(s0))),er=s0/mag,st=(er>=7?10:er>=3?5:er>=1.5?2:1)*mag,t=[];for(let v=Math.ceil(lo/st-1e-9)*st;v<=hi+1e-9;v+=st)t.push(+v.toFixed(10));return t}
+function tag(x,t,xr,y,col){const w=x.measureText(t).width;x.fillStyle='rgba(255,255,255,.88)';x.fillRect(xr-w-4,y-16,w+8,17);x.fillStyle=col;x.textAlign='right';x.textBaseline='bottom';x.fillText(t,xr,y)}
+function lineChart(c,o){
+  const{x,w,h}=prep(c),ser=o.series,names=ser.filter(s=>s.name),lg0=w<460?8:82,LG=[];let lgx=lg0,lgr=0;
+  names.forEach(s=>{const tw=44+x.measureText(s.name).width;if(lgx>lg0&&lgx+tw-16>w-6){lgx=lg0;lgr++}LG.push({s,x:lgx,r:lgr});lgx+=tw});
+  const m={l:78,r:28,t:names.length?20+16*(lgr+1):14,b:46};
+  const xs=[],ys=[];ser.forEach(s=>s.pts.forEach(p=>{xs.push(p[0]);ys.push(p[1])}));(o.hlines||[]).forEach(l=>ys.push(l.y));
+  const x0=o.xmin??Math.min(...xs),x1v=o.xmax??Math.max(...xs),y0=o.ymin??Math.min(0,...ys);let x1=x1v===x0?x0+1:x1v,y1=o.ymax??Math.max(...ys);if(y1===y0)y1=y0+1;if(o.ymax==null)y1+=(y1-y0)*.06;
+  const lg=!!o.xlog,fx=v=>lg?Math.log10(v):v,X=v=>m.l+(fx(v)-fx(x0))/(fx(x1)-fx(x0))*(w-m.l-m.r),Y=v=>h-m.b-(v-y0)/(y1-y0)*(h-m.t-m.b);
+  x.lineWidth=1;x.fillStyle=C.grey;x.textAlign='right';x.textBaseline='middle';
+  niceTicks(y0,y1,5).forEach(v=>{x.strokeStyle=C.grid;x.beginPath();x.moveTo(m.l,Y(v));x.lineTo(w-m.r,Y(v));x.stroke();x.fillStyle=C.grey;x.fillText((o.fmtY||fmt)(v),m.l-6,Y(v))});
+  x.textAlign='center';x.textBaseline='top';let xe=-1e9;(o.xticks||niceTicks(x0,x1,6)).forEach(v=>{x.strokeStyle=C.grid;x.beginPath();x.moveTo(X(v),m.t);x.lineTo(X(v),h-m.b);x.stroke();const t=(o.fmtX||fmt)(v),tw=x.measureText(t).width;if(X(v)-tw/2>xe+6){x.fillStyle=C.grey;x.fillText(t,X(v),h-m.b+6);xe=X(v)+tw/2}});
+  x.strokeStyle=C.ink;x.lineWidth=1.5;x.beginPath();x.moveTo(m.l,m.t);x.lineTo(m.l,h-m.b);x.lineTo(w-m.r,h-m.b);x.stroke();
+  x.fillStyle=C.ink;x.textAlign='center';x.textBaseline='bottom';if(o.xlabel)x.fillText(o.xlabel,(m.l+w-m.r)/2,h-3);
+  if(o.ylabel){x.save();x.translate(13,(m.t+h-m.b)/2);x.rotate(-Math.PI/2);x.textBaseline='top';x.fillText(o.ylabel,0,-2);x.restore()}
+  (o.hlines||[]).forEach(l=>{x.strokeStyle=l.color||C.grey;x.setLineDash([6,4]);x.lineWidth=1.5;x.beginPath();x.moveTo(m.l,Y(l.y));x.lineTo(w-m.r,Y(l.y));x.stroke();x.setLineDash([]);if(l.label)tag(x,l.label,w-m.r-4,Y(l.y)-2,l.color||C.grey)});
+  ser.forEach(s=>{x.strokeStyle=s.color||C.ink;x.lineWidth=s.w||2.5;x.setLineDash(s.dash?[6,4]:[]);x.beginPath();s.pts.forEach((p,i)=>{i?x.lineTo(X(p[0]),Y(p[1])):x.moveTo(X(p[0]),Y(p[1]))});x.stroke();x.setLineDash([]);if(s.dots){x.fillStyle=s.color||C.ink;s.pts.forEach(p=>{x.beginPath();x.arc(X(p[0]),Y(p[1]),3.5,0,7);x.fill()})}});
+  x.textAlign='left';x.textBaseline='middle';LG.forEach(e=>{const s=e.s,ly=14+16*e.r;x.strokeStyle=s.color||C.ink;x.lineWidth=3;x.setLineDash(s.dash?[6,4]:[]);x.beginPath();x.moveTo(e.x,ly);x.lineTo(e.x+22,ly);x.stroke();x.setLineDash([]);x.fillStyle=C.ink;x.fillText(s.name,e.x+28,ly)});
+}
+function barChart(c,o){
+  const{x,w,h}=prep(c),V=o.values,m={l:78,r:16,t:26,b:o.bottom||54},lg=!!o.log,T=v=>lg?Math.log10(Math.max(v,1)):v;
+  const bw0=(w-m.l-m.r)/V.length-6,wrapL=ln=>{if(x.measureText(ln).width<=bw0)return[ln];const out=[];let cur='';ln.split(' ').forEach(wd=>{const t=cur?cur+' '+wd:wd;if(cur&&x.measureText(t).width>bw0){out.push(cur);cur=wd}else cur=t});if(cur)out.push(cur);return out},
+    LB=o.labels.map(l=>String(l).split('\n').flatMap(wrapL)),n0=Math.max(...o.labels.map(l=>String(l).split('\n').length)),n1=Math.max(...LB.map(a=>a.length));if(n1>n0)m.b=Math.max(m.b,14+15*n1);
+  const mx=o.ymax??Math.max(...V,...(o.lines||[]).map(l=>l.y),1)*(lg?1:1.12),tm=lg?Math.ceil(T(mx)):mx,Y=v=>h-m.b-T(v)/tm*(h-m.t-m.b);
+  x.textAlign='right';x.textBaseline='middle';x.lineWidth=1;
+  const lst=Math.max(1,Math.ceil(tm/6)),ticks=lg?Array.from({length:Math.floor(tm/lst)+1},(_,i)=>Math.pow(10,i*lst)):niceTicks(0,mx,5);
+  ticks.forEach(v=>{x.strokeStyle=C.grid;x.beginPath();x.moveTo(m.l,Y(v));x.lineTo(w-m.r,Y(v));x.stroke();x.fillStyle=C.grey;x.fillText(lg?(v<1e5?fmt(v,0):'10'+String(Math.round(Math.log10(v))).split('').map(c=>SUP[c]).join('')):(o.fmtTick||o.fmt||fmt)(v),m.l-6,Y(v))});
+  x.strokeStyle=C.ink;x.lineWidth=1.5;x.beginPath();x.moveTo(m.l,m.t);x.lineTo(m.l,h-m.b);x.lineTo(w-m.r,h-m.b);x.stroke();
+  const n=V.length,band=(w-m.l-m.r)/n,bw=Math.min(90,band*.62);
+  V.forEach((v,i)=>{const cx=m.l+band*(i+.5);x.fillStyle=(o.colors&&o.colors[i])||C.ink;x.fillRect(cx-bw/2,Y(v),bw,h-m.b-Y(v));x.fillStyle=C.ink;x.textAlign='center';x.textBaseline='bottom';x.font='bold 13px system-ui,Arial,sans-serif';x.fillText((o.fmt||fmt)(v),cx,Y(v)-3);x.font='13px system-ui,Arial,sans-serif';
+    x.textBaseline='top';LB[i].forEach((ln,k)=>x.fillText(ln,cx,h-m.b+6+k*15))});
+  (o.lines||[]).forEach(l=>{x.strokeStyle=l.color||C.grey;x.setLineDash([6,4]);x.lineWidth=1.8;x.beginPath();x.moveTo(m.l,Y(l.y));x.lineTo(w-m.r,Y(l.y));x.stroke();x.setLineDash([]);if(l.label)tag(x,l.label,w-m.r-4,Y(l.y)-2,l.color||C.grey)});
+  if(o.ylabel){x.save();x.fillStyle=C.ink;x.translate(13,(m.t+h-m.b)/2);x.rotate(-Math.PI/2);x.textAlign='center';x.textBaseline='top';x.fillText(o.ylabel,0,-2);x.restore()}
+}
+function initTabs(){const tabs=$$('[role=tab]');if(!tabs.length)return;
+  const show=id=>{tabs.forEach(t=>{const on=t.dataset.tab===id;t.setAttribute('aria-selected',on);t.tabIndex=on?0:-1;$('#'+t.getAttribute('aria-controls')).hidden=!on});try{history.replaceState(null,'','#'+id)}catch(e){}requestAnimationFrame(()=>{redrawers.forEach(f=>f())})};
+  tabs.forEach((t,i)=>{t.addEventListener('click',()=>show(t.dataset.tab));t.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){const n=tabs[(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length];n.focus();n.click();e.preventDefault()}})});
+  const hs=location.hash.slice(1);show(tabs.some(t=>t.dataset.tab===hs)?hs:tabs[0].dataset.tab)}
+function bindRange(id,outId,f){const r=$('#'+id),o=$('#'+outId);const u=()=>{o.textContent=f?f(+r.value):r.value};r.addEventListener('input',u);u()}
+</script>
+<script>
+let S;
+const g=id=>document.getElementById(id);
+const cfg=()=>({eps:+g('eps').value,N:+g('n').value,k:+g('k').value,seed:+g('seed').value||1,decay:g('decay').checked});
+const epsAt=(c,t)=>c.decay?c.eps*(1-0.9*t/Math.max(1,c.N-1)):c.eps;
+function pick(q,e,rnd){if(rnd()<e)return{a:rnd()<.5?0:1,ex:true};return{a:q[0]>q[1]?0:q[1]>q[0]?1:(rnd()<.5?0:1),ex:false}}
+function pull(a,k,rnd){return a===0?10:(rnd()<1/k?100:0)}
+function fresh(){const c=cfg();S={c,rnd:mulberry32(c.seed),t:0,n:[0,0],q:[0,0],tot:0,pts:[[0,0]],log:[]};}
+function stepOnce(){const c=S.c;if(S.t>=c.N)return false;const e=epsAt(c,S.t),p=pick(S.q,e,S.rnd),r=pull(p.a,c.k,S.rnd);
+  S.n[p.a]++;S.q[p.a]+=(r-S.q[p.a])/S.n[p.a];S.tot+=r;S.t++;S.pts.push([S.t,S.tot]);S.log.push({t:S.t,ex:p.ex,a:p.a,r,qa:S.q[0],qb:S.q[1]});return true}
+function render(){const c=S.c,avgB=100/c.k;
+  g('sT').textContent=S.t+' / '+c.N;g('sE').textContent=S.t?('ε now '+(epsAt(c,Math.max(0,S.t-1))*100).toFixed(0)+'%'):'ε '+(c.eps*100).toFixed(0)+'%';
+  g('sTot').textContent='$'+fmt(S.tot,0);g('sPer').textContent=S.t?('$'+(S.tot/S.t).toFixed(1)+' per pull'):'';
+  g('sA').textContent=S.n[0]?'$'+S.q[0].toFixed(1):'–';g('sAn').textContent=S.n[0]+' tries';
+  g('sB').textContent=S.n[1]?'$'+S.q[1].toFixed(1):'–';g('sBn').textContent=S.n[1]+' tries';
+  const pref=S.t===0?'–':S.q[0]>S.q[1]?'A':S.q[1]>S.q[0]?'B':'tie';g('sPref').textContent=pref;
+  g('sPrefS').textContent=S.t===0?'':((pref==='A'&&avgB>10)||(pref==='B'&&avgB<10)?'the worse machine!':(pref==='tie'?'':'the better machine'));
+  const tb=g('log').tBodies[0];tb.innerHTML=S.log.slice(-8).reverse().map(l=>`<tr><td>${l.t}</td><td>${l.ex?'<span class="pill blue">Explore</span>':'<span class="pill">Exploit</span>'}</td><td>${l.a?'B':'A'}</td><td>${l.r?'$'+l.r:'$0'}</td><td>$${l.qa.toFixed(1)}</td><td>$${l.qb.toFixed(1)}</td></tr>`).join('');
+  lineChart(g('cLine'),{xmin:0,xmax:c.N,xlabel:'Pull number',ylabel:'Total reward ($)',fmtY:v=>'$'+fmt(v,0),
+    series:[{name:'The AI (this game)',color:C.redd,pts:S.pts,w:3},{name:'Always A',color:C.grey,dash:true,pts:[[0,0],[c.N,10*c.N]]},{name:'Always B (average)',color:C.blue,dash:true,pts:[[0,0],[c.N,avgB*c.N]]}]});
+  announce(`Pull ${S.t} of ${c.N}. Total reward $${S.tot}. The AI prefers ${pref}.`)}
+function truth(){const k=+g('k').value,a=100/k;g('truth').innerHTML=`Machine A pays $10 every time. Machine B pays $100 about 1 pull in ${k} (average <b>$${a.toFixed(1)}</b> per pull). Best machine: <b>${a>10?'B':a<10?'A':'neither (equal)'}</b>.`;g('worse').textContent=a>10?'worse (A)':a<10?'worse (B)':'second-best'}
+function readyAll(){bindRange('eps','epsOut',v=>(v*100).toFixed(0)+'%');bindRange('n','nOut');bindRange('k','kOut');truth();fresh();render()}
+['eps','n','k','seed','decay'].forEach(id=>g(id).addEventListener('input',()=>{truth();fresh();render()}));
+g('step').onclick=()=>{stepOnce();render()};g('run').onclick=()=>{while(stepOnce());render()};g('reset').onclick=()=>{fresh();render()};
+function game(eps,c,seed){const rnd=mulberry32(seed),q=[0,0],n=[0,0];let tot=0;const cc={...c,eps};for(let t=0;t<c.N;t++){const p=pick(q,epsAt(cc,t),rnd),r=pull(p.a,c.k,rnd);n[p.a]++;q[p.a]+=(r-q[p.a])/n[p.a];tot+=r}return{tot,pref:q[0]>q[1]?0:q[1]>q[0]?1:-1}}
+let cmpOpt=null;function drawCmp(){if(cmpOpt){const nar=g('cBar').getBoundingClientRect().width<520;barChart(g('cBar'),{...cmpOpt,fmtTick:cmpOpt.fmt,fmt:nar?v=>fmt(v/1000,1)+'k':cmpOpt.fmt})}else{const{x,w,h}=prep(g('cBar'));x.fillStyle=C.grey;x.textAlign='center';x.textBaseline='middle';x.fillText('Press “Run the comparison” to fill this chart.',w/2,h/2)}}
+g('cmpGo').onclick=()=>{const c=cfg(),E=[0,0.05,0.1,0.2,0.5,1],G=300,avgB=100/c.k,best=avgB>10?1:0,res=E.map((e,i)=>{let s=0,w=0;for(let j=0;j<G;j++){const r=game(e,c,c.seed*100003+i*7919+j*31+1);s+=r.tot;if(r.pref!==best&&r.pref!==-1)w++}return{e,avg:s/G,worse:w/G}});
+  cmpOpt={labels:E.map(e=>'ε = '+(e*100)+'%'),values:res.map(r=>r.avg),colors:res.map(r=>C.redd),fmt:v=>'$'+fmt(v,0),ylabel:'Average total reward ($)',
+    lines:[{y:10*c.N,label:'Always A: $'+fmt(10*c.N,0),color:C.grey},{y:avgB*c.N,label:'Always B: $'+fmt(avgB*c.N,0),color:C.blue}]};drawCmp();
+  g('cmpT').tBodies[0].innerHTML=res.map(r=>`<tr><td>${(r.e*100)}%</td><td>$${fmt(r.avg,0)}</td><td>${(r.worse*100).toFixed(0)}%</td></tr>`).join('');
+  const top=res.reduce((a,b)=>b.avg>a.avg?b:a),r0=res[0],r1=res[res.length-1];
+  g('cmpMsg').textContent=`Highest average here: ε = ${(top.e*100)}% ($${fmt(top.avg,0)}). For comparison: ε = 0% gives $${fmt(r0.avg,0)} and ε = 100% gives $${fmt(r1.avg,0)}. ${top.e===0?'Here exploring did not pay: the better machine is easy to find.':'The best setting is in the middle: some exploration, but not all the time.'}`;announce(g('cmpMsg').textContent)};
+onRedraw(()=>{render();drawCmp()});
+readyAll();drawCmp();
+</script>
+</body></html>
