@@ -4,11 +4,11 @@ Welcome to the presentation folder! This directory contains the slide deck devel
 
 These slides are designed to complement our Study Guide and Video Tutorials, providing a visual and beginner-friendly breakdown of our core concepts.
 
-## 🔗 Presentation Link
+## 📂 Deliverables & Live Folder Link
 
-You can access our finalized presentation slides using the link below:
+All editable documents, PDF exports, and supporting interactive activity files for this task are maintained and updated live in our team's Google Drive workspace:
 
-👉 [**Click here to view the PPT Slides**](https://canva.link/kh5fl3rx8jevwc0)
+*   🔗 **[Access the Learning Content Google Drive Folder](https://drive.google.com/drive/folders/11YtdOz05pGOmELsoVQo63nMRNpnKCb9G?usp=sharing)**
 
 ---
 *🔙 Return to the [Main Repository README](../../README.md)*
