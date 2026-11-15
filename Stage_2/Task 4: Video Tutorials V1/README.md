@@ -4,11 +4,11 @@ Welcome to the video tutorials folder! This directory contains the instructional
 
 These videos bring our Markdown content and Study Guide to life through narrated, step-by-step visual explanations designed specifically for beginners.
 
-## 🔗 Video Link
+## 📂 Deliverables & Live Folder Link
 
-You can access our finalized video tutorials using the link below:
+All editable documents, PDF exports, and supporting interactive activity files for this task are maintained and updated live in our team's Google Drive workspace:
 
-👉 [**Click here to watch the Video Tutorials**](https://canva.link/690mtz9ns42bv7t)
+*   🔗 **[Access the Learning Content Google Drive Folder](https://drive.google.com/drive/folders/11YtdOz05pGOmELsoVQo63nMRNpnKCb9G?usp=sharing)**
 
 ---
 *🔙 Return to the [Main Repository README](../../README.md)*
