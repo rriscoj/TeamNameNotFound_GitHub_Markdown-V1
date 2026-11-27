@@ -10,7 +10,7 @@
 
 | Member Name | Role | GitHub Username |
 | :--- | :--- | :--- |
-| Matthew Owen Winarto (ID: 18020262080) | CEO / Submission Lead | [@matthewtechb](https://github.com/matthewtechb) |
+| Matthew Owen Winarto (ID: 18020262080) | CEO | [@matthewtechb](https://github.com/matthewtechb) |
 | Ricardo Mauricio Risco Jara (ID: 1820262138) | CIO | [@rriscoj](https://github.com/rriscoj) |
 | Harby (ID: 1820262129) | Content Lead | [@harbyyy5](https://github.com/harbyyy5) |
 | Akerke Sarsenbay (ID: 1820262305) | Lead Designer | [@akerkefn](https://github.com/akerkefn) |
@@ -109,4 +109,4 @@ Our master project plan and task list are maintained in the Stage 1 directory fo
 - [ ] Personal learning logs, meeting summaries, and final reflections.
 
 ---
-*All files in this repository are optimized for readability directly within GitHub. For any questions regarding this submission, please reach out to our CEO / Submission Lead, Matthew Owen Winarto.*
+*All files in this repository are optimized for readability directly within GitHub. For any questions regarding this submission, please reach out to our CEO, Matthew Owen Winarto.*
