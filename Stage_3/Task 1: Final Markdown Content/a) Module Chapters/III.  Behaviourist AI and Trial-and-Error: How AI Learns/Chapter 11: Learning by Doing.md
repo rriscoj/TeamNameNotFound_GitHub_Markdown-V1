@@ -1,4 +1,4 @@
-# CHAPTER 11 — Learning by Doing: Exploring New Choices vs. Sticking to What Works
+# CHAPTER 11 —  Learning by Doing: Exploration vs Exploitation, exploring new choices vs. sticking to what already works, and how AI improves through trial and error over time.
 
 ## 1) The Learning Dilemma 
 
@@ -128,23 +128,13 @@ You are training an AI to play a racing game. It finds a glitch where it can dri
 **7. Open-Ended: Finding the Error**
 A student says: "To train an AI to play chess, we should tell it to explore new moves 100% of the time. It should never repeat the same move twice, even if that move is really good." Based on what you know about Exploration vs. Exploitation, what is wrong with this strategy?
 
-## 7) Answer Key
-
-1. **A** (Exploration is risking new things; Exploitation is using known successful strategies).
-2. **B** (A new AI has no data, so it must explore randomly to figure out how the world works).
-3. **B** (Epsilon-Greedy controls the ratio of exploring to exploiting).
-4. **B** (A Local Maximum is a "good enough" strategy that prevents the AI from finding the absolute best strategy).
-5. **B** (Reward Hacking is when the AI exploits a loophole in the reward system).
-6. **Expected Answer:** The AI found a **Local Maximum** and engaged in **Reward Hacking**. It discovered an easy way to get a high score (Exploitation) without actually finishing the race. It doesn't care about winning the game; it only cares about getting the most points, which is why engineers have to carefully design the reward system to prevent this.
-7. **Expected Answer:** If the AI explores 100% of the time, it is using **0% Exploitation**. It will never use the good moves it already learned. It will just play randomly forever and never get good at chess. A good AI must balance both.
-
-## 8) References
+## 7) References
 
 1. Sutton & Barto, *Reinforcement Learning: An Introduction* — Chapter 2: Multi-armed Bandits (The foundational math behind Epsilon-Greedy).
 2. IBM Research, "What is Reinforcement Learning?" — Explanation of how AI learns through trial and error over time.
 3. Stanford Encyclopedia of Philosophy, "Behaviorism" — Historical context of learning through consequences.
 
-## 9) Image References
+## 8) Image References
 
 -  Fig. 1.1: Exploration vs Exploitation https://medium.com/ai-assimilating-intelligence/the-exploration-vs-exploitation-tradeoff-navigating-lifes-choices-52925e540c63 
 -  Fig. 2.1: Epsilon-Greedy Strategy https://pylessons.com/Epsilon-Greedy-DQN
