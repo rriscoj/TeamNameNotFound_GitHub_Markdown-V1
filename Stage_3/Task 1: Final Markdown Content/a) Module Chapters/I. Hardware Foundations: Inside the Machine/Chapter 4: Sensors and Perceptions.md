@@ -128,23 +128,13 @@ You are designing a smart doorbell with a camera. It needs to last a year on bat
 **7. Open-Ended: Finding the Error**
 A student says: "A self-driving car only needs a camera. If the AI is smart enough, it can look at a 2D photo and know exactly how far away the car in front is." Is this statement correct or incorrect? Explain using what you know about sensors.
 
-## 6) Answer Key
-
-1. **C** (LiDAR shoots invisible lasers to measure distance and create 3D maps).
-2. **B** (A camera is like a 2D eye, while LiDAR gives exact 3D depth measurements).
-3. **B** (Data fusion combines sensors like cameras and LiDAR so the car knows *what* an object is and *how far* it is).
-4. **B** (Edge filtering processes data on the device so the computer doesn't get overwhelmed).
-5. **B** (Sensors like cameras create massive amounts of data that can overwhelm a normal processor).
-6. **Expected Answer:** The doorbell is experiencing a **Data Bottleneck**. To fix this, you should use **Edge Filtering**. The tiny camera chip should be programmed to only send a short video clip to the cloud when it detects a human (using a low-power motion sensor). It should not send empty videos of the street all day. This saves battery and bandwidth.
-7. **Expected Answer:** **Incorrect.** A 2D camera image cannot easily tell you exact distances because a flat photo lacks depth information. A car might look tiny because it is far away, or because it is a toy car right in front of the lens. To get safe, accurate distance measurements, the car needs **LiDAR** (which shoots lasers) or **Radar**, combined with the camera using **Data Fusion**.
-
-## 7) References
+## 6) References
 
 1. IBM, "What is Computer Vision?" — Explanation of how cameras and AI process visual data.
 2. NASA, "What is LiDAR?" — Definition and real-world applications of Light Detection and Ranging.
 3. TechTarget, "Sensor Fusion" — Explanation of combining data from multiple sensors for AI.
 
-## 8) Image References
+## 7) Image References
 
 1. Fig. 1.1: Camera https://www.instructables.com/DIY-Image-Sensor-and-Digital-Camera/
 2. Fig. 1.2: LiDAR https://advexure.com/collections/lidar-drones-sensors
