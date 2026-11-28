@@ -13,8 +13,8 @@ At any state, an agent can choose an action it already believes is good (**explo
 This is the same idea from **Chapter 9’s “new trick vs rewarded trick.”** **Chapter 11** formalizes it.
 
 ### Related
-- Chapter 9 — Behaviourist AI
-- Chapter 11 — Exploration vs Exploitation
+- Chapter 9 — The Roots of Small Behavior
+- Chapter 11 — Learning by Doing
 
 Once you understand these three concepts, you understand exactly how an AI makes every single decision, from a robot vacuum cleaning a room to a self-driving car navigating traffic.
 
