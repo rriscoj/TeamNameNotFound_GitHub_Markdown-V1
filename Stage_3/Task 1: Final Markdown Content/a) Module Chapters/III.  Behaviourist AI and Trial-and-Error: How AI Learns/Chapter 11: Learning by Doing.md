@@ -18,7 +18,7 @@ This is the **Exploration vs. Exploitation trade-off**.
 > [!NOTE]
 > **Exploitation** means choosing the action that currently seems to give the best reward. **Exploration** means trying a less-certain action to gather information.
 >
-> These are two settings of the same decision rule. This is the same idea you met in **Chapter 9** as trying new tricks vs repeating rewarded tricks, and in **Chapter 10** as choosing among actions in a state.
+> They are the two choices an AI has at every step. This is the same idea you met in **Chapter 9** as trying new tricks vs repeating rewarded tricks, and in **Chapter 10** as choosing among actions in a state.
 >
 > You will use it again in the **Chapter 15** maze project.
 
@@ -50,7 +50,7 @@ Imagine the dial is set to **10%**. Here is how the AI makes a decision:
 
 Imagine an AI in a casino playing two slot machines.
 *   **Machine A** gives an average of **$10** per pull.
-*   **Machine B** gives an average of **$5** per pull, but occasionally gives a **$100** jackpot.
+*   **Machine B** usually gives **$5** per pull, but about 1 in 5 pulls hits a **$100** jackpot (an average of about **$24** per pull).
 
 How does the AI learn which machine to play?
 
