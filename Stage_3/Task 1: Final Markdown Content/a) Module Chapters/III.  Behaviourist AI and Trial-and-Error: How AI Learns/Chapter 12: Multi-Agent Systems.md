@@ -156,24 +156,15 @@ You are managing a warehouse with 50 robot agents cooperating to pack boxes. The
 A student says: "In a competitive game like 2-player chess, the AI should be rewarded for every piece it captures (+5 points). We don't need to give it a reward for winning the whole game."
 Based on what you learned about Reward Hacking and Multi-Agent Systems, what is the flaw in this reward system?
 
-## 8) Answer Key
 
-1. **B** (A MAS is multiple agents interacting in a shared environment).
-2. **B** (Cooperation is a shared goal; Competition is a zero-sum game where one wins and the other loses).
-3. **C** (Cars use invisible V2V radio signals to share their data instantly).
-4. **C** (Latency delays messages. If Car A tells Car B to stop, but the message is late, they crash).
-5. **C** (Emergent behavior is when simple individual rules create complex group behavior, like a flock of birds).
-6. **Expected Answer:** The robots should have a backup plan to **stop immediately**. In a MAS, latency means the robots can no longer "see" where the others are in real-time. If they keep moving, they will crash into each other. A safe system always defaults to stopping when communication is lost.
-7. **Expected Answer:** The flaw is that the AI will engage in **Reward Hacking**. If it gets points for every piece it captures, it might just capture random pawns and lose its Queen in the process, because it is chasing the +5 points for the pawn. The ultimate reward must be for winning the game (+100) to ensure it makes smart, long-term decisions, not just short-term greedy ones.
-
-## 9) References
+## 8) References
 
 1. Multi-Agent Systems, *Stanford Encyclopedia of Philosophy* — Explanation of agents interacting in shared environments.
 2. OpenAI, "Emergent Tool Use From Multi-Agent Autocurricula" (The Hide-and-Seek AI) — Real-world research on competitive multi-agent systems.
 3. IBM Research, "What is a Multi-Agent System?" — Real-world applications of MAS in industry.
 4. US Department of Transportation, "Vehicle-to-Everything (V2X) Communications" — Official explanation of V2V and V2I technology.
 
-## 10) Image References
+## 9) Image References
 
 -  Fig. 1.1: Autonomous Cars with Visible Connection https://www.istockphoto.com/photos/autonomous-vehicles
 -  Fig. 1.2: Single vs Multi Agent System https://www.codecademy.com/article/multi-agent-systems-in-ai
