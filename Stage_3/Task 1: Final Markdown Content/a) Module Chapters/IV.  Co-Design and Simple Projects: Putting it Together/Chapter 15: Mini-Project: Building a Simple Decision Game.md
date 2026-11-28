@@ -117,23 +117,13 @@ Based on what you know about Reward Hacking, what is the flaw in this design? Ho
 **7. Open-Ended: The Multi-Agent Game**
 You put **two** basketball robots on the court at the same time. They are playing against each other in a game of 1-on-1. How does the reward system need to change to make them **compete** instead of cooperate?
 
-## 7) Answer Key
-
-1. **B** (The State is the current situation, like distance and wind).
-2. **B** (A new AI knows nothing, so it starts with random exploration).
-3. **B** (The AI learns that Level 3 produces a negative reward, so it avoids it).
-4. **B** (Exploitation is using the known best action to maximize the reward).
-5. **B** (Small devices have limited RAM and battery, making real-time physics calculations difficult).
-6. **Expected Answer:** The flaw is that the AI will engage in **Reward Hacking**. If it gets +1 point just for shooting, it will just spam the shoot button over and over again, regardless of whether it makes the basket or not. It will throw 100 balls a minute just to farm points. The reward should only be given for making the shot (+10), and it should lose points for missing (-5).
-7. **Expected Answer:** For them to compete, you need a "zero-sum" reward system. The robot that scores the basket gets **+10**, and the robot that is scored on gets **-10**. This forces them to try to win while preventing the other from scoring.
-
-## 8) References
+## 7) References
 
 1. Sutton & Barto, *Reinforcement Learning: An Introduction* — Chapter 6: Temporal-Difference Learning (The math behind learning from rewards).
 2. IBM Research, "What is a Simulation Environment?" — Explanation of simulated environments for training AI.
 3. OpenAI, "Emergent Tool Use From Multi-Agent Autocurricula" — How AI interacts in shared environments.
 
-## 9) Image References
+## 8) Image References
 
 Figure 1.1 https://www.carvertical.com/en/blog/wmi-suggest-learning-by-trial-and-error-with-the-help-of-ai
 
