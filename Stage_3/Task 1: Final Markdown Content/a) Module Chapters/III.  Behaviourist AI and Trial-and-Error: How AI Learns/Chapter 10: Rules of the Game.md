@@ -6,16 +6,6 @@ Previously, we learned that AI learns through trial and error, just like trainin
 
 To teach an AI to make decisions, computer scientists have to set up a formal environment—like a board game. To build this game, we use three fundamental building blocks: **States, Actions, and Rewards**.
 
-## Decision Tension Preview
-
-At any state, an agent can choose an action it already believes is good (**exploitation**) or try a less-certain action to learn whether it is better (**exploration**).
-
-This is the same idea from **Chapter 9’s “new trick vs rewarded trick.”** **Chapter 11** formalizes it.
-
-### Related
-- Chapter 9 — The Roots of Smart Behavior
-- Chapter 11 — Learning by Doing
-
 Once you understand these three concepts, you understand exactly how an AI makes every single decision, from a robot vacuum cleaning a room to a self-driving car navigating traffic.
 
 | Building Block | Simple Description | Board Game Analogy |
@@ -32,6 +22,16 @@ Once you understand these three concepts, you understand exactly how an AI makes
 > **Terminology — Action:** A specific move the AI can take ("move left," "hit the brakes," or "say hello").
 
 > **Terminology — Reward:** A numerical score given to the AI after it takes an action, telling it if it did a good job or a bad job.
+
+## Decision Tension Preview
+
+At any state, an agent can choose an action it already believes is good (**exploitation**) or try a less-certain action to learn whether it is better (**exploration**).
+
+This is the same idea from **Chapter 9’s “new trick vs rewarded trick.”** **Chapter 11** formalizes it.
+
+### Related
+- [Chapter 9 — The Roots of Smart Behavior](./Chapter%209%3A%20The%20Roots%20of%20Smart%20Behavior.md)
+- [Chapter 11 — Learning by Doing: Exploration vs Exploitation](./Chapter%2011%3A%20Learning%20by%20Doing.md)
 
 ## 2) The Decision Loop
 
