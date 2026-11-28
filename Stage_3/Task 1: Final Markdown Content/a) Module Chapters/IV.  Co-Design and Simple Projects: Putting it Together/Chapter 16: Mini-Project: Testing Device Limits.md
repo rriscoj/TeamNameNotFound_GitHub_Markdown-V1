@@ -145,23 +145,13 @@ Based on what you learned previously, why might a Cloud AI actually be faster th
 A student says: "To train an AI to recognize human faces, I should buy a computer with 64GB of RAM and a super powerful CPU, but I can save money by skipping the GPU." 
 Based on what you learned about AI workloads, why is this a terrible idea?
 
-## 7) Answer Key
-
-1. **C** (Device F has a fast CPU and 16GB RAM, but its outdated GPU makes image generation very slow).
-2. **B** (Chatbots use text and local processing; they don't rely on constant network updates like self-driving cars).
-3. **B** (The CPU/GPU mismatch causes a delay. The GPU sees the danger, but the slow CPU delays the action).
-4. **B** (Without the Cloud or Edge AI, the car loses its "brain" and cannot process sensor data to drive safely).
-5. **C** (Low RAM causes the system to freeze or crash when handling high-resolution images or video).
-6. **Expected Answer:** Even though Device A has great hardware, the Edge AI model must be compressed (shrunk down) to fit on the phone, making it slightly less "smart" and slower to process. The Cloud AI has massive, uncompressed GPUs that can calculate the answer almost instantly, making it faster overall despite the network latency.
-7. **Expected Answer:** This is a terrible idea because AI vision (recognizing faces) relies on massive parallel processing. While RAM and CPU are important, a GPU is essential for processing the millions of pixels in an image. Without a GPU, the computer would take months to train the AI.
-
-## 8) References
+## 7) References
 
 1. IBM Research, "What is a Benchmark Test?" — Explanation of how computing performance is measured.
 2. MIT Technology Review, "The Hardware Limits of AI" — How physical size and memory limits restrict AI on small devices.
 3. NVIDIA, "CPU vs. GPU for AI" — Why GPUs are necessary for heavy AI workloads.
 
-## 9) Image References
+## 8) Image References
 
 Figure 1.1 https://www.chatbench.org/ai-benchmarks/
 
