@@ -6,6 +6,16 @@ Previously, we learned that AI learns through trial and error, just like trainin
 
 To teach an AI to make decisions, computer scientists have to set up a formal environment—like a board game. To build this game, we use three fundamental building blocks: **States, Actions, and Rewards**.
 
+## Decision Tension Preview
+
+At any state, an agent can choose an action it already believes is good (**exploitation**) or try a less-certain action to learn whether it is better (**exploration**).
+
+This is the same idea from **Chapter 9’s “new trick vs rewarded trick.”** **Chapter 11** formalizes it.
+
+### Related
+- Chapter 9 — Behaviourist AI
+- Chapter 11 — Exploration vs Exploitation
+
 Once you understand these three concepts, you understand exactly how an AI makes every single decision, from a robot vacuum cleaning a room to a self-driving car navigating traffic.
 
 | Building Block | Simple Description | Board Game Analogy |
@@ -147,23 +157,14 @@ The robot leaves the food in the pan and it turns black. It gets a -20 reward. O
 **7. Open-Ended: Finding the Error**
 A student says: "To train an AI to play basketball, we should only give it a +100 reward at the exact moment it scores a point. We don't need to give any rewards for dribbling or passing." Based on what you know about States, Actions, and Rewards, why might this make it very hard for the AI to learn?
 
-## 6) Answer Key
 
-1. **B** (The State is the current situation or snapshot of the environment).
-2. **A** (An Action is the choice the AI makes; a Reward is the score it gets for making it).
-3. **C** (A car must track many variables simultaneously, making the state space massive).
-4. **B** (A negative reward is a penalty, meaning the AI should learn to avoid that action).
-5. **B** (The loop is State -> Action -> Reward -> New State).
-6. **Expected Answer:** The robot should remember the **State** (the pan was too hot/the food was black). It learned that the **Action** of leaving the food resulted in a -20 **Reward**. On the next attempt, when it sees the food getting dark, it should choose the action to "take the food out" or "turn down the heat" to get the +10 reward.
-7. **Expected Answer:** This is a problem because the AI will only learn *after* it scores. If it doesn't get tiny rewards for dribbling or passing, it won't know that those **Actions** are necessary to reach the scoring **State**. It will just randomly throw the ball. Good AI training uses **intermediate rewards** (small points for good passes) to guide the AI toward the final goal.
-
-## 7) References
+## 6) References
 
 1. Sutton & Barto, *Reinforcement Learning: An Introduction* — Chapter 3: Finite Markov Decision Processes (the formal math behind States, Actions, and Rewards).
 2. IBM Research, "What is Reinforcement Learning?" — Explanation of the agent-environment interaction loop.
 3. Massachusetts Institute of Technology (MIT), "Introduction to Deep Reinforcement Learning" — Explanation of State Spaces and Action Spaces.
 
-## 8) Image References
+## 7) Image References
 
 - Figure 1.1: https://www.kdnuggets.com/2023/07/reinforcement-learning-teaching-computers-make-optimal-decisions.html
 - Figure 2.1: https://snusforsale.com/loop/loop-red-chili-melon-strong/?srsltid=AYCX9vKizEvz_1pjIGW11EDCOFrcOngjCEhXqLGy8SbSYCOhMSDNoDTa
