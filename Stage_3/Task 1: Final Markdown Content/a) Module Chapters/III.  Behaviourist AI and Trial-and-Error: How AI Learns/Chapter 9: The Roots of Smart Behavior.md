@@ -82,9 +82,9 @@ If the AI explores too much, it never gets good at anything. If it exploits too 
 
 ### Think Ahead
 
-When you train a pet, you sometimes try a new command (**explore**) and sometimes repeat a command that already earns a treat (**exploit**).
+When you train a pet, you sometimes try a new trick (**explore**) and sometimes repeat a rewarded trick that already earns a treat (**exploit**).
 
-> Keep this in mind: **Chapter 11** will give this everyday idea its technical name.
+> Keep this in mind: **Chapter 11** will show how an AI *balances* the two, using an "exploration dial" called **Epsilon-Greedy**.
 
 > **Terminology — Exploration:** The process of an AI trying new, random actions to discover new information.
 
