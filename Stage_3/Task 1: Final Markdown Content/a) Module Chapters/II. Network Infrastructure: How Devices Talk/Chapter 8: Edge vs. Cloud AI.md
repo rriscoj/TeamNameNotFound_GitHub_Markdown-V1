@@ -152,26 +152,13 @@ You are designing an AI delivery drone to deliver packages in a busy city. The d
 A student says: "We should just put all the AI in the Cloud. Devices should only have a screen and a battery. It's cheaper and easier."
 Based on what you know about Latency and Edge vs. Cloud, what is the major flaw in this idea?
 
-## 8) Answer Key
-
-1. **B** (Edge AI is local; Cloud AI is remote).
-2. **B** (High latency means the car would wait too long for a response from the Cloud, causing a crash).
-3. **B** (Data stays on the local device, reducing the risk of it being intercepted online).
-4. **B** (Cloud AI saves battery because the heavy computing happens in a remote Data Center).
-5. **B** (A hybrid approach uses Edge for fast reflexes and Cloud for heavy thinking).
-6. **Expected Answer:** You should use a **Hybrid Approach**. Here is why the other two options fail:
-    *   **Why NOT just Edge AI?** If the drone used only Edge AI, the tiny chip on the drone would have to calculate all the complex live traffic routes. This would drain the drone's limited battery in minutes, and it would overheat. The Edge chip is too weak for heavy traffic mapping.
-    *   **Why NOT just Cloud AI?** If the drone used only Cloud AI, it would have to send a video to the Cloud to ask, "Is there a bird in front of me?" By the time the Cloud answers (latency), the drone has already crashed into the bird. It also risks losing connection in a city with tall buildings.
-    *   **Why Hybrid is better:** Use **Edge AI** for obstacle avoidance (instant reflexes for birds/power lines) and **Cloud AI** for route calculation (heavy math done in the Data Center to save the drone's battery).
-7. **Expected Answer:** **Incorrect.** The major flaw is **Latency**. If devices only had a screen and battery, every action would require sending data to the Cloud and waiting for a response. For things like typing, gaming, or self-driving cars, the delay (latency) would be unplayable and dangerous. Devices need local Edge processing for immediate tasks.
-
-## 9) References
+## 8) References
 
 1. IBM Research, "What is Edge AI?" — Explanation of processing data on the device versus the cloud.
 2. MIT Technology Review, "The Future of Hybrid AI" — How devices combine local processing with cloud processing.
 3. Cisco Networking Academy, "Edge Computing vs. Cloud Computing" — The network implications of Edge vs. Cloud.
 
-## 10) Image References
+## 9) Image References
 
 -  Fig. 1.1: Examples of Cloud AIs https://redblink.com/llm-comparison-chatgpt-gemini-grok-claude-deepseek/
 -  Fig. 1.2: Edge vs Cloud AI https://www.justcodify.com/edge-ai-vs-cloud-ai-differences/
