@@ -15,6 +15,14 @@ This is the **Exploration vs. Exploitation trade-off**.
 | **Exploitation** | Sticking to what already works to get a safe, guaranteed reward. | Eating at your favorite pizza place every Friday. You know it's good. |
 | **Exploration** | Trying new, random choices to see if there is a bigger reward. | Trying the new sushi restaurant across the street. It might be better, or it might make you sick. |
 
+> [!NOTE]
+> **Exploitation** means choosing the action that currently seems to give the best reward. **Exploration** means trying a less-certain action to gather information.
+>
+> These are two settings of the same decision rule. This is the same idea you met in **Chapter 9** as trying new tricks vs repeating rewarded tricks, and in **Chapter 10** as choosing among actions in a state.
+>
+> You will use it again in the **Chapter 15** maze project.
+
+
 > **Terminology — Exploitation:** The AI uses the knowledge it already has to maximize its immediate reward. It plays it safe.
 
 > **Terminology — Exploration:** The AI tries random, new actions to discover new information. It takes a risk.
