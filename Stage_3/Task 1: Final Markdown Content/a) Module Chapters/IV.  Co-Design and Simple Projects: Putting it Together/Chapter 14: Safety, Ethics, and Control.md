@@ -128,24 +128,13 @@ A company uses an AI to review job applications. They train the AI by feeding it
 **8. Open-Ended: The Trust Factor**
 Based on the "Trust Factor" section, why are people comfortable using AI to help write a high school essay, but very uncomfortable with the idea of an AI performing surgery on them without a human doctor in the room? What is the solution to this trust issue?
 
-## 7) Answer Key
-
-1. **C** (Fail-safe means the system defaults to a safe state if something goes wrong).
-2. **C** (Human-in-the-loop means a human must approve the AI's final action).
-3. **B** (Bias comes from training data that reflects unfair human history).
-4. **B** (Using diverse data and Explainable AI helps engineers find and fix bias).
-5. **B** (The safest response is to slow down or stop until it can navigate safely again).
-6. **Expected Answer:** It must use a **Human-in-the-Loop** design. Even though the AI is 99% accurate, the 1% could mean a missed cancer diagnosis (which is fatal) or a false positive (causing extreme stress). Because human lives are at stake, a human doctor must review the X-ray and the AI's recommendation before a final diagnosis is made.
-7. **Expected Answer:** The student is **Incorrect.** Computers do not have feelings, but they inherit the bias of their data. If the AI only learns from resumes of male employees, it will learn that "male" traits are what make a good employee. It will likely unfairly reject female applicants. This is **Algorithmic Bias**.
-8. **Expected Answer:** It comes down to the **cost of failure**. If an AI makes a mistake on a high school essay, the student gets a lower grade. But if an AI makes a mistake during surgery, the patient could die. To solve this trust issue, engineers must use **Human-in-the-Loop** systems, where the AI assists the doctor but does not make the final cut. Furthermore, **rigorous testing and transparency** are needed to prove the AI is safe.
-
-## 8) References
+## 7) References
 
 1. Harvard Business Review, "What Does 'Ethical AI' Mean?" — Explanation of fairness, bias, and human oversight in AI.
 2. IBM Research, "What is Explainable AI (XAI)?" — Why it is important for AI to explain its decisions.
 3. National Institute of Standards and Technology (NIST), "AI Risk Management Framework" — Standards for creating safe and reliable AI systems.
 
-## 9) Image References
+## 8) Image References
 
 Figure 1.1 https://www.forbes.com/sites/andreamorris/2023/06/15/why-experts-cant-understand-or-predict-ai-behaviors/
 
