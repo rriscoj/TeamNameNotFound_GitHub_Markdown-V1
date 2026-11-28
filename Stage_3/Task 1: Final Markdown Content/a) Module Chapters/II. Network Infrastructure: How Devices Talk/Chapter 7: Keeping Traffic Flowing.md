@@ -134,23 +134,13 @@ You are managing a factory with 50 smart robots that communicate via a local Wi-
 A student says: "To make my internet faster for gaming, I just need to buy a plan with more bandwidth. Latency doesn't matter as long as I have 1 Gigabit per second download speed."
 Based on what you know about Latency and Bandwidth, why is this statement incorrect?
 
-## 7) Answer Key
-
-1. **B** (Bandwidth is the volume of data; Latency is the delay).
-2. **B** (Higher Mbps means higher bandwidth and more data per second).
-3. **C** (A self-driving car needs instant communication to avoid crashes; latency must be near zero).
-4. **B** (QoS prioritizes VIP data like video calls or gaming over background downloads).
-5. **B** (Load balancing spreads the traffic to prevent a single server from crashing).
-6. **Expected Answer:** The software update is consuming all the **Bandwidth**, causing **Network Congestion** and increasing latency for the robots. You should use **QoS** on the factory router to put the robots' communication in the VIP lane, and force the 100GB update into the slow/background lane.
-7. **Expected Answer:** **Incorrect.** Having massive **Bandwidth** (1 Gbps) means you can download huge files quickly. But if the **Latency** is high (e.g., 100ms), there will still be a delay between when you press a button and when the server registers it. Gaming requires low latency, not just high bandwidth.
-
-## 8) References
+## 7) References
 
 1. Cisco Networking Academy, "Quality of Service (QoS)" — Explanation of how routers prioritize network traffic.
 2. Cloudflare Learning Center, "What is Latency?" — Explanation of how latency differs from bandwidth.
 3. IBM Research, "What is Load Balancing?" — Explanation of how data centers distribute traffic across servers.
 
-## 9) Image References
+## 8) Image References
 
 1. Fig. 1.1: Traffic Jam https://www.vecteezy.com/free-vector/traffic-jam 
 2. Fig. 2.1: Bandwidth vs Latency https://broadbandnow.com/guides/bandwidth-vs-latency
