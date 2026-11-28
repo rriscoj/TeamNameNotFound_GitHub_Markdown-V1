@@ -135,24 +135,14 @@ You take a photo on your phone and it instantly backs up to "The Cloud" (like iC
 A student says: "Since we have The Cloud, we don't need powerful GPUs anymore. We can just put a cheap, slow CPU in our phones, and the Data Center's Wi-Fi will do all the heavy thinking for us."
 Based on what you know about Network Latency and Data Centers, what is the major flaw in this idea?
 
-## 9) Answer Key
-
-1. **B** — The Cloud is a physical data center filled with servers.
-2. **B** — Undersea fiber optic cables carry data as pulses of light across the ocean.
-3. **B** — Distributed computing is multiple computers working on one problem via a network.
-4. **B** — Data parallelism copies the model and gives different data chunks to different servers.
-5. **B** — Physical distance increases the time it takes for data to travel, increasing latency.
-6. **Expected Answer:** Your phone uses its sensors to capture the image. It breaks the photo into **packets** and sends them over Wi-Fi. The packets travel through routers and undersea fiber optic cables to a **Data Center**. The Data Center stores the packets on a server and rebuilds the image so you can access it later.
-7. **Expected Answer:** **Incorrect.** The major flaw is **Network Latency**. If your phone had a weak CPU, it would have to send every tiny action (like typing a letter on the screen, or moving the camera) to the Cloud and wait for the network to send the answer back. The delay (latency) would make the phone feel incredibly laggy and slow. You need a decent local chip (Edge computing) to handle immediate tasks.
-
-## 10) References
+## 9) References
 
 1. Amazon Web Services (AWS), "What is Cloud Computing?" — Explanation of data centers and renting cloud servers.
 2. Google Cloud, "What is Distributed Computing?" — Explanation of how tasks are split across multiple servers.
 3. IBM Research, "What is Data Parallelism?" — Explanation of how AI models are trained across massive server clusters.
 4. Cloudflare, "What is a Fiber Optic Cable?" — How undersea cables use light to transmit data globally.
 
-## 11) Image References
+## 10) Image References
 
 1. Fig. 1.1 & 1.3: Data Cloud Server https://www.magnific.com/free-photos-vectors/cloud-server 
 2. Fig. 1.2 & 3.1: PC https://stock.adobe.com/search?k=desktop+computer
