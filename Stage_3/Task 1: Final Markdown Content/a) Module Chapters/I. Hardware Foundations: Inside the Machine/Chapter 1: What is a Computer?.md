@@ -164,17 +164,8 @@ D. The monitor resolution is too low.
 
 7. A user complains that their laptop is running very slowly while trying to open a massive video file, but their processor is barely working (low CPU usage). Based on the concept of the memory hierarchy and the "von Neumann bottleneck," what is the most likely cause of the slowdown?
 
-## 6) Answer Key
 
-1. A
-2. B
-3. B
-4. B
-5. C
-6. The processor takes the value that was previously saved in the memory location called NUM and adds it to the value currently sitting in the working register (the accumulator). The result then replaces the old value in the accumulator.
-7. The laptop is most likely experiencing a storage bottleneck. Because the file is massive and not currently in RAM, the processor has to wait for the slow storage drive (HDD or SSD) to fetch the data and send it across the bus. The processor isn't "thinking slowly"—it is just idling and waiting for the data to arrive.
-
-## 7) References
+## 6) References
 
 1. Princeton University, “Inside the CPU” (COS 109) — fetch–decode–execute cycle and toy computer instruction set.
 2. MIT Computer Science, “The von Neumann Model” — memory holds both data and instructions; CPU fetches, interprets, and executes.
@@ -185,7 +176,7 @@ D. The monitor resolution is too low.
 7. Computer Hope — computer definition: https://www.computerhope.com/jargon/c/computer.htm
 8. OpenStax — Introduction to Computer Science: https://openstax.org/books/introduction-computer-science/pages/1-introduction
 
-## 8) Image References
+## 7) Image References
 
 1. Fig1.1 Computer processor https://digibuggy.com/blog-details/top-5-processors-for-gaming-pcs-in-2025
 2. Fig1.2 Computer RAM https://www.itpro.com/hardware/31661/what-is-ram
