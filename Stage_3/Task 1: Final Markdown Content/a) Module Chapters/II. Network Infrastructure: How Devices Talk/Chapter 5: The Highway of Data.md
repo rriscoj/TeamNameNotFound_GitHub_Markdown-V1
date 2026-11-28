@@ -157,23 +157,13 @@ You install a smart security camera in your backyard. It records 4K video and se
 A student says: "If I am playing a fast-paced multiplayer shooting game, my game should use TCP so that if I miss a packet, the game pauses and resends it to make sure I don't miss anything."
 Based on what you know about TCP and UDP, why is this a terrible idea?
 
-## 7) Answer Key
-
-1. **B** (Packets are small chunks of data traveling across a network).
-2. **B** (Routers direct data packets to their destination).
-3. **A** (Latency is the delay; Jitter is the variation in that delay).
-4. **B** (TCP is reliable but slower; UDP is fast but allows packet loss).
-5. **C** (Low bandwidth causes congestion and bottlenecks in data transfer).
-6. **Expected Answer:** You can lower the resolution of the camera from 4K to 1080p (or lower). This means the camera will generate smaller **packets** and less data, which can fit through the low **bandwidth** of your home Wi-Fi without getting stuck in congestion.
-7. **Expected Answer:** **Incorrect.** If a shooting game used **TCP**, every time a packet was lost, the entire game would pause and wait for it to be resent. This would cause massive lag and make the game unplayable. Games use **UDP** because they prioritize speed. It is better to miss a tiny frame of data than to have the whole game freeze.
-
-## 8) References
+## 7) References
 
 1. Cisco Networking Academy, "Introduction to Networks" — Explanation of how packets, routers, and bandwidth work.
 2. IBM Research, "What is a Computer Network?" — The fundamentals of networking and data transfer.
 3. Cloudflare Learning Center, "What is Packet Loss?" — Explanation of packet loss, jitter, corruption, and TCP/UDP.
 
-## 9) Image References
+## 8) Image References
 
 1. Fig. 1.1: Network https://www.dreamstime.com/photos-images/network-picture.html 
 2. Fig. 1.2: Wi-Fi https://www.magnific.com/photos/wifi-router 
