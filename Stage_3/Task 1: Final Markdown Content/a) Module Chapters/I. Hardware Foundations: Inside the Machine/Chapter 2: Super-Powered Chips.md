@@ -82,24 +82,14 @@ A student says: "I upgraded my computer's CPU from 4 cores to 8 cores so it will
 
 <img width="780" height="438" alt="image" src="https://github.com/user-attachments/assets/3110231a-85de-4baa-add0-17b8c010f79f" />
 
-## 6) Answer Key
 
-**Scenario 1:**
-**Expected Answer:** A **GPU or TPU**. The car needs to process millions of pixels from 8 cameras every single second. This requires thousands of simple calculations to happen at the same time (parallel processing). A CPU would bottleneck and be too slow, which would be dangerous for a moving car.
-
-**Scenario 2:**
-**Expected Answer:** **No, a CPU is fine.** A spell checker processes one word at a time (sequential). The workload is very small and doesn't require thousands of parallel calculations. A standard CPU handles this easily.
-
-**Scenario 3:**
-**Expected Answer:** **Incorrect.** Even with 8 cores, a CPU is designed for sequential tasks. A GPU has thousands of cores designed specifically for parallel processing. A GPU will still crush the CPU in AI training because AI requires solving millions of math problems simultaneously. The student is confusing a slightly faster CPU with massively parallel GPU architecture.
-
-## 7) References
+## 6) References
 1. NVIDIA, "What is a GPU?" — Explanation of GPUs and parallel processing architecture.
 2. Google Cloud, "What is a TPU?" — Definition of Tensor Processing Units and their use in machine learning.
 3. IBM Research, "CPU vs. GPU" — Comparisons between sequential and parallel processing architectures.
 4. TechTarget, "Tensor" — Definition of tensors in computing and machine learning.
 
-## 8) Image References
+## 7) Image References
 1. Fig. 2.1: Computer Processor https://digibuggy.com/blog-details/top-5-processors-for-gaming-pcs-in-2025
 2. Fig. 2.2: GPU https://www.hellotech.com/blog/whats-a-gpu-what-gpu-do-you-have?srsltid=AYCX9vJHt4TEhAjow4onmCUGeg5rhaSDsPj-xPk8VU_TJlH8Cjfz0cMj4TEhAjow4onmCUGeg5rhaSDsPj-xPk8VU_TJlH8Cjfz0cMj
 3.  Fig. 3.1: Tensor Comparison https://www.kdnuggets.com/2018/05/wtf-tensor.html
