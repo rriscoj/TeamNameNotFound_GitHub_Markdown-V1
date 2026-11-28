@@ -144,23 +144,13 @@ You are designing a delivery drone. The drone is flying over a city and is curre
 **7. Open-Ended: Finding the Error**
 A student says: "To make a robot dog learn how to walk, we should put the most powerful RTX 5090 GPU on its back and connect to a 5G tower constantly." Based on what you know about Hardware Limits and Heat, what is the major flaw in this design?
 
-## 7) Answer Key
-
-1. **B** (Thermal throttling is when a chip slows down to avoid overheating).
-2. **C** (Network latency makes the cloud too slow for real-time physical actions like driving or flying).
-3. **C** (Turning off heavy components is a classic way to save battery in edge devices).
-4. **B** (Small devices lack the space for big batteries, massive RAM, or large cooling fans).
-5. **C** (A Hybrid approach uses Edge for fast reflexes and Cloud for heavy processing).
-6. **Expected Answer:** Because it has no network, it must rely entirely on **Edge** processing to navigate back on course. To deal with the **Heat**, it must throttle its CPU (slowing down its thinking) and perhaps land to cool off. It also needs to turn off non-essential sensors to save battery.
-7. **Expected Answer:** The major flaw is **Heat and Battery**. An RTX 5090 generates an insane amount of heat and uses massive amounts of power. The robot dog would melt or have a battery life of 3 minutes. It would need heavy cooling fans (which add weight) and a massive battery (which adds more weight). It is better to use a small, efficient Edge AI chip.
-
-## 8) References
+## 7) References
 
 1. IBM Research, "What is Edge Computing?" — Explanation of processing data near the source to avoid network latency.
 2. Intel, "Thermal Management for Embedded Devices" — Why small devices overheat and how they throttle performance.
 3. MIT Technology Review, "The Hardware Limits of AI" — How the physical size of chips and batteries limits real-world AI.
 
-## 9) Image References
+## 8) Image References
 
 Figure 1.1 https://heptner.dev/blog/messy-data-broken-ai-why-your-data-holds-you-back/
 
