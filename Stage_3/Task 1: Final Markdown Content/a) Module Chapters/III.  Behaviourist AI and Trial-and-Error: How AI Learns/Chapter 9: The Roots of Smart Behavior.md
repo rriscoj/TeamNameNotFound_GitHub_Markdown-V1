@@ -80,6 +80,12 @@ This is called the **Exploration vs. Exploitation** trade-off.
 
 If the AI explores too much, it never gets good at anything. If it exploits too much, it gets stuck in a routine and never finds the *best* solution. Modern AI uses mathematical rules to balance both.
 
+### Think Ahead
+
+When you train a pet, you sometimes try a new command (**explore**) and sometimes repeat a command that already earns a treat (**exploit**).
+
+> Keep this in mind: **Chapter 11** will give this everyday idea its technical name.
+
 > **Terminology — Exploration:** The process of an AI trying new, random actions to discover new information.
 
 > **Terminology — Exploitation:** The process of an AI using the knowledge it already has to maximize rewards.
@@ -144,23 +150,13 @@ You are designing a robot vacuum. It learns by trial and error. When it cleans a
 **7. Open-Ended: Finding the Error**
 A student says: "To train an AI to play chess, we just need to give it a rulebook and tell it to memorize the best move for every situation." Is this statement an example of Behaviorist AI? Explain why or why not.
 
-## 6) Answer Key
-
-1. **B** (Behaviorist AI learns through rewards and penalties, similar to training an animal).
-2. **C** (The agent is the AI making decisions in the environment).
-3. **C** (A separate Reward Model grades the AI's output, which was trained by millions of human clicks).
-4. **A** (Exploration is trying new things; Exploitation is using known successful strategies).
-5. **C** (Trial and error requires millions of practice runs. GPUs process these parallel math equations much faster than CPUs).
-6. **Expected Answer:** The vacuum might be stuck in **Exploitation**. It has learned one path to the couch that guarantees a few points, and it is too afraid to **Explore** new paths that might lose points, even though a new path might avoid the couch entirely. To fix this, the programmer needs to encourage exploration by changing the reward system.
-7. **Expected Answer:** **Incorrect.** This is not Behaviorist AI. That is a rule-based system (or memorization). Behaviorist AI learns by **trial and error**—playing millions of games, making mistakes, and receiving a +1 for winning or a -1 for losing. It figures out the best moves through experience, not by memorizing a rulebook.
-
-## 7) References
+## 6) References
 
 1. Stanford Encyclopedia of Philosophy, "Behaviorism" — Historical context of behaviorism in psychology.
 2. Sutton & Barto, *Reinforcement Learning: An Introduction* — The foundational textbook on how AI uses rewards and penalties.
 3. IBM Research, "What is Reinforcement Learning?" — Explanation of Agents, Environments, and Rewards.
 
-## 8) Image References
+## 7) Image References
 
 1. Fig. 1.1: Behaviorism https://slideshare.net/slideshow/tolman-theory/235131073 
 2. Fig. 2.1: Feedback Loop https://screencloud.com/corporate-culture/feedback-loops
