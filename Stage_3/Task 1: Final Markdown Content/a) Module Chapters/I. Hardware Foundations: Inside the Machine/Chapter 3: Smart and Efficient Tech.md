@@ -139,28 +139,12 @@ A company is making a smart ring that measures your sleep patterns. The ring is 
 **Scenario 3: Finding the Error**
 An engineer is designing a smart home thermostat. They decide to use a powerful SoC with a 24-hour continuous cooling fan to run the thermostat. Based on what we learned, what is the major flaw in this design?
 
-## 6) Answer Key
-
-### Part A: Multiple Choice Answers
-1. **B** (An MCU is simple and low-power; an SoC is complex and packs CPU, GPU, and memory onto one chip).
-2. **C** (Sleep mode is the secret to battery life; it turns off the big chips when they aren't needed).
-3. **C** (The motion sensor detects the wrist flick and generates an interrupt to wake up the CPU).
-4. **C** (GPUs require massive power and cooling fans. A tiny ring has neither, so it would overheat).
-5. **B** (A smart lightbulb only does a simple, repetitive task, which is perfect for a low-power MCU).
-
-### Part B: Open-Ended Answers
-**Scenario 1:** An **MCU with a sleep mode**. The doorbell must last a year on AA batteries. A heavy SoC would drain the battery in days. An MCU can sit in sleep mode using almost zero power until its sensor detects a person.
-
-**Scenario 2:** A GPU requires massive amounts of electricity and generates a lot of heat. There is no room for a large battery or a cooling fan inside a tiny ring. A GPU would melt the ring and drain the battery in minutes. 
-
-**Scenario 3:** The major flaw is **power usage and heat**. A thermostat is on the wall 24/7. Using a heavy SoC and a cooling fan wastes massive amounts of electricity and creates annoying noise. It should use a low-power MCU that sleeps most of the day.
-
-## 7) References
+## 6) References
 1. ARM Education, "What is a System on a Chip (SoC)?" 
 2. IBM, "What is a Microcontroller?" 
 3. TechTarget, "Sleep Mode"
 
-## 8) Image References
+## 7) Image References
 1. Fig. 1.1: Hot GPU https://www.cherryservers.com/blog/gpu-temperature-range
 2. Fig. 2.1: Low-Power Microchip https://www.futurity.org/robots-low-power-chip-2009832/
 3. Fig. 2.2 & 2.3: Microprocessor vs MCU vs SoC https://www.ampheo.com/blog/microprocessor-vs-microcontroller-vs-system-on-chip-what-are-the-differences-among-them
